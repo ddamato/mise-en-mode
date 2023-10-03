@@ -1,64 +1,48 @@
 ---
-const { media, callout } = Astro.props;
+const { split } = Astro.props;
 ---
 
 <style>
   section {
-    --bg-offset: 25%;
-    display: flex;
-    flex-flow: row-reverse;
-    justify-content: center;
-    align-items: start;
+    --bg-offset: 25%;    
+    background: white;
     padding: calc(var(--unit) * 2);
-    gap: calc(var(--unit) * 2);
+    max-width: calc(var(--unit) * 24);
+    margin-inline: auto;
+  }
+
+  section[data-split] {
     background: linear-gradient(.25turn, transparent var(--bg-offset), white var(--bg-offset) 100%);
+    padding-inline-start: calc(var(--unit) * 8);
   }
 
-  section:first-of-type {
-    height: calc(var(--unit) * 8);
-    margin-inline-start: 0;
-    margin-inline-end: auto;
-    background: linear-gradient(.25turn, white calc(100% - var(--bg-offset)), transparent calc(100% - var(--bg-offset)));
-  }
-
-  section div {
-    width: calc(var(--unit) * 10);
-  }
-
-  :where(img, video) {
-    width: calc(var(--unit) * 10);
-  }
-
-  strong {
-    font-size: 5em;
-    background: #3c2b0f;
-    color: #ffb53b;
-    line-height: calc(var(--unit) * 2);
-    padding-inline: calc(var(--unit) * 1);
-    -webkit-box-decoration-break: clone;
-    box-decoration-break: clone;
-  }
-
-  section div:empty {
-    display: none;
-  }
-
-  section div:empty + :where(img, video) {
-    max-width: calc(var(--unit) * 14);
-    max-height: calc(var(--unit) * 10);
+  section[data-split] div {
+    /* width: calc(var(--unit) * 8); */
+    /* margin-inline-start: auto; */
   }
 
   @media not (display-mode: browser) {
-    
+    section {
+      font-size: 0;
+      margin-block-start:  calc(var(--unit) * 2);
+      scroll-snap-align: start;
+      scroll-margin-block-start: calc(var(--unit) * 2);
+      max-height: calc(var(--unit) * 14);
+      height: 100%;
+    }
+
+    section:last-of-type {
+      margin-block-end:  calc(var(--unit) * 2);
+    }
+
+    section:not(:has(figure)) {
+      display: none;
+    }
   }
 </style>
 
-<section data-media={ Boolean(media) }>
-  <div class="content">
+<section data-split={ Boolean(split) }>
+  <div>
     <slot/>
   </div>
-  { callout && <strong class="callout">{ callout }</strong> }
-  { media ? media.endsWith('mp4')
-    ? <video class="media" src={ media } loop autoplay muted />
-    : <img class="media" src={ media } /> : null }
 </section>

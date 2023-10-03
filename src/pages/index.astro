@@ -2,14 +2,17 @@
 import Layout from '@layouts/Layout.astro';
 import logo from '@components/Logo.svg?raw';
 import Section from '@components/Section.astro';
+import Media from '@components/Media.astro';
 ---
 
 <style>
 	main {
-		max-width: calc(var(--unit) * 24);
 		margin-inline: auto;
-		padding-block: calc(var(--unit) * 2);
 		position: relative;
+		overflow-y: scroll;
+		scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+		height: 100vh;
 	}
 	:global(svg) {
 		max-width: calc(var(--unit) * 4);
@@ -23,13 +26,26 @@ import Section from '@components/Section.astro';
 		<Section>
 			<Fragment set:html={logo} />
 		</Section>
-		<Section media="/media/schema.png">
-			Green juice keytar poke +1 next level gochujang poutine gentrify yuccie flexitarian flannel. Ethical synth la croix street art occupy af. Flexitarian cupping sus farm-to-table migas ramps, glossier paleo deep v. Mixtape tumblr vaporware, whatever truffaut chambray vibecession hell of pug shaman portland swag unicorn. Squid helvetica heirloom, fam ugh normcore live-edge vegan. Flannel vice chicharrones woke jean shorts. Keytar kale chips gluten-free celiac yuccie, photo booth church-key.
+		<Section>
+			Activated charcoal food truck dreamcatcher blog artisan chicharrones kale chips authentic adaptogen franzen. Lo-fi ugh craft beer mumblecore leggings meggings put a bird on it tonx. Chicharrones fashion axe pug Brooklyn retro ramps. Poutine chartreuse YOLO +1 poke. Fixie quinoa ugh celiac. Air plant normcore adaptogen, direct trade art party tbh vexillologist try-hard mlkshk.
+		</Section>
+		<Section split>
+			Activated charcoal food truck dreamcatcher blog artisan chicharrones kale chips authentic adaptogen franzen. Lo-fi ugh craft beer mumblecore leggings meggings put a bird on it tonx. Chicharrones fashion axe pug Brooklyn retro ramps. Poutine chartreuse YOLO +1 poke. Fixie quinoa ugh celiac. Air plant normcore adaptogen, direct trade art party tbh vexillologist try-hard mlkshk.
+
+			<Media split src="/media/schema.png" alt="schema image" />
+
+VHS ugh polaroid, forage glossier jean shorts craft beer flannel keytar vape normcore hexagon grailed farm-to-table. Single-origin coffee neutra viral raw denim fingerstache. Lo-fi man braid blog, fanny pack woke vegan dreamcatcher humblebrag grailed post-ironic organic YOLO freegan. Cornhole kale chips ramps microdosing jean shorts, bodega boys bespoke yr trust fund hoodie. Photo booth meggings kogi sartorial fam snackwave. Portland direct trade poke, bespoke swag authentic williamsburg chillwave palo santo succulents hammock four dollar toast. Yes plz actually fanny pack JOMO.
+
+Hot chicken lumbersexual pork belly flannel, retro gochujang pug asymmetrical hexagon next level. Forage pitchfork everyday carry pickled fixie retro kale chips bespoke glossier. Yes plz mlkshk vegan, fit pour-over organic vinyl pop-up blue bottle yuccie iPhone tofu af XOXO narwhal. Four loko blackbird spyplane knausgaard heirloom.
+
+Kitsch jawn bicycle rights truffaut 8-bit cornhole quinoa chicharrones VHS freegan mixtape dreamcatcher. Grailed flannel drinking vinegar, etsy activated charcoal marfa jianbing adaptogen truffaut cloud bread small batch organic farm-to-table beard meh. Flexitarian freegan jianbing, big mood pitchfork adaptogen prism iPhone etsy. Chia tumeric tofu, hell of sus banh mi cred mustache PBR&B slow-carb yr. Seitan crucifix bushwick DIY prism polaroid small batch hot chicken listicle franzen af green juice sustainable air plant unicorn. Lyft hell of XOXO cloud bread. Bespoke kickstarter raclette put a bird on it.
+
+Pork belly swag yr forage kinfolk pitchfork chillwave bushwick trust fund. Fam mustache normcore sus kinfolk humblebrag art party blog kale chips mixtape. Irony same hammock marfa, chia succulents activated charcoal 3 wolf moon. Wolf sustainable pabst forage iPhone. Man braid ramps cronut, farm-to-table big mood jean shorts selfies readymade godard retro vexillologist mixtape. Neutra ascot tbh chartreuse, microdosing pork belly palo santo yuccie hexagon hammock paleo sus sustainable seitan. Aesthetic readymade messenger bag hammock.
 		</Section>
 
-		<Section media="/media/tweet-hand.mp4"/>
-
-		<Section callout="Hello world!"/>
+		<Section>
+			<Media src="/media/tweet-hand.mp4" alt="hand video" />
+		</Section>
 		
 	</main>
 </Layout>

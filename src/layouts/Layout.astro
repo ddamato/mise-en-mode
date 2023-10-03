@@ -19,12 +19,26 @@ const ogImage = new URL('og-image.png', Astro.url);
 		background-size: calc(var(--unit) * 12);
 		background-position: top center;
 		background-attachment: fixed;
+		background-color: #c58621;
+		font-size: 2rem;
+		line-height: 1.5;
+		font-family: 'Red Hat Display', sans-serif;
+		color: #3c2b0f;
+		font-weight: 400;
 	}
+
+	@media not (display-mode: browser) {
+    body {
+			height: 100vh;
+			/* overflow: hidden; */
+		}
+  }
 </style>
 
 <!doctype html>
 <html lang="en">
 	<head>
+		<title>{title}</title>
 		<meta charset="UTF-8" />
 		<meta name="description" content={ description } />
 		<meta name="viewport" content="width=device-width" />
@@ -45,7 +59,10 @@ const ogImage = new URL('og-image.png', Astro.url);
 		<meta property="og:image:width" content="1200" />
 		<meta property="og:image:height" content="630" />
 		<meta property="og:image:alt" content="Mise en mode" />
-		<title>{title}</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Red+Hat+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
 	</head>
 	<body>
 		<slot />
