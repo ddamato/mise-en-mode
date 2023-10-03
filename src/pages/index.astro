@@ -3,12 +3,14 @@ import Layout from '@layouts/Layout.astro';
 import logo from '@components/Logo.svg?raw';
 import Section from '@components/Section.astro';
 import Media from '@components/Media.astro';
+import Callout from '@components/Callout.astro';
 ---
 
 <style>
 	main {
 		margin-inline: auto;
 	}
+
 	:global(svg) {
 		max-width: calc(var(--unit) * 4);
 		padding: 1em;
@@ -36,15 +38,17 @@ import Media from '@components/Media.astro';
 		<Section split>
 			Activated charcoal food truck dreamcatcher blog artisan chicharrones kale chips authentic adaptogen franzen. Lo-fi ugh craft beer mumblecore leggings meggings put a bird on it tonx. Chicharrones fashion axe pug Brooklyn retro ramps. Poutine chartreuse YOLO +1 poke. Fixie quinoa ugh celiac. Air plant normcore adaptogen, direct trade art party tbh vexillologist try-hard mlkshk.
 
-			<Media split src="/media/schema.png" alt="“Expanding your Design System's sphere of influence and other lessons” - Lauren LoPrete, schema by Figma 2022" />
+			<Media float src="/media/schema.png" alt="“Expanding your Design System's sphere of influence and other lessons” - Lauren LoPrete, schema by Figma 2022" />
 
 VHS ugh polaroid, forage glossier jean shorts craft beer flannel keytar vape normcore hexagon grailed farm-to-table. Single-origin coffee neutra viral raw denim fingerstache. Lo-fi man braid blog, fanny pack woke vegan dreamcatcher humblebrag grailed post-ironic organic YOLO freegan. Cornhole kale chips ramps microdosing jean shorts, bodega boys bespoke yr trust fund hoodie. Photo booth meggings kogi sartorial fam snackwave. Portland direct trade poke, bespoke swag authentic williamsburg chillwave palo santo succulents hammock four dollar toast. Yes plz actually fanny pack JOMO.
 
-Hot chicken lumbersexual pork belly flannel, retro gochujang pug asymmetrical hexagon next level. Forage pitchfork everyday carry pickled fixie retro kale chips bespoke glossier. Yes plz mlkshk vegan, fit pour-over organic vinyl pop-up blue bottle yuccie iPhone tofu af XOXO narwhal. Four loko blackbird spyplane knausgaard heirloom.
-
-Kitsch jawn bicycle rights truffaut 8-bit cornhole quinoa chicharrones VHS freegan mixtape dreamcatcher. Grailed flannel drinking vinegar, etsy activated charcoal marfa jianbing adaptogen truffaut cloud bread small batch organic farm-to-table beard meh. Flexitarian freegan jianbing, big mood pitchfork adaptogen prism iPhone etsy. Chia tumeric tofu, hell of sus banh mi cred mustache PBR&B slow-carb yr. Seitan crucifix bushwick DIY prism polaroid small batch hot chicken listicle franzen af green juice sustainable air plant unicorn. Lyft hell of XOXO cloud bread. Bespoke kickstarter raclette put a bird on it.
-
 Pork belly swag yr forage kinfolk pitchfork chillwave bushwick trust fund. Fam mustache normcore sus kinfolk humblebrag art party blog kale chips mixtape. Irony same hammock marfa, chia succulents activated charcoal 3 wolf moon. Wolf sustainable pabst forage iPhone. Man braid ramps cronut, farm-to-table big mood jean shorts selfies readymade godard retro vexillologist mixtape. Neutra ascot tbh chartreuse, microdosing pork belly palo santo yuccie hexagon hammock paleo sus sustainable seitan. Aesthetic readymade messenger bag hammock.
+		</Section>
+
+		<Section split>
+			Hot chicken lumbersexual pork belly flannel, retro gochujang pug asymmetrical hexagon next level. Forage pitchfork everyday carry pickled fixie retro kale chips bespoke glossier. Yes plz mlkshk vegan, fit pour-over organic vinyl pop-up blue bottle yuccie iPhone tofu af XOXO narwhal. Four loko blackbird spyplane knausgaard heirloom.
+			<Callout float>What is up today?</Callout>
+			Kitsch jawn bicycle rights truffaut 8-bit cornhole quinoa chicharrones VHS freegan mixtape dreamcatcher. Grailed flannel drinking vinegar, etsy activated charcoal marfa jianbing adaptogen truffaut cloud bread small batch organic farm-to-table beard meh. Flexitarian freegan jianbing, big mood pitchfork adaptogen prism iPhone etsy. Chia tumeric tofu, hell of sus banh mi cred mustache PBR&B slow-carb yr. Seitan crucifix bushwick DIY prism polaroid small batch hot chicken listicle franzen af green juice sustainable air plant unicorn. Lyft hell of XOXO cloud bread. Bespoke kickstarter raclette put a bird on it.
 		</Section>
 
 		<Section>

@@ -1,5 +1,5 @@
 ---
-const { src, alt, split } = Astro.props;
+const { src, alt, float } = Astro.props;
 ---
 <style>
   figure {
@@ -7,9 +7,10 @@ const { src, alt, split } = Astro.props;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-block: calc(var(--unit) * 2);
   }
 
-  figure[data-split] {
+  figure[data-float] {
     padding: calc(var(--unit) * 2);
     float: left;
     max-width: calc(var(--unit) * 16);
@@ -37,12 +38,12 @@ const { src, alt, split } = Astro.props;
   }
 
   figcaption {
-    font-size: 1rem;
+    font-size: 1.5rem;
     line-height: 1.2;
     border-radius: 12px;
     background: #ffb53b;
     color: #3c2b0f;
-    padding: 0.5rem;
+    padding: 0.75em;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     font-weight: 500;
@@ -52,14 +53,14 @@ const { src, alt, split } = Astro.props;
   }
 
   @media not (display-mode: browser) {
-    figure[data-split] {
+    figure[data-float] {
       float: initial;
       padding-block: 0;
     }
   }
 </style>
 
-{ src ? <figure data-split={ Boolean(split) }>
+{ src ? <figure data-float={ Boolean(float) }>
     <div>
       { src.endsWith('mp4')
       ? <video src={ src } title={ alt } loop autoplay muted />

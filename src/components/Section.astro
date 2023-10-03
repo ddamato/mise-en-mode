@@ -37,7 +37,7 @@ const { split } = Astro.props;
       margin-block-end:  calc(var(--unit) * 2);
     }
 
-    section:not(:has(figure)) {
+    section:not(:has(figure, blockquote)) {
       display: none;
     }
   }

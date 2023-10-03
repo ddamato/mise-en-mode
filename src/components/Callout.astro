@@ -1,0 +1,60 @@
+---
+const { cite, float } = Astro.props;
+---
+<style>
+  blockquote {
+    --bg-offset: 14.2%;
+    margin-block: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 6.5rem;
+    font-weight: 600;
+    font-family: 'Gloock', serif;
+    line-height: calc(var(--unit) * 2);
+    text-align: center;
+    padding-block: calc(var(--unit) * 2);
+    background: white;
+  }
+
+  blockquote[data-float] {
+    padding: calc(var(--unit) * 2);
+    float: left;
+    text-align: right;
+    max-width: calc(var(--unit) * 14);
+    margin-inline-start: calc(var(--unit) * -8);
+  }
+  
+  blockquote div {
+    text-shadow: 4px 4px #ffb53d;
+  }
+
+  cite {
+    font-size: 1.5rem;
+    line-height: 1.2;
+    border-radius: 12px;
+    background: #ffb53b;
+    color: #3c2b0f;
+    padding: 0.75em;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    font-weight: 500;
+    margin-inline-start: calc(var(--unit) * 2);
+    margin-inline-end: 24px;
+    align-self: end;
+  }
+
+  @media not (display-mode: browser) {
+    blockquote[data-float] {
+      float: initial;
+      text-align: center;
+    }
+  }
+</style>
+
+<blockquote data-float={ Boolean(float) }>
+  <div>
+    <slot/>
+  </div>
+  { cite && <cite>{ cite }</cite> }
+</blockquote>
