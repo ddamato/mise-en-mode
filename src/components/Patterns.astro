@@ -1,0 +1,54 @@
+<style>
+  .patterns {
+    display: grid;
+    grid-auto-flow: dense;
+    grid-template-columns: repeat(auto-fit, minmax(calc(var(--unit) * 5), 1fr));
+    overflow: hidden;
+  }
+
+  [data-index] {
+    aspect-ratio: 1;
+    --bg-half: linear-gradient(var(--bg-rotate, 45deg), currentColor 50%, transparent 50%);
+    --bg-lines: linear-gradient(transparent, transparent 6px, currentColor 6px, currentColor) 0 0 / 100% 12px;
+    --bg-dots: radial-gradient(currentColor 4px, transparent 4px) center center / 20px 20px;
+    --bg-quarter: linear-gradient(var(--bg-rotate, 135deg), currentColor 25%, transparent 25%),
+                  linear-gradient(var(--bg-rotate, 135deg), transparent 75%, currentColor 75%);
+  }
+
+  [data-index] {
+    background: currentColor;
+    color: white;
+  }
+
+  [data-index]:nth-child(even) {
+    --bg-rotate: -135deg;
+  }
+
+  [data-index]:nth-child(4n) {
+    /* grid-column: span 2; */
+  }
+
+  [data-index]:nth-child(odd) {
+    --bg-rotate: -45deg;
+  }
+
+  [data-index]:nth-child(2n + 3) {
+    background: var(--bg-half); 
+  }
+
+  [data-index]:nth-child(3n - 2) {
+    background: var(--bg-quarter);
+  }
+
+  [data-index]:nth-child(4n + 3) {
+    background: var(--bg-lines), var(--bg-half); 
+  }
+
+  [data-index]:nth-child(5n - 2) {
+    background: var(--bg-dots), var(--bg-half); 
+  }
+</style>
+
+<div class="patterns">
+  { Array.from({ length: 50 }, (_, i) => <span data-index={ i }/>) }
+</div>

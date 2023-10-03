@@ -10,6 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^3.2.1"
+    "astro": "^3.2.1",
+    "css-doodle": "^0.37.3"
   }
 }

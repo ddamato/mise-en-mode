@@ -11,8 +11,8 @@
       "@content/*": [
         "src/content/*"
       ],
-      "@images/*": [
-        "src/images/*"
+      "@media/*": [
+        "src/media/*"
       ],
       "@layouts/*": [
         "src/layouts/*"

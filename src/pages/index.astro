@@ -1,17 +1,35 @@
 ---
 import Layout from '@layouts/Layout.astro';
-import logo from '@components/Logo.svg?raw'
+import logo from '@components/Logo.svg?raw';
+import Section from '@components/Section.astro';
 ---
 
 <style>
 	main {
-		color: hotpink;
-		filter: drop-shadow(4px 4px 0 black);
+		max-width: calc(var(--unit) * 24);
+		margin-inline: auto;
+		padding-block: calc(var(--unit) * 2);
+		position: relative;
+	}
+	:global(svg) {
+		max-width: calc(var(--unit) * 4);
+		padding: 1em;
+		aspect-ratio: 1;
 	}
 </style>
 
 <Layout title="Mise en mode" description="">
 	<main>
-		<Fragment set:html={logo} />
+		<Section>
+			<Fragment set:html={logo} />
+		</Section>
+		<Section media="/media/schema.png">
+			Green juice keytar poke +1 next level gochujang poutine gentrify yuccie flexitarian flannel. Ethical synth la croix street art occupy af. Flexitarian cupping sus farm-to-table migas ramps, glossier paleo deep v. Mixtape tumblr vaporware, whatever truffaut chambray vibecession hell of pug shaman portland swag unicorn. Squid helvetica heirloom, fam ugh normcore live-edge vegan. Flannel vice chicharrones woke jean shorts. Keytar kale chips gluten-free celiac yuccie, photo booth church-key.
+		</Section>
+
+		<Section media="/media/tweet-hand.mp4"/>
+
+		<Section callout="Hello world!"/>
+		
 	</main>
 </Layout>

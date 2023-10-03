@@ -3,6 +3,25 @@ const { title, description } = Astro.props;
 const ogImage = new URL('og-image.png', Astro.url);
 ---
 
+<style is:global>
+
+	* {
+		box-sizing: border-box;
+	}
+
+	:root {
+		--unit: 4rem;
+	}
+
+	body {
+		margin: 0;
+    background-image: url('/colored-geometric.jpg');
+		background-size: calc(var(--unit) * 12);
+		background-position: top center;
+		background-attachment: fixed;
+	}
+</style>
+
 <!doctype html>
 <html lang="en">
 	<head>
