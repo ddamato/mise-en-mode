@@ -21,6 +21,7 @@ const { split } = Astro.props;
     flex-wrap: wrap;
     justify-content: center;
     gap: calc(var(--unit) * 2);
+    height: 100%;
   }
 
   @media not (display-mode: browser) {
@@ -39,6 +40,14 @@ const { split } = Astro.props;
 
     section:not(:has(figure, blockquote)) {
       display: none;
+    }
+
+    section[data-split]:has(blockquote) {
+      background: white;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 </style>
