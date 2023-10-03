@@ -3,8 +3,10 @@ const { src, alt, split } = Astro.props;
 ---
 <style>
   figure {
-    display: inline-block;
-    margin-inline: auto;
+    margin-block: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   figure[data-split] {
@@ -14,26 +16,39 @@ const { src, alt, split } = Astro.props;
     margin-inline-start: calc(var(--unit) * -10);
   }
 
-  :where(img, video) {
-    max-width: 100%;
+  figure div {
+    background-image: url('/colored-geometric.jpg');
+		background-size: calc(var(--unit) * 12);
+		background-position: top center;
+		background-attachment: fixed;
+		background-color: #c58621;
     max-height: calc(var(--unit) * 10);
     border: 12px solid #c58621;
     border-radius: 24px;
+    overflow: hidden;
+  }
+
+  :where(img, video) {
     display: block;
+    max-width: 100%;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: contrast(0.5) blur(5px);
   }
 
   figcaption {
-    font-size: .6em;
-    line-height: 1;
+    font-size: 1rem;
+    line-height: 1.2;
     border-radius: 12px;
     background: #ffb53b;
     color: #3c2b0f;
-    padding: 0.5em;
+    padding: 0.5rem;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
-    float: right;
-    margin-inline-end: 24px;
     font-weight: 500;
+    margin-inline-start: calc(var(--unit) * 2);
+    margin-inline-end: 24px;
+    align-self: end;
   }
 
   @media not (display-mode: browser) {
@@ -45,8 +60,10 @@ const { src, alt, split } = Astro.props;
 </style>
 
 { src ? <figure data-split={ Boolean(split) }>
-  { src.endsWith('mp4')
-    ? <video src={ src } title={ alt } loop autoplay muted />
-    : <img src={ src } alt={ alt } /> }
+    <div>
+      { src.endsWith('mp4')
+      ? <video src={ src } title={ alt } loop autoplay muted />
+      : <img src={ src } alt={ alt } /> }  
+    </div>
     <figcaption>{ alt }</figcaption>
 </figure> : null }

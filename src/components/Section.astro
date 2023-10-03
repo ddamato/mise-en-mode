@@ -16,9 +16,11 @@ const { split } = Astro.props;
     padding-inline-start: calc(var(--unit) * 8);
   }
 
-  section[data-split] div {
-    /* width: calc(var(--unit) * 8); */
-    /* margin-inline-start: auto; */
+  section:not([data-split]) div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: calc(var(--unit) * 2);
   }
 
   @media not (display-mode: browser) {
