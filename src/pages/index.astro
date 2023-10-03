@@ -1,6 +1,6 @@
 ---
 import Layout from '@layouts/Layout.astro';
-import logo from '@components/Logo.svg?raw';
+import Hero from '@components/Hero.astro';
 import Section from '@components/Section.astro';
 import Media from '@components/Media.astro';
 import Callout from '@components/Callout.astro';
@@ -9,12 +9,6 @@ import Callout from '@components/Callout.astro';
 <style>
 	main {
 		margin-inline: auto;
-	}
-
-	:global(svg) {
-		max-width: calc(var(--unit) * 4);
-		padding: 1em;
-		aspect-ratio: 1;
 	}
 
 	@media not (display-mode: browser) {
@@ -29,9 +23,7 @@ import Callout from '@components/Callout.astro';
 
 <Layout title="Mise en mode" description="">
 	<main>
-		<Section>
-			<Fragment set:html={logo} />
-		</Section>
+		<Hero/>
 		<Section>
 			Activated charcoal food truck dreamcatcher blog artisan chicharrones kale chips authentic adaptogen franzen. Lo-fi ugh craft beer mumblecore leggings meggings put a bird on it tonx. Chicharrones fashion axe pug Brooklyn retro ramps. Poutine chartreuse YOLO +1 poke. Fixie quinoa ugh celiac. Air plant normcore adaptogen, direct trade art party tbh vexillologist try-hard mlkshk.
 		</Section>
