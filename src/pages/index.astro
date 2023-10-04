@@ -1,47 +1,13 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import Section from '@components/Section.astro';
+import Main from '@components/Main.astro';
 import Media from '@components/Media.astro';
 import Callout from '@components/Callout.astro';
-
-import logo from '@components/Logo.svg?raw';
 ---
 
-<style>
-	main {
-		margin-inline: auto;
-		padding-block-start: calc(var(--unit) * 2);
-		background-image: url('/colored-geometric.jpg');
-		background-size: calc(var(--unit) * 12);
-		background-position: top center;
-		background-attachment: fixed;
-	}
-
-	#logo {
-		aspect-ratio: 1;
-		max-width: calc(var(--unit) * 8);
-		width: 100%;
-		display: flex;
-		margin: auto;
-		font-size: min(4rem, var(--unit) * 2);
-		filter: drop-shadow(.04em .04em #ffb53d);
-	}
-
-	@media not (display-mode: browser) {
-		main {
-			overflow-y: scroll;
-			scroll-behavior: smooth;
-			scroll-snap-type: y mandatory;
-			height: 100dvh;
-		}
-	}
-</style>
-
 <Layout title="Mise en mode" description="">
-	<main>
-		<Section flip split>
-			<div set:html={logo} id="logo" />
-		</Section>
+	<Main>
 		<Section>
 			Activated charcoal food truck dreamcatcher blog artisan chicharrones kale chips authentic adaptogen franzen. Lo-fi ugh craft beer mumblecore leggings meggings put a bird on it tonx. Chicharrones fashion axe pug Brooklyn retro ramps. Poutine chartreuse YOLO +1 poke. Fixie quinoa ugh celiac. Air plant normcore adaptogen, direct trade art party tbh vexillologist try-hard mlkshk.
 		</Section>
@@ -67,5 +33,5 @@ Pork belly swag yr forage kinfolk pitchfork chillwave bushwick trust fund. Fam m
 			<Media src="/media/tweet-hand.mp4" alt="Tweet by Charles Patterson @charlespattson " />
 		</Section>
 		
-	</main>
+	</Main>
 </Layout>

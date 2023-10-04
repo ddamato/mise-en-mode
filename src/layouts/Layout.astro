@@ -1,66 +1,11 @@
 ---
-const { title, description } = Astro.props;
-const ogImage = new URL('og-image.png', Astro.url);
+import Head from '@components/Head.astro';
 ---
-
-<style is:global>
-
-	* {
-		box-sizing: border-box;
-	}
-
-	:root {
-		--unit: 6vh;
-	}
-
-	body {
-		margin: 0;
-    
-		background-color: #c58621;
-		font-size: 1.5rem;
-		line-height: 1.5;
-		font-family: 'Red Hat Display', sans-serif;
-		color: #3c2b0f;
-		font-weight: 300;
-	}
-
-	@media  (display-mode: browser) and (max-width: 96vh) {
-		:root {
-			--unit: 3vh;
-		}
-	}
-</style>
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<title>{title}</title>
-		<meta charset="UTF-8" />
-		<meta name="description" content={ description } />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-		<link rel="manifest" href="/site.webmanifest">
-		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
-		<meta name="msapplication-TileColor" content="#da532c">
-		<meta name="theme-color" content="#ffffff">
-		<meta property="og:title" content={ title } />
-    <meta property="og:description" content={ description } />
-		<meta property="og:url" content={ Astro.url } />
-		<meta property="og:image" content={ ogImage } />
-		<meta property="og:image:type" content="image/png" />
-		<meta property="og:image:width" content="1200" />
-		<meta property="og:image:height" content="630" />
-		<meta property="og:image:alt" content="Mise en mode" />
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Red+Hat+Display:wght@400;600&display=swap" rel="stylesheet">
-
-	</head>
+	<Head { ...Astro.props }/>
 	<body>
-		<slot />
+		<slot/>
 	</body>
 </html>

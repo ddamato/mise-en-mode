@@ -1,0 +1,35 @@
+---
+const { title, description } = Astro.props;
+const ogImage = new URL('og-image.png', Astro.url);
+---
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content={ description }>
+  <meta name="viewport" content="width=device-width">
+  <meta name="generator" content={Astro.generator}>
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
+  <title>{title}</title>
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:title" content={ title }>
+  <meta property="og:description" content={ description }>
+  <meta property="og:url" content={ Astro.url }>
+  <meta property="og:image" content={ ogImage }>
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Mise en mode">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Red+Hat+Display:wght@400;600&display=swap" rel="stylesheet">
+
+  <style is:global>
+    @import '../global.css';
+  </style>
+</head>

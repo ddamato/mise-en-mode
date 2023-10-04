@@ -58,7 +58,7 @@ const { src, alt, float } = Astro.props;
 
 { src ? <figure data-float={ Boolean(float) }>
     { src.endsWith('mp4')
-      ? <video src={ src } title={ alt } loop autoplay muted />
-      : <img src={ src } alt={ alt } /> } 
+      ? <video src={ src } title={ alt } autoplay muted loop playsinline />
+      : <img src={ src } alt={ alt } loading="lazy" /> } 
     <figcaption>{ alt }</figcaption>
 </figure> : null }

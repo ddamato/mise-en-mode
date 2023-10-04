@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --unit: 6vh;
+}
+
+body {
+  margin: 0;
+  background-color: #c58621;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  font-family: 'Red Hat Display', sans-serif;
+  background-image: url('/colored-geometric.jpg');
+  background-size: calc(var(--unit) * 12);
+  background-position: top center;
+  background-attachment: fixed;
+  color: #3c2b0f;
+  font-weight: 300;
+}
+
+@media  (display-mode: browser) and (max-width: 96vh) {
+  :root {
+    --unit: 3vh;
+  }
+}

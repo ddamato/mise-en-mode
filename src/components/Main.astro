@@ -1,0 +1,28 @@
+---
+import Section from '@components/Section.astro';
+import Logo from '@components/Logo.astro';
+---
+
+<style>
+
+  main {
+		margin-inline: auto;
+		padding-block-start: calc(var(--unit) * 2);
+	}
+
+  @media not (display-mode: browser) {
+		main {
+			overflow-y: scroll;
+			scroll-behavior: smooth;
+			scroll-snap-type: y mandatory;
+			height: 100dvh;
+		}
+	}
+</style>
+
+<main>
+  <Section flip split>
+    <Logo/>
+  </Section>
+  <slot/>
+</main>
