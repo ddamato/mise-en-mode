@@ -7,7 +7,7 @@ const { cite, float } = Astro.props;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-size: min(4rem, var(--unit) * 2);
+    font-size: clamp(2rem, 2vmin + 2rem, var(--unit) * 2);
     font-weight: 600;
     font-family: 'Aboreto', cursive;
     line-height: calc(var(--unit) * 2);
