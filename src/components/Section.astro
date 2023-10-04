@@ -1,10 +1,11 @@
 ---
-const { split } = Astro.props;
+const { split, flip } = Astro.props;
 ---
 
 <style>
   section {
-    --bg-offset: 25%;    
+    --bg-offset: 25%; 
+    --bg-turn: .25turn;   
     background: white;
     padding: calc(var(--unit) * 2);
     max-width: calc(var(--unit) * 24);
@@ -12,8 +13,20 @@ const { split } = Astro.props;
   }
 
   section[data-split] {
-    background: linear-gradient(.25turn, transparent var(--bg-offset), white var(--bg-offset) 100%);
+    background: linear-gradient(var(--bg-turn), transparent var(--bg-offset), white var(--bg-offset) 100%);
     padding-inline-start: calc(var(--unit) * 8);
+    padding-inline-end: calc(var(--unit) * 2);
+  }
+
+  section[data-flip] {
+    --bg-turn: -.25turn;
+    --bg-offset: 50%; 
+    padding-inline-start: calc(var(--unit) * 2);
+    padding-inline-end: calc(var(--unit) * 14);
+  }
+
+  section div {
+    width: 100%;
   }
 
   section:not([data-split]) div {
@@ -24,6 +37,13 @@ const { split } = Astro.props;
     height: 100%;
   }
 
+  @media  (display-mode: browser) and (max-width: 144vh) {
+		section[data-split] {
+      background: white;
+      padding-inline: calc(var(--unit) * 2);
+    }
+	}
+
   @media not (display-mode: browser) {
     section {
       font-size: 0;
@@ -32,6 +52,7 @@ const { split } = Astro.props;
       scroll-margin-block-start: calc(var(--unit) * 2);
       max-height: calc(var(--unit) * 14);
       height: 100%;
+      /* cursor: none; */
     }
 
     section:last-of-type {
@@ -42,7 +63,7 @@ const { split } = Astro.props;
       display: none;
     }
 
-    section[data-split]:has(blockquote) {
+    section[data-split]:has(blockquote, svg) {
       padding: 0;
       background: white;
       display: flex;
@@ -52,7 +73,7 @@ const { split } = Astro.props;
   }
 </style>
 
-<section data-split={ Boolean(split) }>
+<section data-split={ Boolean(split) } data-flip={ Boolean(flip) }>
   <div>
     <slot/>
   </div>

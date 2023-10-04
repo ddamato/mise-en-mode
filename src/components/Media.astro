@@ -3,9 +3,8 @@ const { src, alt, float } = Astro.props;
 ---
 <style>
   figure {
-    margin-block: 0;
+    margin: 0;
     display: flex;
-    flex-direction: column;
     justify-content: center;
   }
 
@@ -22,10 +21,11 @@ const { src, alt, float } = Astro.props;
 		background-position: top center;
 		background-attachment: fixed;
 		background-color: #c58621;
-    max-height: calc(var(--unit) * 10);
     border: 12px solid #c58621;
     border-radius: 24px;
     overflow: hidden;
+    height: 100%;
+    max-height: calc(var(--unit) * 10);
   }
 
   :where(img, video) {
@@ -37,7 +37,8 @@ const { src, alt, float } = Astro.props;
   }
 
   figcaption {
-    font-size: 1.5rem;
+    display: none;
+    font-size: 1.2rem;
     line-height: 1.2;
     border-radius: 12px;
     background: #ffb53b;
@@ -50,6 +51,15 @@ const { src, alt, float } = Astro.props;
     margin-inline-end: 24px;
     align-self: end;
   }
+
+  @media  (display-mode: browser) and (max-width: 144vh) {
+		figure[data-float] {
+      float: initial;
+      margin: 0;
+      max-width: none;
+      padding-inline: 0;
+    }
+	}
 
   @media not (display-mode: browser) {
     figure[data-float] {

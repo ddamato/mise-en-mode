@@ -20,11 +20,17 @@ const ogImage = new URL('og-image.png', Astro.url);
 		background-position: top center;
 		background-attachment: fixed;
 		background-color: #c58621;
-		font-size: 2rem;
+		font-size: 1.5rem;
 		line-height: 1.5;
 		font-family: 'Red Hat Display', sans-serif;
 		color: #3c2b0f;
 		font-weight: 400;
+	}
+
+	@media  (display-mode: browser) and (max-width: 96vh) {
+		:root {
+			--unit: 3vh;
+		}
 	}
 </style>
 
