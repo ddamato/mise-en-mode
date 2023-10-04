@@ -28,8 +28,6 @@ const { split, flip } = Astro.props;
   section div {
     width: 100%;
     max-width: 70ch;
-    margin: 0 auto;
-    font-size: 1.25em;
   }
 
   section:not([data-split]) div {
@@ -38,16 +36,13 @@ const { split, flip } = Astro.props;
     justify-content: center;
     gap: calc(var(--unit) * 2);
     height: 100%;
+    margin: 0 auto;
   }
 
   @media  (display-mode: browser) and (max-width: 144vh) {
 		section[data-split] {
       background: white;
       padding-inline: calc(var(--unit) * 2);
-    }
-
-    section div {
-      font-size: 1em;
     }
 	}
 
