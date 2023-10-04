@@ -20,3 +20,9 @@ body {
   color: #3c2b0f;
   font-weight: 300;
 }
+
+@media  (display-mode: browser) and (max-width: 500px) {
+  :root {
+    --unit: 2vh;
+  }
+}
