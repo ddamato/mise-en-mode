@@ -5,7 +5,8 @@ const { src, alt, float } = Astro.props;
   figure {
     margin: 0;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
 
   figure[data-float] {
@@ -21,11 +22,9 @@ const { src, alt, float } = Astro.props;
 		background-position: top center;
 		background-attachment: fixed;
 		background-color: #c58621;
-    border: 12px solid #c58621;
-    border-radius: 24px;
     overflow: hidden;
     height: 100%;
-    max-height: calc(var(--unit) * 10);
+    max-height: 80vh;
   }
 
   :where(img, video) {
@@ -37,19 +36,11 @@ const { src, alt, float } = Astro.props;
   }
 
   figcaption {
-    display: none;
     font-size: 1.2rem;
-    line-height: 1.2;
-    border-radius: 12px;
-    background: #ffb53b;
-    color: #3c2b0f;
+    line-height: 1.5;
     padding: 0.75em;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
     font-weight: 500;
-    margin-inline-start: calc(var(--unit) * 2);
-    margin-inline-end: 24px;
-    align-self: end;
+    background: white;
   }
 
   @media  (display-mode: browser) and (max-width: 144vh) {
@@ -65,6 +56,10 @@ const { src, alt, float } = Astro.props;
     figure[data-float] {
       float: initial;
       padding-block: 0;
+    }
+
+    figure div {
+      max-height: calc(var(--unit) * 10);
     }
   }
 </style>
