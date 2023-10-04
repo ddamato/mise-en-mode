@@ -11,6 +11,10 @@ import logo from '@components/Logo.svg?raw';
 	main {
 		margin-inline: auto;
 		padding-block-start: calc(var(--unit) * 2);
+		background-image: url('/colored-geometric.jpg');
+		background-size: calc(var(--unit) * 12);
+		background-position: top center;
+		background-attachment: fixed;
 	}
 
 	#logo {
@@ -26,7 +30,7 @@ import logo from '@components/Logo.svg?raw';
 			overflow-y: scroll;
 			scroll-behavior: smooth;
 			scroll-snap-type: y mandatory;
-			height: 100vh;
+			height: 100dvh;
 		}
 	}
 </style>
