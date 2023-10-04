@@ -16,15 +16,12 @@ const { src, alt, float } = Astro.props;
     margin-inline-start: calc(var(--unit) * -10);
   }
 
-  figure div {
-    max-height: 80vh;
-  }
-
   :where(img, video) {
     display: block;
     max-width: 100%;
     height: 100%;
     width: 100%;
+    max-height: 80vh;
     backdrop-filter: contrast(0.5) blur(5px);
   }
 
@@ -53,17 +50,15 @@ const { src, alt, float } = Astro.props;
       padding-block: 0;
     }
 
-    figure div {
+    :where(img, video) {
       max-height: calc(var(--unit) * 10);
     }
   }
 </style>
 
 { src ? <figure data-float={ Boolean(float) }>
-    <div>
-      { src.endsWith('mp4')
+    { src.endsWith('mp4')
       ? <video src={ src } title={ alt } loop autoplay muted />
-      : <img src={ src } alt={ alt } /> }  
-    </div>
+      : <img src={ src } alt={ alt } /> } 
     <figcaption>{ alt }</figcaption>
 </figure> : null }

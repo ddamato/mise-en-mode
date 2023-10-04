@@ -14,6 +14,7 @@ const { cite, float } = Astro.props;
     text-align: center;
     padding-block: calc(var(--unit) * 2);
     background: white;
+    text-shadow: .04em .04em #ffb53d;
   }
 
   blockquote[data-float] {
@@ -23,24 +24,20 @@ const { cite, float } = Astro.props;
     max-width: calc(var(--unit) * 14);
     margin-inline-start: calc(var(--unit) * -8);
   }
-  
-  blockquote div {
-    text-shadow: .04em .04em #ffb53d;
-  }
 
   cite {
-    font-size: 1.5rem;
-    line-height: 1.2;
-    border-radius: 12px;
-    background: #ffb53b;
-    color: #3c2b0f;
+    font-size: 1.2rem;
+    line-height: 1.5;
     padding: 0.75em;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
     font-weight: 500;
-    margin-inline-start: calc(var(--unit) * 2);
-    margin-inline-end: 24px;
-    align-self: end;
+    background: white;
+    width: 100%;
+    text-shadow: none;
+    font-family: 'Red Hat Display', sans-serif;
+  }
+
+  cite:before {
+    content: '— ';
   }
 
   @media  (display-mode: browser) and (max-width: 144vh) {
@@ -64,8 +61,6 @@ const { cite, float } = Astro.props;
 </style>
 
 <blockquote data-float={ Boolean(float) }>
-  <div>
-    <slot/>
-  </div>
+  <slot/>
   { cite && <cite>{ cite }</cite> }
 </blockquote>
