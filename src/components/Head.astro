@@ -32,4 +32,8 @@ const ogImage = new URL('og-image.png', Astro.url);
   <style is:global>
     @import '../global.css';
   </style>
+
+  <script type="text/javascript">
+    window.onload = () => 'serviceWorker' in navigator && navigator.serviceWorker.register('/sw.js').then((registration) => registration.update()).catch((err) => {});
+  </script>
 </head>
