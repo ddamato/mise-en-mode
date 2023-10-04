@@ -3,8 +3,9 @@
 }
 
 :root {
-  --unit: 6vh;
+  --unit: calc(2vmin + 2rem);
 }
+
 
 body {
   margin: 0;
@@ -18,10 +19,4 @@ body {
   background-attachment: fixed;
   color: #3c2b0f;
   font-weight: 300;
-}
-
-@media  (display-mode: browser) and (max-width: 96vh) {
-  :root {
-    --unit: 3vh;
-  }
 }
