@@ -1,0 +1,15 @@
+---
+const { browser, Tag = 'h2' } = Astro.props;  
+---
+
+<style>
+    @media not (display-mode: browser) {
+        .heading[data-browser] {
+            display: none;
+        }
+    }
+</style>
+
+<Tag class="heading" data-browser={ Boolean(browser) }>
+    <slot/>
+</Tag>

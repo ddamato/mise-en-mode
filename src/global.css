@@ -4,11 +4,18 @@
 
 :root {
   --unit: calc(2vmin + 2rem);
+  --tan-100: #ffb53d;
+  --tan-300: #c58522;
+  --tan-500: #965e01;
+  --tan-700: #3d2a0f;
+  --bg-color: white;
+  --fg-color: var(--tan-700);
+  --accent-color: var(--tan-300);
 }
 
 
 html {
-  background-color: rgb(255, 181, 61);
+  background-color: var(--tan-100);
   background-image:
     linear-gradient(90deg, rgba(197, 134, 33, 0.5) 50%, transparent 0),
     linear-gradient(rgba(60, 43, 15, .8) 50%, transparent 0); 
@@ -23,11 +30,16 @@ body {
   line-height: 1.5;
   font-weight: 300;
   font-family: 'Red Hat Display', sans-serif;
-  color: rgb(60, 43, 15);
+  color: var(--fg-color);
   background-image: url('/colored-geometric.jpg');
   background-size: calc(var(--unit) * 12);
   background-position: top center;
   background-attachment: fixed;
+}
+
+a {
+  color: currentColor;
+  text-decoration-color: var(--accent-color);
 }
 
 @media  (display-mode: browser) and (max-width: 500px) {

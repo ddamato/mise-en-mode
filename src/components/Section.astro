@@ -1,19 +1,22 @@
 ---
-const { split, flip } = Astro.props;
+const { split, flip, slide } = Astro.props;
 ---
 
 <style>
   section {
     --bg-offset: 25%; 
     --bg-turn: .25turn;   
-    background: white;
-    padding: calc(var(--unit) * 2);
+    background: var(--bg-color);
+    padding-inline: calc(var(--unit) * 2);
+    padding-block: calc(var(--unit) * 2);
     max-width: calc(var(--unit) * 24);
     margin-inline: auto;
+    clear: both;
+    display: flow-root;
   }
 
   section[data-split] {
-    background: linear-gradient(var(--bg-turn), transparent var(--bg-offset), white var(--bg-offset) 100%);
+    background: linear-gradient(var(--bg-turn), transparent var(--bg-offset), var(--bg-color) var(--bg-offset) 100%);
     padding-inline-start: calc(var(--unit) * 8);
     padding-inline-end: calc(var(--unit) * 2);
   }
@@ -37,15 +40,20 @@ const { split, flip } = Astro.props;
 
   @media  (display-mode: browser) and (max-width: 144vh) {
 		section[data-split] {
-      background: white;
-      padding-inline: calc(var(--unit) * 2);
+      background: var(--bg-color);
     }
 	}
+
+  @media (display-mode: browser) {
+    section[data-slide] {
+      display: none;
+    }
+  }
 
   @media not (display-mode: browser) {
     section {
       font-size: 0;
-      margin-block-start:  calc(var(--unit) * 2);
+      margin-block-start: calc(var(--unit) * 2);
       scroll-snap-align: start;
       scroll-margin-block-start: calc(var(--unit) * 2);
       height:  calc( 100% - (var(--unit) * 2));
@@ -66,7 +74,7 @@ const { split, flip } = Astro.props;
 
     section[data-split]:has(blockquote, svg) {
       padding: 0;
-      background: white;
+      background: var(--bg-color);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -74,7 +82,10 @@ const { split, flip } = Astro.props;
   }
 </style>
 
-<section data-split={ Boolean(split) } data-flip={ Boolean(flip) }>
+<section
+  data-split={ Boolean(split) }
+  data-flip={ Boolean(flip) }
+  data-slide={ Boolean(slide) }>
   <div>
     <slot/>
   </div>

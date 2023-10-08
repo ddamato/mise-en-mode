@@ -1,0 +1,51 @@
+- Rectangles are important
+    - Schema, Lauren LoPrete
+    - Rectangles IRL
+    - The missing link (with semantic tokens)
+    - How we might execute design decisions not through complex token naming but using the boundaries of rectangles.
+- Design with intentions
+    - What does "semantic" mean?
+    - The "smedium" test
+    - Examples of semantic
+    - Why is semantic naming so important?
+        - Dark mode
+        - Private labeling
+- Ondark Virus
+    - Wrote this is frustration about the token explosion that comes with adding "ondark" tokens.
+    - Example of the problem.
+        - Footer CTA, inverted area
+        - Add more components, requires more "ondark" tokens
+        - Eventually you have 2x times the tokens
+    - Solution: use the same tokens with different values
+        - Scope the values to the area, name this with purpose. Why are you making this change?
+    - Light and dark are NOT semantic. Is this treatment a callout, campaign, low-power, high-contrast? Why is it different?
+- Complementary Space
+    - Wrote this as an exploration about what a truly semantic spacing system might look like.
+    - Example of the problem.
+    - Describe space in terms of relationships not amounts.
+    - "How closely related is this thing related to other things?"
+    - Group apples and oranges.
+    - Change the frame (rectangle) of reference in the same environment. Shrinking test. Update the ruler at every rectangle.
+    - If you want have more space, zoom out your frame of reference. If you want less, zoom in.
+    - Nathan Curtis recommends less spacing options, Hicks Law.
+- Mise en mode
+    - The previous ideas are very similar; creating a boundary which has new qualities for the elements inside.
+    - This region is different because:
+        - There's critical information that the user needs to see.
+        - There's a lot of information that we need the user to review.
+        - This is a different kind of task.
+        - This is a promotion.
+        - NOT. I think it looks _cooler_.
+    - Art history, mise en abyme
+    - What is a "mode"?
+        - Caps Lock, settings produce different results
+        - A theme with a purpose; a semantic theme.
+        - The mode affects appearance for a purpose.
+        - Layout vs. Content vs. Appearance
+        - Wireframe is MODELESS
+        - Encoding hierarchy (heading/paragraph, primary/secondary) into layout...
+        - "There is no critical button, only a button that exists in a critical mode."
+    - Difference between critical button and critical mode
+    - Designing with meaningful rectangles
+        - 
+        - Consider designing by identifying areas of intentful boundaries; like wireframing.

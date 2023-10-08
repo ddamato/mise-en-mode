@@ -2,6 +2,7 @@
 import Layout from '@layouts/Layout.astro';
 import Section from '@components/Section.astro';
 import Main from '@components/Main.astro';
+import Heading from '@components/Heading.astro';
 import Media from '@components/Media.astro';
 import Callout from '@components/Callout.astro';
 ---
@@ -11,27 +12,130 @@ import Callout from '@components/Callout.astro';
 		<Section>
 			Activated charcoal food truck dreamcatcher blog artisan chicharrones kale chips authentic adaptogen franzen. Lo-fi ugh craft beer mumblecore leggings meggings put a bird on it tonx. Chicharrones fashion axe pug Brooklyn retro ramps. Poutine chartreuse YOLO +1 poke. Fixie quinoa ugh celiac. Air plant normcore adaptogen, direct trade art party tbh vexillologist try-hard mlkshk.
 		</Section>
-		<Section split>
-			Activated charcoal food truck dreamcatcher blog artisan chicharrones kale chips authentic adaptogen franzen. Lo-fi ugh craft beer mumblecore leggings meggings put a bird on it tonx. Chicharrones fashion axe pug Brooklyn retro ramps. Poutine chartreuse YOLO +1 poke. Fixie quinoa ugh celiac. Air plant normcore adaptogen, direct trade art party tbh vexillologist try-hard mlkshk.
+		<Section>
+			<p>A year ago, at the time of this writing, my wife and I were invited to attend Schema 2022, Figma's design systems conference in New York. There were a collection of several great talks throughout the day. <a href="https://youtu.be/On3w6zPQPHU?si=882hkcmS2zsuR2Yp">One of these talks was by Lauren LoPrete</a>, who walks the audience down her path of growing influence in her teams. Her talk echoes a common statement within our practice; “design systems are for people” which I wholeheartedly agree with. All of the tokens and components we spend time with everyday will mean nothing without adoption. So building trustworthy relationships is key to success.</p>
 
-			<Media float src="/media/schema.png" alt="“Expanding your Design System's sphere of influence and other lessons” - Lauren LoPrete, schema by Figma 2022" />
+			<p>The final slide of Lauren's talk ends with the following sentence: “They're just rectangles on the internet.”</p>
 
-VHS ugh polaroid, forage glossier jean shorts craft beer flannel keytar vape normcore hexagon grailed farm-to-table. Single-origin coffee neutra viral raw denim fingerstache. Lo-fi man braid blog, fanny pack woke vegan dreamcatcher humblebrag grailed post-ironic organic YOLO freegan. Cornhole kale chips ramps microdosing jean shorts, bodega boys bespoke yr trust fund hoodie. Photo booth meggings kogi sartorial fam snackwave. Portland direct trade poke, bespoke swag authentic williamsburg chillwave palo santo succulents hammock four dollar toast. Yes plz actually fanny pack JOMO.
+			<Media src="/media/schema.png" alt="“Expanding your Design System's sphere of influence and other lessons” - Lauren LoPrete, schema by Figma 2022" />
 
-Pork belly swag yr forage kinfolk pitchfork chillwave bushwick trust fund. Fam mustache normcore sus kinfolk humblebrag art party blog kale chips mixtape. Irony same hammock marfa, chia succulents activated charcoal 3 wolf moon. Wolf sustainable pabst forage iPhone. Man braid ramps cronut, farm-to-table big mood jean shorts selfies readymade godard retro vexillologist mixtape. Neutra ascot tbh chartreuse, microdosing pork belly palo santo yuccie hexagon hammock paleo sus sustainable seitan. Aesthetic readymade messenger bag hammock.
+			<p>There's a collective chuckle from the crowd, myself included. It's common for folks to joke about the work we do.</p>
+
+			<p>However, in retrospect, I wouldn't have been in that room without rectangles. My career, which puts a roof over my head and food on the table, wouldn't exist without rectangles. I wouldn't have met my wife without them. The work that we do with rectangles is truly changing humanity every day. In reality, rectangles make the world go round, socio-economically speaking. I didn't know it then but I was about to discover that these rectangles could also be a looking glass to a whole new design paradigm.</p>
+
+			<p>The following is a recap of a year long research and development journey revealing how we might take semantic responsibility away from design tokens. I will attempt to demonstrate how we might execute design decisions not through complex token naming exercises, but by burdening these rectangles with glorious purpose.</p>
+
 		</Section>
-
-		<Section split>
-			<h2>Section heading</h2>
-
-			Hot chicken lumbersexual pork belly flannel, retro gochujang pug asymmetrical hexagon next level. Forage pitchfork everyday carry pickled fixie retro kale chips bespoke glossier. Yes plz mlkshk vegan, fit pour-over organic vinyl pop-up blue bottle yuccie iPhone tofu af XOXO narwhal. Four loko blackbird spyplane knausgaard heirloom.
-			<Callout float cite="Benjamin Franklin">Important rectangles in history</Callout>
-			Kitsch jawn bicycle rights truffaut 8-bit cornhole quinoa chicharrones VHS freegan mixtape dreamcatcher. Grailed flannel drinking vinegar, etsy activated charcoal marfa jianbing adaptogen truffaut cloud bread small batch organic farm-to-table beard meh. Flexitarian freegan jianbing, big mood pitchfork adaptogen prism iPhone etsy. Chia tumeric tofu, hell of sus banh mi cred mustache PBR&B slow-carb yr. Seitan crucifix bushwick DIY prism polaroid small batch hot chicken listicle franzen af green juice sustainable air plant unicorn. Lyft hell of XOXO cloud bread. Bespoke kickstarter raclette put a bird on it.
+		<Section slide>
+			<Media src="/media/tweet-hand.mp4" alt="Tweet by Charles Patterson @charlespattson" />
 		</Section>
 
 		<Section>
-			<Media src="/media/tweet-hand.mp4" alt="Tweet by Charles Patterson @charlespattson " />
+			<p>There's no shortage of articles on token naming, <a href="https://blog.damato.design/posts/tokens-as-intents/">even I have one</a>. If you don't have an opinion about naming tokens, are you even interested in design systems? While I won't go into opinions about the best naming scheme here, I was frustrated with one particular recommendation that I kept seeing across the web. So much so, that I did what all of us do when we are angry at the internet; I wrote a blog post.</p>
+
+			[dark mode footer img]
+
+			<p>Here we have a basic footer. It has some text, links, and a button. What many folks who use tokens might do is create tokens that describe the concept of inverse or "ondark". to support the difference between the footer and the rest of the page. Text ondark, button background ondark, etc. After all it is just a small part of the larger experiences, what harm could be done?</p>
+				
+			<p>While that might seem reasonable at first, things may get out of hand over time. What happens when we add a text input? Maybe that input has an error that needs to be displayed? How do you account for that?</p>
+
+			<p>If your answer is more tokens, you're going to find that you'll end up trying to have an ondark version of every semantic token you have. You'll have to cover every possibility of each element appearing in this dark area of the page; at least doubling your token set. I don't know about you, but I'm trying to maintain <em>fewer</em> tokens, not more.</p>
+		</Section>
+
+		<Section>
+			<p>What I recommend is to instead consider this footer as a separate mini-region which has the dark mode applied to it. There's a few benefits to this, one of which is <strong>no new tokens</strong>. The button background continues to use the button background token just with a new value applied in the same way that you might apply new values for dark mode.</p>
+
+			[diagram of tokens / values applied img]
+
+			<p>In this way, the footer is a boundary for new values for the same elements. It's functionally the same text, links, and button just visually changed by existing within a new scope.</p>
+
+			<p>Keep this idea, put it in your pocket, and save it for later.</p>
+		</Section>
+
+		<Section>
+			<p>The blog post, <a href="https://blog.damato.design/posts/ondark-virus/">Ondark Virus</a>, was simply meant as a response to a repeated harmful practice. At the time, my real focus earlier this year was how we might expand other themable properties into semantic naming. Is semantic naming for border radius possible? Spoiler, <a href="https://blog.damato.design/posts/meaningless-curves/">no it's not</a>, but what about spacing?</p>
+
+			<p>Spacing tokens in many design systems are either published as T-shirt sizing or propotional amounts, neither of which are semantic. The names of these tokens give no indication on where to use them. My focus was to find if there was a way to mark where space should be applied, influenced later by a set of design decision values.</p>
+
+			<p>I first began by grounding myself to understand <em>why we apply space</em> fundamentally. The <a href="https://lawsofux.com/law-of-proximity/">Gestalt principle of proximity</a> says that objects closer together suggest that they are more related. If I asked you to group apples and oranges by type, how might that look?</p>
+
+			[apples and oranges grouped, but all spaced the same from each other]
+
+			<p>Most folks might believe that while the apples and oranges are grouped, the space is unsettling. If you'd perform the exercise yourself, you'd most likely move the groups farther from each other instinctually.</p>
+
+			<p>Ok, all basic stuff, nothing revolutionary there so far. </p>
+		</Section>
+
+		<Section>
+			<p>One way that we can make things appear to be apart is by physically moving them; changing the physical distance between them. This is intuitive, and how we expect to create space between objects.</p>
+
+			[two objects top down]
+
+			<p>There are two colored objects in the image with some space between. One way we could create more space between these objects is by picking the objects up and physically translating them in the environment to be further from each other. However, there is another way. We can make the objects appear farther from each other by <em>zooming the camera</em>.</p>
+
 		</Section>
 		
+		<Section>
+
+			[two objects zoomed]
+
+			<p>Because of the way the composition is framed, it's not possible to tell if the distance between the two objects was changed by either method because there's no other reference. It could be by moving the objects or by moving the camera.</p>
+
+			<p>This technique can create the illusion of a change of space. The benefit of zooming instead of moving is that the relationship between the elements does not change, only our frame of reference. So perhaps another way we can think of the visual representation of space not as distance but zoom. This would mean that each time we need a perception of density we can think of the space as zoomed where the visual distance between those elements is now seemingly less, making the region look more compact. Points appear to come together.</p>
+				
+			<p>Importantly this isn't recommending to change the size of the elements, just the space between those elements. Think of being able to scale only the space, without changing the visual size of the objects themselves.</p>
+
+			<p>In practice, what this could mean is applying single spacing token that means "space goes here" and then we determine how much space by identifying "how much zoom" to apply overall. That "zoom" isn't really zooming but instead changing the scale of space for this region.</p>
+			
+			<p>In this way, we no longer need to have semantics at all <em>if</em> the density increases as you go deeper into the interface and areas are simply marked to go one step down. Going multiple levels at once is a matter of nesting multiple regions. Once you attempt to name these levels of depth as a scale; you'll no longer be truly semantic.</p>
+		</Section>
+
+		<Section>
+			<p>Through these separate units of work I soon realized that both ondark virus and complementary space were using the same technique of changing token values depending on the scope. Let's break this down to a few fundamental concepts of user interface design; layout, content, and appearance.</p>
+			
+			
+			<p>Layout is the most important one of these, as you cannot change appearance without having elements in the layout and similarly once you place content on the page it is immediately also a layout. You can know where content will go without knowing the value of the content.</p>
+
+			<p>The value of a layout is an element which must eventually contain content with appearance When we choose elements for a layout, we are (hopefully) adding them with purpose, hierarchy, and user input in mind. As an example, the layout of a social media site should both be immediately identifiable and different from the layout of a calendar application to be the most succesful.</p>
+
+			DEFINTION OF MODE???
+
+			<p>From here we can use a mode to describe a change that needs to affect the entire page or (more innovately) part of the page. This area needs to be dense, this needs to standout, this needs to show another brand. From here what's stopping us from putting a mode <em>inside</em> a mode? Yo dawg I heard you like modes. So we put a dark mode in your light mode so you can stop wasting time naming more tokens</p>
+
+			[xzibit meme img]
+
+		</Section>
+		<Section split>
+			<p>That's why I've have called this technique "<strong>mise en mode</strong>" meaning placement in mode. A play on the art history term mise en abyme, which is act of creating smaller artwork within a larger work of art. In this idea, an experience is designed as a nested collection of modes, each with a specific purpose for being there by design. Each mode provides new values to existing tokens based on that purpose. This means that the semantics are moved from the tokens, to these new rectangular boundaries of the interface. Now the tokens are then simplified to functional categories and properties.</p>
+
+			<p>This isn't too far from wanting container queries after having media queries in a component driven architecture. We want micro experiences to be self contained and work within a larger experience.</p>
+
+			<Callout float>There is no critical button, only a button that exists in a critical mode.</Callout>
+
+			<p>Taking this a step further, and maybe too far for some but, perhaps there is no critical button, only a button that exists in a critical mode. When a double confirm modal appears the content of that modal is meant to display as wholly critical. It is not just the button. Therefore we could treat the entire region as critical and adjust the appearance through the scoping the token values to this boundary.</p>
+
+			<p>So how might we determine when something should be a token versus a mode? If the concept exists across modes, it is a good candidate to be a token. A button will exist across modes, but a state (like critical) could be considered a specific mode. Be careful, hierarchy is not state but structure and should persist between modes. Primary and secondary is herarchical. The lowest fidelity wireframes will help suggest the difference and inform necessary tokens. Wireframes are effectively a modeless representation of the experience. So the best way to name your tokens is to audit your lowest fidelity wireframes, identify the elements and group them by purpose.</p>
+		</Section>
 	</Main>
 </Layout>
+
+<script>
+	const observer = new IntersectionObserver((entries) => {
+		entries.forEach(({ isIntersecting, target }) => {
+			if (isIntersecting) {
+			target.setAttribute('aria-current', 'step');
+			} else {
+			target.removeAttribute('aria-current');
+			}
+		})
+	}, { threshold: .5 });
+
+	function observe(toggle) {
+		[...document.querySelectorAll('section')].forEach(($slide) => {
+			toggle ? observer.observe($slide) : observer.unobserve($slide)
+		});
+	}
+
+	const mql = window.matchMedia("(display-mode: browser)");
+	mql.onchange = ({ matches }) => observe(!matches);
+</script>

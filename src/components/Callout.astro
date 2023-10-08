@@ -13,8 +13,8 @@ const { cite, float } = Astro.props;
     line-height: calc(var(--unit) * 2);
     text-align: center;
     padding-block: calc(var(--unit) * 2);
-    background: white;
-    text-shadow: .04em .04em #ffb53d;
+    background: var(--bg-color);
+    text-shadow: .04em .04em var(--accent-color);
   }
 
   blockquote[data-float] {

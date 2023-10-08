@@ -16,6 +16,11 @@ import Logo from '@components/Logo.astro';
 		align-items: center;
 	}
 
+	.lockup {
+		min-height: calc(var(--unit) * 2);
+		justify-content: center;
+	}
+
 	small {
 		font-size: .6em;
 	}
@@ -27,16 +32,22 @@ import Logo from '@components/Logo.astro';
 			scroll-snap-type: y mandatory;
 			height: 100dvh;
 		}
+
+		.lockup {
+			display: none;
+		}
 	}
 </style>
 
 <main>
   <Section flip split>
     <div>
-			<Logo/>
+		<Logo/>
+		<div class="lockup">
 			<small>(Fr. pronunciation: [miz ɑ̃n‿mɔd])</small>
 			<span>“placement in mode”</span>
 		</div>
+	</div>
   </Section>
   <slot/>
 </main>
