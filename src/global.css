@@ -47,3 +47,11 @@ a {
     --unit: 2vh;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  /* :root {
+    --bg-color: black;
+    --fg-color: #eee;
+    --accent-color: var(--tan-500);
+  } */
+}

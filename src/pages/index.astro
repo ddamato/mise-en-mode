@@ -17,7 +17,9 @@ import Callout from '@components/Callout.astro';
 
 			<p>The final slide of Lauren's talk ends with the following sentence: “They're just rectangles on the internet.”</p>
 
-			<Media src="/media/schema.png" alt="“Expanding your Design System's sphere of influence and other lessons” - Lauren LoPrete, schema by Figma 2022" />
+			<Media src="/media/schema.png" alt="">
+				“Expanding your Design System's sphere of influence and other lessons” - Lauren LoPrete, schema by Figma 2022
+			</Media>
 
 			<p>There's a collective chuckle from the crowd, myself included. It's common for folks to joke about the work we do.</p>
 
@@ -27,13 +29,17 @@ import Callout from '@components/Callout.astro';
 
 		</Section>
 		<Section slide>
-			<Media src="/media/tweet-hand.mp4" alt="Tweet by Charles Patterson @charlespattson" />
+			<Media src="/media/tweet-hand.mp4" alt="">
+				Tweet by Charles Patterson @charlespattson
+			</Media>	
 		</Section>
 
-		<Section>
+		<Section split>
 			<p>There's no shortage of articles on token naming, <a href="https://blog.damato.design/posts/tokens-as-intents/">even I have one</a>. If you don't have an opinion about naming tokens, are you even interested in design systems? While I won't go into opinions about the best naming scheme here, I was frustrated with one particular recommendation that I kept seeing across the web. So much so, that I did what all of us do when we are angry at the internet; I wrote a blog post.</p>
 
-			[dark mode footer img]
+			<Media float src="/media/which-mode.png" alt="">
+				light page, dark footer
+			</Media>
 
 			<p>Here we have a basic footer. It has some text, links, and a button. What many folks who use tokens might do is create tokens that describe the concept of inverse or "ondark". to support the difference between the footer and the rest of the page. Text ondark, button background ondark, etc. After all it is just a small part of the larger experiences, what harm could be done?</p>
 				
@@ -45,64 +51,63 @@ import Callout from '@components/Callout.astro';
 		<Section>
 			<p>What I recommend is to instead consider this footer as a separate mini-region which has the dark mode applied to it. There's a few benefits to this, one of which is <strong>no new tokens</strong>. The button background continues to use the button background token just with a new value applied in the same way that you might apply new values for dark mode.</p>
 
-			[diagram of tokens / values applied img]
+			<Media src="/media/which-mode.png" alt="">
+				footer marked with tokens
+			</Media>
 
 			<p>In this way, the footer is a boundary for new values for the same elements. It's functionally the same text, links, and button just visually changed by existing within a new scope.</p>
 
 			<p>Keep this idea, put it in your pocket, and save it for later.</p>
 		</Section>
 
-		<Section>
+		<Section split>
 			<p>The blog post, <a href="https://blog.damato.design/posts/ondark-virus/">Ondark Virus</a>, was simply meant as a response to a repeated harmful practice. At the time, my real focus earlier this year was how we might expand other themable properties into semantic naming. Is semantic naming for border radius possible? Spoiler, <a href="https://blog.damato.design/posts/meaningless-curves/">no it's not</a>, but what about spacing?</p>
+
+			<Media float src="/media/which-mode.png" alt="">
+				apples and oranges
+			</Media>
 
 			<p>Spacing tokens in many design systems are either published as T-shirt sizing or propotional amounts, neither of which are semantic. The names of these tokens give no indication on where to use them. My focus was to find if there was a way to mark where space should be applied, influenced later by a set of design decision values.</p>
 
 			<p>I first began by grounding myself to understand <em>why we apply space</em> fundamentally. The <a href="https://lawsofux.com/law-of-proximity/">Gestalt principle of proximity</a> says that objects closer together suggest that they are more related. If I asked you to group apples and oranges by type, how might that look?</p>
 
-			[apples and oranges grouped, but all spaced the same from each other]
-
-			<p>Most folks might believe that while the apples and oranges are grouped, the space is unsettling. If you'd perform the exercise yourself, you'd most likely move the groups farther from each other instinctually.</p>
-
 			<p>Ok, all basic stuff, nothing revolutionary there so far. </p>
-		</Section>
-
-		<Section>
-			<p>One way that we can make things appear to be apart is by physically moving them; changing the physical distance between them. This is intuitive, and how we expect to create space between objects.</p>
-
-			[two objects top down]
-
-			<p>There are two colored objects in the image with some space between. One way we could create more space between these objects is by picking the objects up and physically translating them in the environment to be further from each other. However, there is another way. We can make the objects appear farther from each other by <em>zooming the camera</em>.</p>
-
 		</Section>
 		
 		<Section>
 
-			[two objects zoomed]
+			<Media src="/media/which-mode.png" alt="">
+				colored objects camera
+			</Media>
+
+			<p>There are two colored objects in the image with some space between. One way we could create more space between these objects is by physically translating them in the environment to be further from each other. However, there is another way. We can make the objects appear farther from each other by <em>zooming the camera</em>. This allows us to set the objects at a fixed distance and change the viewport to adjust the perceived amount of space between the objects.</p>
 
 			<p>Because of the way the composition is framed, it's not possible to tell if the distance between the two objects was changed by either method because there's no other reference. It could be by moving the objects or by moving the camera.</p>
 
-			<p>This technique can create the illusion of a change of space. The benefit of zooming instead of moving is that the relationship between the elements does not change, only our frame of reference. So perhaps another way we can think of the visual representation of space not as distance but zoom. This would mean that each time we need a perception of density we can think of the space as zoomed where the visual distance between those elements is now seemingly less, making the region look more compact. Points appear to come together.</p>
+			<p>This technique can create the illusion of a change of space. The benefit of zooming instead of moving is that the relationship between the elements does not change, only our frame of reference. So perhaps another way we can think of the visual representation of space not as distance but scale. This would mean that each time we need a perception of density we can think of the space as scaled where the visual distance between those elements is now seemingly less, making the region look more compact. Points appear to come together.</p>
 				
-			<p>Importantly this isn't recommending to change the size of the elements, just the space between those elements. Think of being able to scale only the space, without changing the visual size of the objects themselves.</p>
+			<p>Importantly this isn't recommending to change the scale of the elements, just the space between those elements. Think of being able to only affect the space, without changing the visual size of the objects themselves.</p>
 
 			<p>In practice, what this could mean is applying single spacing token that means "space goes here" and then we determine how much space by identifying "how much zoom" to apply overall. That "zoom" isn't really zooming but instead changing the scale of space for this region.</p>
 			
-			<p>In this way, we no longer need to have semantics at all <em>if</em> the density increases as you go deeper into the interface and areas are simply marked to go one step down. Going multiple levels at once is a matter of nesting multiple regions. Once you attempt to name these levels of depth as a scale; you'll no longer be truly semantic.</p>
+			<p>In this way, <strong>we no longer need to have naming at all</strong> if the density increases as you go deeper into the interface and areas are simply marked to go one step down. Going multiple levels at once is a matter of nesting multiple regions. This is appropriate because as areas become smaller, the amount of room to place items becomes less and content is expected to be more dense.</p>
 		</Section>
 
-		<Section>
+		<Section split>
 			<p>Through these separate units of work I soon realized that both ondark virus and complementary space were using the same technique of changing token values depending on the scope. Let's break this down to a few fundamental concepts of user interface design; layout, content, and appearance.</p>
-			
+
+			<Media float src="/media/which-mode.png" alt="">
+				Yo dawg I heard you like modes. So we put a dark mode in your light mode so you can stop making more tokens.
+			</Media>
 			
 			<p>Layout is the most important one of these, as you cannot change appearance without having elements in the layout and similarly once you place content on the page it is immediately also a layout. You can know where content will go without knowing the value of the content.</p>
 
-			<p>The value of a layout is an element which must eventually contain content with appearance When we choose elements for a layout, we are (hopefully) adding them with purpose, hierarchy, and user input in mind. As an example, the layout of a social media site should both be immediately identifiable and different from the layout of a calendar application to be the most succesful.</p>
+
+			<p>The value of a layout is an element which must eventually contain content with appearance When we choose elements for a layout, we are (hopefully) adding them with purpose, hierarchy, and user input in mind. As an example, the layout of a social media site should both be immediately identifiable and different from the layout of a calendar application to be the most successful.</p>
 
 			DEFINTION OF MODE???
 
-			<p>From here we can use a mode to describe a change that needs to affect the entire page or (more innovately) part of the page. This area needs to be dense, this needs to standout, this needs to show another brand. From here what's stopping us from putting a mode <em>inside</em> a mode? Yo dawg I heard you like modes. So we put a dark mode in your light mode so you can stop wasting time naming more tokens</p>
-
-			[xzibit meme img]
+			<p>From here we can use a mode to describe a change that needs to affect the entire page or (more innovately) part of the page. This area needs to be dense, this needs to standout, this needs to show another brand. From here what's stopping us from putting a mode <em>inside</em> a mode?</p>
 
 		</Section>
 		<Section split>
@@ -110,7 +115,7 @@ import Callout from '@components/Callout.astro';
 
 			<p>This isn't too far from wanting container queries after having media queries in a component driven architecture. We want micro experiences to be self contained and work within a larger experience.</p>
 
-			<Callout float>There is no critical button, only a button that exists in a critical mode.</Callout>
+			<Callout float>There is no critical button, only a button in a critical mode.</Callout>
 
 			<p>Taking this a step further, and maybe too far for some but, perhaps there is no critical button, only a button that exists in a critical mode. When a double confirm modal appears the content of that modal is meant to display as wholly critical. It is not just the button. Therefore we could treat the entire region as critical and adjust the appearance through the scoping the token values to this boundary.</p>
 
