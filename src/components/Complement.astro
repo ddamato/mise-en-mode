@@ -1,0 +1,31 @@
+---
+import Figure from '@components/Figure.astro';
+const { alt, float, view = 'full' } = Astro.props;
+import complement from '@components/Complement.svg?raw';
+---
+
+<style>
+
+
+  svg {
+    --left-box: var(--tan-100);
+    --right-box: var(--tan-500);
+    --field-of-view: rgba(128, 128, 128, .3);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    /* span {
+      --left-box: red;
+      --right-box: blue;
+      --field-of-view: orange;
+    } */
+  }
+</style>
+
+<Figure float={ float }>
+  <svg slot="media" viewBox="0 0 1292.61 720.96">
+    <use href={ `#${view}-view` }/>
+  </svg>
+  <slot/>
+</Figure>
+<span style="display: none;" set:html={complement} aria-label={ alt } />

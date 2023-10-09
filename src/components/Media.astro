@@ -1,20 +1,8 @@
 ---
+import Figure from '@components/Figure.astro';
 const { src, alt, float } = Astro.props;
 ---
 <style>
-  figure {
-    margin: 0;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
-
-  figure[data-float] {
-    padding: calc(var(--unit) * 2);
-    float: left;
-    max-width: calc(var(--unit) * 16);
-    margin-inline-start: calc(var(--unit) * -10);
-  }
 
   :where(img, video) {
     display: block;
@@ -23,40 +11,18 @@ const { src, alt, float } = Astro.props;
     backdrop-filter: contrast(0.5) blur(5px);
   }
 
-  figcaption {
-    font-size: 1.2rem;
-    line-height: 1.5;
-    padding: 0.75em;
-    font-weight: 500;
-    background: var(--bg-color);
-    width: 100%;
-    text-align: center;
-  }
-
-  @media  (display-mode: browser) and (max-width: 144vh) {
-		figure[data-float] {
-      float: initial;
-      margin: 0;
-      max-width: none;
-      padding-inline: 0;
-    }
-	}
-
   @media not (display-mode: browser) {
-    figure[data-float] {
-      float: initial;
-      padding-block: 0;
-    }
-
     :where(img, video) {
       max-height: calc(var(--unit) * 10);
     }
   }
 </style>
 
-{ src ? <figure data-float={ Boolean(float) }>
+{ src && (
+  <Figure float={ float }>
     { src.endsWith('mp4')
-      ? <video src={ src } title={ alt } autoplay muted loop playsinline />
-      : <img src={ src } alt={ alt } loading="lazy" /> } 
-    <figcaption><slot/></figcaption>
-</figure> : null }
+      ? <video slot="media" src={ src } title={ alt } autoplay muted loop playsinline />
+      : <img slot="media" src={ src } alt={ alt } loading="lazy" /> }
+    <slot/>
+  </Figure>
+) }

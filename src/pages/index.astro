@@ -5,6 +5,7 @@ import Main from '@components/Main.astro';
 import Heading from '@components/Heading.astro';
 import Media from '@components/Media.astro';
 import Callout from '@components/Callout.astro';
+import Complement from '@components/Complement.astro';
 ---
 
 <Layout title="Mise en mode" description="Placement in mode">
@@ -74,11 +75,31 @@ import Callout from '@components/Callout.astro';
 			<p>Ok, all basic stuff, nothing revolutionary there so far. </p>
 		</Section>
 		
+		<Section slide>
+			<Complement view="start">
+				Looking top down, small field-of-view
+			</Complement>
+		</Section>
+
+		<Section slide>
+			<Complement view="end">
+				Looking top down, small field-of-view
+			</Complement>
+		</Section>
+
+		<Section slide>
+			<Complement view="move" />
+		</Section>
+
+		<Section slide>
+			<Complement view="zoom" />
+		</Section>
+
 		<Section>
 
-			<Media src="/media/which-mode.png" alt="">
+			<Complement alt="">
 				colored objects camera
-			</Media>
+			</Complement>
 
 			<p>There are two colored objects in the image with some space between. One way we could create more space between these objects is by physically translating them in the environment to be further from each other. However, there is another way. We can make the objects appear farther from each other by <em>zooming the camera</em>. This allows us to set the objects at a fixed distance and change the viewport to adjust the perceived amount of space between the objects.</p>
 
