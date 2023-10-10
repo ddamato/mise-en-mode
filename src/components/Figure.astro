@@ -28,6 +28,10 @@ const { float } = Astro.props;
     text-align: center;
   }
 
+  figcaption:empty {
+    display: none;
+  }
+
   @media  (display-mode: browser) and (max-width: 144vh) {
 		figure[data-float] {
       float: initial;

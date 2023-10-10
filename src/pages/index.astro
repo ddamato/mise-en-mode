@@ -29,9 +29,16 @@ import Complement from '@components/Complement.astro';
 			<p>The following is a recap of a year long research and development journey revealing how we might take semantic responsibility away from design tokens. I will attempt to demonstrate how we might execute design decisions not through complex token naming exercises, but by burdening these rectangles with glorious purpose.</p>
 
 		</Section>
+
 		<Section slide>
 			<Media src="/media/tweet-hand.mp4" alt="">
 				Tweet by Charles Patterson @charlespattson
+			</Media>	
+		</Section>
+
+		<Section slide>
+			<Media src="/media/token-naming.png" alt="">
+				A small selection of token naming articles
 			</Media>	
 		</Section>
 
@@ -53,7 +60,7 @@ import Complement from '@components/Complement.astro';
 			<p>What I recommend is to instead consider this footer as a separate mini-region which has the dark mode applied to it. There's a few benefits to this, one of which is <strong>no new tokens</strong>. The button background continues to use the button background token just with a new value applied in the same way that you might apply new values for dark mode.</p>
 
 			<Media src="/media/pricing-tokens.png" alt="">
-				footer marked with tokens
+				Pricing page marked with treatments and tokens
 			</Media>
 
 			<p>In this way, the footer is a boundary for new values for the same elements. It's functionally the same text, links, and button just visually changed by existing within a new scope.</p>
@@ -83,22 +90,26 @@ import Complement from '@components/Complement.astro';
 
 		<Section slide>
 			<Complement view="end">
-				Looking top down, small field-of-view
+				Adding space between the colored objects
 			</Complement>
 		</Section>
 
 		<Section slide>
-			<Complement view="move" />
+			<Complement view="move">
+				Creating space between objects by moving
+			</Complement>
 		</Section>
 
 		<Section slide>
-			<Complement view="zoom" />
+			<Complement view="zoom">
+				Creating space by zooming the field-of-view
+			</Complement>
 		</Section>
 
 		<Section>
 
 			<Complement alt="">
-				colored objects camera
+				Creating space can occur either way
 			</Complement>
 
 			<p>There are two colored objects in the image with some space between. One way we could create more space between these objects is by physically translating them in the environment to be further from each other. However, there is another way. We can make the objects appear farther from each other by <em>zooming the camera</em>. This allows us to set the objects at a fixed distance and change the viewport to adjust the perceived amount of space between the objects.</p>
@@ -117,9 +128,7 @@ import Complement from '@components/Complement.astro';
 		<Section split>
 			<p>Through these separate units of work I soon realized that both ondark virus and complementary space were using the same technique of changing token values depending on the scope. Let's break this down to a few fundamental concepts of user interface design; layout, content, and appearance.</p>
 
-			<Media float src="/media/which-mode.png" alt="">
-				Yo dawg I heard you like modes. So we put a dark mode in your light mode so you can stop making more tokens.
-			</Media>
+			<Media float src="/media/xzibit.png" alt=""/>
 			
 			<p>Layout is the most important one of these, as you cannot change appearance without having elements in the layout and similarly once you place content on the page it is immediately also a layout. You can know where content will go without knowing the value of the content.</p>
 
@@ -141,6 +150,21 @@ import Complement from '@components/Complement.astro';
 			<p>Taking this a step further, and maybe too far for some but, perhaps there is no critical button, only a button that exists in a critical mode. When a double confirm modal appears the content of that modal is meant to display as wholly critical. It is not just the button. Therefore we could treat the entire region as critical and adjust the appearance through the scoping the token values to this boundary.</p>
 
 			<p>So how might we determine when something should be a token versus a mode? If the concept exists across modes, it is a good candidate to be a token. A button will exist across modes, but a state (like critical) could be considered a specific mode. Be careful, hierarchy is not state but structure and should persist between modes. Primary and secondary is herarchical. The lowest fidelity wireframes will help suggest the difference and inform necessary tokens. Wireframes are effectively a modeless representation of the experience. So the best way to name your tokens is to audit your lowest fidelity wireframes, identify the elements and group them by purpose.</p>
+		</Section>
+
+		<Section>
+			<Media src="/media/github-danger.png" alt="">
+				A critical "mode" within the larger page at Github.com
+			</Media>
+		</Section>
+
+		<Section split>
+			What does it mean to be light or dark?
+
+			<Media float src="/media/which-mode.png" alt="">
+				The might not be the right question.
+			</Media>
+
 		</Section>
 	</Main>
 </Layout>
