@@ -40,6 +40,7 @@ const { split, flip, slide } = Astro.props;
 
   @media  (display-mode: browser) and (max-width: 144vh) {
 		section[data-split] {
+      padding-inline-start: calc(var(--unit) * 2);
       background: var(--bg-color);
     }
 	}

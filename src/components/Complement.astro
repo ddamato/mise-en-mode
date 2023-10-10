@@ -5,7 +5,9 @@ import complement from '@components/Complement.svg?raw';
 ---
 
 <style>
-
+  .host {
+    background: var(--bg-color);
+  }
 
   svg {
     --left-box: var(--tan-100);
@@ -23,9 +25,11 @@ import complement from '@components/Complement.svg?raw';
 </style>
 
 <Figure float={ float }>
-  <svg slot="media" viewBox="0 0 1292.61 720.96">
-    <use href={ `#${view}-view` }/>
-  </svg>
+  <div class="host">
+    <svg slot="media" viewBox="0 0 1292.61 720.96">
+      <use href={ `#${view}-view` }/>
+    </svg>
+  </div>
   <slot/>
 </Figure>
 <span style="display: none;" set:html={complement} aria-label={ alt } />
