@@ -4,18 +4,20 @@ const { float } = Astro.props;
 
 <style>
   figure {
-    margin: 0;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     flex-direction: column;
     max-height: 100%;
+    width: 90%;
+    background: var(--bg-color);
   }
 
   figure[data-float] {
-    padding: calc(var(--unit) * 2);
+    margin: calc(var(--unit) * 2);
+    margin-inline-start: calc(var(--unit) * -8);
     float: left;
     max-width: calc(var(--unit) * 16);
-    margin-inline-start: calc(var(--unit) * -10);
   }
 
   figcaption {
@@ -23,7 +25,6 @@ const { float } = Astro.props;
     line-height: 1.5;
     padding: 0.75em;
     font-weight: 500;
-    background: var(--bg-color);
     width: 100%;
     text-align: center;
   }
@@ -35,7 +36,7 @@ const { float } = Astro.props;
   @media  (display-mode: browser) and (max-width: 144vh) {
 		figure[data-float] {
       float: initial;
-      margin: 0;
+      margin: 0 auto;
       max-width: none;
       padding-inline: 0;
     }
@@ -45,6 +46,7 @@ const { float } = Astro.props;
     figure[data-float] {
       float: initial;
       padding-block: 0;
+      margin: 0 auto;
     }
   }
 </style>

@@ -15,12 +15,6 @@ const { split, flip, slide } = Astro.props;
     display: flow-root;
   }
 
-  section[data-split] {
-    background: linear-gradient(var(--bg-turn), transparent var(--bg-offset), var(--bg-color) var(--bg-offset) 100%);
-    padding-inline-start: calc(var(--unit) * 8);
-    padding-inline-end: calc(var(--unit) * 2);
-  }
-
   section[data-flip] {
     --bg-turn: -.25turn;
     --bg-offset: 50%; 
@@ -49,6 +43,12 @@ const { split, flip, slide } = Astro.props;
     section[data-slide] {
       display: none;
     }
+
+    section[data-split] {
+      background: linear-gradient(var(--bg-turn), transparent var(--bg-offset), var(--bg-color) var(--bg-offset) 100%);
+      padding-inline-start: calc(var(--unit) * 8);
+      padding-inline-end: calc(var(--unit) * 2);
+    }
   }
 
   @media not (display-mode: browser) {
@@ -57,7 +57,7 @@ const { split, flip, slide } = Astro.props;
       margin-block-start: calc(var(--unit) * 2);
       scroll-snap-align: start;
       scroll-margin-block-start: calc(var(--unit) * 2);
-      height:  calc( 100% - (var(--unit) * 2));
+      height: calc( 100% - (var(--unit) * 2));
       cursor: none;
     }
 
