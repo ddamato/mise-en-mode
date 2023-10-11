@@ -10,11 +10,11 @@ import Complement from '@components/Complement.astro';
 
 <Layout title="Mise en mode" description="Placement in mode, the practical application of form following function.">
 	<Main>
-		<Section>
-			Activated charcoal food truck dreamcatcher blog artisan chicharrones kale chips authentic adaptogen franzen. Lo-fi ugh craft beer mumblecore leggings meggings put a bird on it tonx. Chicharrones fashion axe pug Brooklyn retro ramps. Poutine chartreuse YOLO +1 poke. Fixie quinoa ugh celiac. Air plant normcore adaptogen, direct trade art party tbh vexillologist try-hard mlkshk.
+		<Section split>
+			<p>The following is a recap of a year long research and development journey revealing how we might take semantic responsibility away from design tokens. I will attempt to demonstrate how we might execute design decisions not through complex token naming exercises, but by burdening these rectangles with glorious purpose.</p>
 		</Section>
 		<Section>
-			<p>A year ago, at the time of this writing, my wife and I were invited to attend Schema 2022, Figma's design systems conference in New York. There were a collection of several great talks throughout the day. <a href="https://youtu.be/On3w6zPQPHU?si=882hkcmS2zsuR2Yp">One of these talks was by Lauren LoPrete</a>, who walks the audience down her path of growing influence in her teams. Her talk echoes a common statement within our practice; “design systems are for people” which I wholeheartedly agree with. All of the tokens and components we spend time with everyday will mean nothing without adoption. So building trustworthy relationships is key to success.</p>
+			<p>A year ago, at the time of this writing, my wife and I were invited to attend Schema 2022, Figma's design systems conference in New York. There were a collection of several great talks throughout the day. <a href="https://youtu.be/On3w6zPQPHU?si=882hkcmS2zsuR2Yp">One of these talks was by Lauren LoPrete</a>, who walks the audience down her path of growing influence in her teams. Her talk echoes a common statement within our practice; “design systems are for people” which I wholeheartedly agree with. All of the tokens and components we spend time with everyday will mean nothing without adoption. So building trustworthy relationships is key to success in our practice.</p>
 
 			<p>The final slide of Lauren's talk ends with the following sentence: “They're just rectangles on the internet.”</p>
 
@@ -24,9 +24,7 @@ import Complement from '@components/Complement.astro';
 
 			<p>There's a collective chuckle from the crowd, myself included. It's common for folks to joke about the work we do.</p>
 
-			<p>However, in retrospect, I wouldn't have been in that room without rectangles. My career, which puts a roof over my head and food on the table, wouldn't exist without rectangles. I wouldn't have met my wife without them. The work that we do with rectangles is truly changing humanity every day. In reality, rectangles make the world go round, socio-economically speaking. I didn't know it then but I was about to discover that these rectangles could also be a looking glass to a whole new design paradigm.</p>
-
-			<p>The following is a recap of a year long research and development journey revealing how we might take semantic responsibility away from design tokens. I will attempt to demonstrate how we might execute design decisions not through complex token naming exercises, but by burdening these rectangles with glorious purpose.</p>
+			<p>However, in retrospect, I wouldn't have been in that room without rectangles. My career, which puts a roof over my head and food on the table, would have been completely different without rectangles. I wouldn't have met my wife without them. The work that we do with rectangles is truly changing humanity every day. In reality, rectangles make the world go round, socio-economically speaking. I didn't know it then but I was about to discover that these rectangles could also be a looking glass to a whole new design paradigm.</p>
 
 		</Section>
 
@@ -43,7 +41,7 @@ import Complement from '@components/Complement.astro';
 		</Section>
 
 		<Section split>
-			<p>There's no shortage of articles on token naming, <a href="https://blog.damato.design/posts/tokens-as-intents/">even I have one</a>. If you don't have an opinion about naming tokens, are you even interested in design systems? While I won't go into opinions about the best naming scheme here, I was frustrated with one particular recommendation that I kept seeing across the web. So much so, that I did what all of us do when we are angry at the internet; I wrote a blog post.</p>
+			<p>There's no shortage of articles on token naming, <a href="https://blog.damato.design/posts/tokens-as-intents/">even I have one</a>. If you don't have an opinion about naming tokens, are you even interested in design systems? While I won't go into opinions about the best naming scheme here, I was frustrated with one particular recommendation that I kept seeing across the web. So much so, that I did what all of us do when we are angry at the internet; <a href="https://blog.damato.design/posts/ondark-virus/">I wrote a blog post</a>.</p>
 
 			<Media float src="/media/pricing.png" alt="">
 				Pricing page with different tiers
@@ -57,7 +55,7 @@ import Complement from '@components/Complement.astro';
 		</Section>
 
 		<Section>
-			<p>What I recommend is to instead consider each card as a separate mini-region which has a colored mode applied to it. There's a few benefits to this, one of which is <strong>no new tokens</strong>. The button background continues to use the button background token just with a new value applied in the same way that you might apply new values for dark mode.</p>
+			<p>What I recommend is to instead consider each card as a separate mini-region which creates a scope of new values. There's a few benefits to this, one of which is <strong>no new tokens</strong>. The button background continues to use the button background token just with a new value applied in the same way that you might apply new values for dark mode.</p>
 
 			<Media src="/media/pricing-tokens.png" alt="">
 				Pricing page marked with treatments and tokens
@@ -94,39 +92,36 @@ import Complement from '@components/Complement.astro';
 
 		<Section split>
 
-			<p>The blog post, <a href="https://blog.damato.design/posts/ondark-virus/">Ondark Virus</a>, was simply meant as a response to a repeated harmful practice. At the time, my real focus earlier this year was how we might expand other themable properties into semantic naming. Is semantic naming for border radius possible? Spoiler, <a href="https://blog.damato.design/posts/meaningless-curves/">no it's not</a>, but what about spacing?</p>
+			<p>That blog post was simply meant as a response to a repeated harmful practice. At the time, <a href="https://complementary.space/">my real focus</a> was how we might expand other themable properties into semantic naming. Is semantic naming for border radius possible? Spoiler, <a href="https://blog.damato.design/posts/meaningless-curves/">no it's not</a>, but what about spacing?</p>
 
-			<p>Spacing tokens in many design systems are either published as T-shirt sizing or propotional amounts, neither of which are semantic. The names of these tokens give no indication on where to use them. My focus was to find if there was a way to mark where space should be applied, influenced later by a set of design decision values.</p>
+			<p>Spacing tokens in many design systems are either published as T-shirt sizing or propotional amounts, neither of which are semantic; <strong>the names of these tokens give no indication about where to use them</strong>. My focus was to find if there was a way to mark where space should be applied, influenced later by a set of design decision values.</p>
 
 			<Complement float alt="">
 				Creating space can occur either way
 			</Complement>
 
-			<p>There are two colored objects in the image with some space between. One way we could create more space between these objects is by physically translating them in the environment to be further from each other. However, there is another way. We can make the objects appear farther from each other by <em>zooming the camera</em>. This allows us to set the objects at a fixed distance and change the viewport to adjust the perceived amount of space between the objects.</p>
+			<p>In this example, there are two colored objects in the image with some space between restricted by a narrow field-of-view. One way we could create more space between these objects is by physically translating them in the environment to be further from each other. However, there is another way. We can make the objects appear farther from each other by <em>zooming the camera</em>. This allows us to set the objects at a fixed distance and change the viewport to adjust the perceived amount of space between the objects.</p>
 
-			<p>Because of the way the composition is framed, it's not possible to tell if the distance between the two objects was changed by either method because there's no other reference. It could be by moving the objects or by moving the camera.</p>
+			<p>In practice, what this could mean is applying single spacing token that means "space goes here" and then we determine how much space by deciding "how much zoom". In this way, <strong>we no longer need to have naming at all</strong> if the density increases as you go deeper into the interface and areas are simply marked to go one step down. Going multiple levels at once is a matter of nesting multiple regions. This is appropriate because as areas become smaller, the amount of room to place items becomes less and content appears more dense.</p>
 
-			<p>This technique can create the illusion of a change of space. The benefit of zooming instead of moving is that the relationship between the elements does not change, only our frame of reference. So perhaps another way we can think of the visual representation of space not as distance but scale. This would mean that each time we need a perception of density we can think of the space as scaled where the visual distance between those elements is now seemingly less, making the region look more compact. Points appear to come together.</p>
-				
 			<p>Importantly this isn't recommending to change the scale of the elements, just the space between those elements. Think of being able to only affect the space, without changing the visual size of the objects themselves.</p>
-
-			<p>In practice, what this could mean is applying single spacing token that means "space goes here" and then we determine how much space by identifying "how much zoom" to apply overall. That "zoom" isn't really zooming but instead changing the scale of space for this region.</p>
-			
-			<p>In this way, <strong>we no longer need to have naming at all</strong> if the density increases as you go deeper into the interface and areas are simply marked to go one step down. Going multiple levels at once is a matter of nesting multiple regions. This is appropriate because as areas become smaller, the amount of room to place items becomes less and content is expected to be more dense.</p>
-
-			<p>This result was an approach I called <a href="https://complementary.space/">Complementary Space</a>, where space is scoped to boundaries and values are applied based on how deep the boundary was set. The tokens and boundaries worked together in complement to create the appropriate amount of space.</p>
 		</Section>
 
 		<Section>
-			<p>Through these separate units of work I soon realized that both Ondark Virus and Complementary Space were using the same technique of changing token values depending on a targeted scope. From here I wanted to understand the fundamental prinicples I was uncovering so that it was clear when tokens were meant to drive design decisions and when scope should be considered instead.</p>
-			
+			<p>Through these separate units of work I soon realized that both were using the same technique of changing token values depending on a targeted scope. From here I wanted to understand the fundamental prinicples I was uncovering so that it was clear when tokens were meant to drive design decisions and when scope should be considered instead.</p>
+		</Section>
+		<Section split>
 			<p>What I've found is that breaking down interface design into the foundational concepts of layout, content, and appearance help clearly define the responsibilities.</p>
 
 			<p>Layout is the most important one of these. You cannot change appearance without having elements in the layout to provide style and you cannot place content without it immediately becoming layout.</p>
 
-			<Media src="/media/wireframes.png" alt=""/>
+			<Media float src="/media/wireframes.png" alt="">
+				Layouts, represented as wireframes, are the key to identifying responsibilities.
+			</Media>
 
-			<p>The value of a layout is an element which must eventually contain content with appearance; best represented as a wireframe. When we choose elements for a layout, we are (hopefully) adding them with purpose, hierarchy, and user input in mind. As an example, the layout of a social media site should both be immediately identifiable and different from the layout of a calendar application to be the most successful. Even when the layout does change in the case of right-to-left languages, the purpose, hierarchy and user input of the elements should not.</p>
+			<p>The value of a layout is an element which must eventually contain content with appearance; best represented as a wireframe. When we choose elements for a layout, we are (hopefully) adding them with purpose, hierarchy, and user input in mind.</p>
+			
+			<p>As an example, the layout of a social media site should both be immediately identifiable and different from the layout of a calendar application to be the most successful. Even when the layout does change in the case of right-to-left languages, the purpose, hierarchy and user input of the elements should not.</p>
 
 		</Section>
 		<Section>
@@ -151,7 +146,7 @@ import Complement from '@components/Complement.astro';
 
 			<p>This isn't too far from wanting container queries after having media queries in a component driven architecture. We want micro experiences to be self contained and work within a larger experience.</p>
 
-			<Callout float>There is no critical button, only a button in a critical mode.</Callout>
+			<Callout float>There is no critical button,<br> only a button in a critical mode.</Callout>
 
 			<p>Taking this a step further, and maybe too far for some but, perhaps there is no critical button, only a button that exists in a critical mode. When a double confirm modal appears the content of that modal is meant to display as wholly critical. It is not just the button. Therefore we could treat the entire region as critical and adjust the appearance through the scoping the token values to this boundary.</p>
 		</Section>
