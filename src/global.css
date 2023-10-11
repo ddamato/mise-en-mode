@@ -49,9 +49,9 @@ a {
 }
 
 @media (prefers-color-scheme: dark) {
-  /* :root {
-    --bg-color: black;
+  :root {
+    --bg-color: #261a08;
     --fg-color: #eee;
     --accent-color: var(--tan-500);
-  } */
+  }
 }
