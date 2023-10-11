@@ -124,12 +124,17 @@ import Complement from '@components/Complement.astro';
 
 			<p>Layout is the most important one of these. You cannot change appearance without having elements in the layout to provide style and you cannot place content without it immediately becoming layout.</p>
 
+			<Media src="/media/wireframes.png" alt=""/>
+
 			<p>The value of a layout is an element which must eventually contain content with appearance; best represented as a wireframe. When we choose elements for a layout, we are (hopefully) adding them with purpose, hierarchy, and user input in mind. As an example, the layout of a social media site should both be immediately identifiable and different from the layout of a calendar application to be the most successful. Even when the layout does change in the case of right-to-left languages, the purpose, hierarchy and user input of the elements should not.</p>
 
-			<blockquote>
-				<a href="https://www.nngroup.com/articles/modes/">Modes are different interpretations of the user input by the system, depending on the state which is active. Same input, different results.</a>
-				<cite>Defintion of mode, Nielsen Norman Group (NN/G)</cite>
-			</blockquote>
+		</Section>
+		<Section>
+			<p>Modes are different interpretations of the user input by the system, depending on the state which is active.</p>
+
+			<Callout cite="Mode, Nielsen Norman Group (NN/G)" href="https://www.nngroup.com/articles/modes/">
+				Same input, different results.
+			</Callout>
 
 			<p>In the way we have begun to use the term within the design system practice, it is no longer only user input that could change the results, but a configuration of the system itself. Consider the password field with a hidden input as a mode provided by the system. Another way to think of this of input is via tokens; the user applies the same token but the interface renders a different result because of the active mode.</p>
 
@@ -164,10 +169,9 @@ import Complement from '@components/Complement.astro';
 		</Section>
 
 		<Section>
-			<blockquote>
-				<a href="https://www.nngroup.com/videos/jakobs-law-internet-ux/">Users spend most of their time on other sites. This means that users prefer your site to work the same way as all the other sites they already know. Design for patterns for which users are accustomed.</a>
-				<cite>Jakob's Law, Nielsen Norman Group (NN/G)</cite>
-			</blockquote>
+			<Callout cite="Jakob's Law, Nielsen Norman Group (NN/G)" href="https://www.nngroup.com/videos/jakobs-law-internet-ux/">
+				Design for patterns for which users are accustomed.
+			</Callout>
 
 			<p>What we aim to achieve in the design system practice is to identify the patterns that have developed across experiences and provide a means for repeating their socially agreeable purpose; a library of functions. The naming convention we provide to tokens is meant to describe how modes can affect the presentation of these functions; a collection of forms. Mise en mode is the practical application of form following function. Tokens describing the presentational qualities of functions. Modes providing the values for that presentation as clearly defined forms.</p>
 		</Section>

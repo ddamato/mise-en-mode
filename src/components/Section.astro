@@ -15,13 +15,6 @@ const { split, flip, slide } = Astro.props;
     display: flow-root;
   }
 
-  section[data-flip] {
-    --bg-turn: -.25turn;
-    --bg-offset: 50%; 
-    padding-inline-start: calc(var(--unit) * 2);
-    padding-inline-end: calc(var(--unit) * 14);
-  }
-
   section div {
     width: 100%;
     max-width: 70ch;
@@ -31,13 +24,6 @@ const { split, flip, slide } = Astro.props;
     height: 100%;
     margin: 0 auto;
   }
-
-  @media  (display-mode: browser) and (max-width: 144vh) {
-		section[data-split] {
-      padding-inline: calc(var(--unit) * 2);
-      background: var(--bg-color);
-    }
-	}
 
   @media (display-mode: browser) {
     section[data-slide] {
@@ -49,7 +35,21 @@ const { split, flip, slide } = Astro.props;
       padding-inline-start: calc(var(--unit) * 8);
       padding-inline-end: calc(var(--unit) * 2);
     }
+
+    section[data-flip] {
+      --bg-turn: -.25turn;
+      --bg-offset: 50%; 
+      padding-inline-start: calc(var(--unit) * 2);
+      padding-inline-end: calc(var(--unit) * 14);
+    }
   }
+
+  @media  (display-mode: browser) and (max-width: 144vh) {
+		section[data-split] {
+      padding-inline: calc(var(--unit) * 2);
+      background: var(--bg-color);
+    }
+	}
 
   @media not (display-mode: browser) {
     section {
@@ -67,6 +67,10 @@ const { split, flip, slide } = Astro.props;
 
     section div {
       max-width: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
     }
 
     section:not(:has(figure, blockquote)) {
