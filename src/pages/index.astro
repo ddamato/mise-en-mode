@@ -48,7 +48,7 @@ import Author from '@components/Author.astro';
 				Pricing page with different tiers
 			</Media>
 
-			<p>In this example, we have a section of a pricing page. Each card has some text, a button, and maybe some links. What many folks who use tokens might do is create tokens that describe the concept of inverse, highlight, or accent to support the difference between each of the cards and the rest of the page. Maybe text onaccent, or button background onaccent, et cetera. After all it is just a small part of the larger experiences, what harm could be done?</p>
+			<p>In this example, we have a section of a pricing page. Each card has some text, a button, and maybe some links. What many folks who use tokens might do is create tokens that describe the concept of inverse, highlight, or accent to support the difference between each of the cards and the rest of the page. Maybe text onaccent, or button background onaccent, et cetera. After all it is just a small part of the larger experiences. What harm could be done?</p>
 				
 			<p>While that might seem reasonable at first, things may get out of hand over time. What happens if we need a text input? Maybe that input has an error that needs to be displayed? How do you account for that?</p>
 
@@ -67,7 +67,7 @@ import Author from '@components/Author.astro';
 			<p>Keep this idea, put it in your pocket, and let's save it for later.</p>
 		</Section>
 
-		<Section>
+		<Section slide>
 			<Callout>
 				How might we introduce semantic naming for space?
 			</Callout>
@@ -101,19 +101,27 @@ import Author from '@components/Author.astro';
 
 			<p>That blog post was simply meant as a response to a repeated harmful practice. At the time, <a href="https://complementary.space/">my real focus</a> was how we might expand other themable properties into semantic naming. Is semantic naming for border radius possible? Spoiler, <a href="https://blog.damato.design/posts/meaningless-curves/">no it's not</a>, but what about spacing?</p>
 
-			<p>Spacing tokens in many design systems are either published as T-shirt sizing or propotional amounts, neither of which are semantic; <strong>the names of these tokens give no indication about where to use them</strong>. I had determination to find if there was a way to mark where space should be applied, influenced later by a set of design decision values.</p>
+			<p>Spacing tokens in many design systems are either published as T-shirt sizing or propotional amounts, neither of which are semantic; <strong>the names of these tokens give no indication about where to use them</strong>. Think about if a person was asked to markup an interface with only a list of token names. It is logical that the semantic token name <code>btn-bg-color</code> is meant to color button backgrounds. While the proportional scale token <code>space-4</code> gives no indication where it should be applied using only the token name.</p>
+				
+				<p>I had determination to discover if there was a way to mark where space should be applied, influenced later by a set of design decision values. Turns out, there is! You just need to think of space in a new way.</p>
 
 			<Complement float alt="">
 				Creating space can occur either by moving objects or zooming the field-of-view
 			</Complement>
 
-			<p>In this example, there are two colored objects in the image with some space between restricted by a narrow field-of-view. One way we could create more space between these objects is by physically translating them in the environment to be further from each other. </p>
+			<p>In this example, there are two colored objects set some distance apart. We are observing the objects, top-down, through a narrow field-of-view. </p>
 			
-			<p> However, there is another way. We can make the objects appear farther from each other by <em>zooming the camera</em>. This allows us to set the objects at a fixed distance and change the field-of-view to adjust the perceived amount of space between the objects. Importantly this isn't recommending to change the scale of the elements, just the space between those elements. Think of being able to only affect the space, without changing the visual size of the objects themselves.</p>
+			<p>One way we could create more space between these objects is by physically translating them in the environment to be further from each other. </p>
+			
+			<p> However, there is another way. We can make the objects appear farther from each other by <em>zooming the camera</em>. This allows us to set the objects at a fixed distance and change the field-of-view to adjust the perceived amount of space between the objects. </p>
+			
+			<p>Importantly, this isn't recommending to change the scale of the elements, just the space between those elements. Think of being able to only affect the space, without changing the visual size of the objects themselves.</p>
 
-			<p>In theory, what this could mean is applying single spacing token that means "space goes here" and then we determine how much space by deciding "how much zoom". In this way, <strong>we no longer need to have naming at all</strong> if the density increases as you go deeper into the interface and areas are simply marked to go one step down. Going multiple levels at once is a matter of nesting multiple regions. This is appropriate because as areas become smaller, the amount of room to place items becomes less and content appears more dense.</p>
+			<p>In theory, what this could mean is applying a single spacing token that means "space goes here" and then a designer determines how much space by deciding "how much zoom". In this way, <strong>we no longer need to have naming at all</strong> if the density increases as you go deeper into the interface and areas are simply marked to go one step down. Going multiple levels at once is a matter of nesting multiple regions. This is appropriate because as areas become smaller, the amount of room to place items becomes less and content appears more dense.</p>
 
 			<p>In practice, I recommend two spacing tokens for the concepts of "near" and "away". In fact, these map nicely to where the expected use should be, "gap" and "inset" (ie., padding). From here, regions are marked as a shift in density as needed through design requirements. In other words, this approach doesn't take the decision of how to apply space from the design responsibility, it merely redistributes that responsibility as an exercise of identifying changing areas of users' needs.</p>
+
+			<p>Returning to the example of applying tokens by name, now the person can identify where padding and gap should be applied and <strong>choose the appropriate token every time</strong>. No fudging space off the scale, no wasted time measuring the right amount of space. The exercise of choosing space is off-loaded to a decision about how dense any given area should be. Designers now choose how many areas and where they belong.</p>
 		</Section>
 
 		<Section slide>
@@ -123,7 +131,7 @@ import Author from '@components/Author.astro';
 		</Section>
 
 		<Section>
-			<p>Through these separate units of work I soon realized that both were using the same technique of changing token values depending on a targeted scope. From here I wanted to understand the fundamental prinicples I was uncovering so that it was clear when tokens were meant to drive design decisions and when scope should be considered instead.</p>
+			<p>Through these separate units of work I soon realized that both were using the same technique of changing token values depending on a targeted scope. From here, I wanted to understand the fundamental prinicples I was uncovering so that it was clear when tokens were meant to drive design decisions and when scope should be considered instead.</p>
 		</Section>
 		<Section split>
 			<p>What I've found is that breaking down interface design into the foundational concepts of layout, content, and appearance help clearly define the responsibilities.</p>
@@ -136,7 +144,9 @@ import Author from '@components/Author.astro';
 
 			<p>The value of a layout is an element which must eventually contain content with appearance; best represented as a wireframe. When we choose elements for a layout, we are (hopefully) adding them with purpose, hierarchy, and user input in mind.</p>
 			
-			<p>As an example, the layout of a social media site should both be immediately identifiable and different from the layout of a calendar application to be the most successful. Even when the layout does change in the case of right-to-left languages, the purpose, hierarchy and user input of the elements should not.</p>
+			<p>As an example, the layout of a social media site should both be immediately identifiable and different from the layout of a calendar application to be the most successful.</p>
+			
+			<p>Even when the layout does change, in the case of right-to-left languages or responsive reflow, the purpose, hierarchy and methods of user input should persist. Changing any of these creates a new experience, even if slightly.</p>
 
 		</Section>
 
@@ -152,12 +162,12 @@ import Author from '@components/Author.astro';
 			<p>Modes are different interpretations of the user input by the system, depending on the state which is active.</p>
 
 			<Callout cite="Mode, Nielsen Norman Group (NN/G)" href="https://www.nngroup.com/articles/modes/">
-				Same input, different results.
+				Same input, <br> different results.
 			</Callout>
 
 			<p>In the way we have begun to use the term within the design system practice, it is no longer only user input that could change the results, but a configuration of the system itself. Consider the password field with a hidden input as a mode provided by the system. Another way to think of this of input is via tokens; the user applies the same token but the interface renders a different result because of the active mode.</p>
 
-			<p>From here we can use a mode to describe a change that needs to affect the entire page or (more innovately) part of the page. This area needs to be dense, this needs to standout, this needs to show another brand. From here what's stopping us from putting a mode <em>inside</em> a mode?</p>
+			<p>From here, we can use a mode to describe a change that needs to affect the entire page or (more innovately) part of the page. This area needs to be dense, this needs to standout, this needs to show another brand. From here what's stopping us from putting a mode <em>inside</em> a mode?</p>
 
 		</Section>
 
@@ -182,7 +192,7 @@ import Author from '@components/Author.astro';
 		<Section split>
 			<p>That's why I've have called this technique "<strong>mise en mode</strong>" meaning placement in mode. A play on the art history term <a href="https://en.wikipedia.org/wiki/Mise_en_abyme">mise en abyme</a>, which is act of creating smaller artwork within a larger composition. In this idea, an experience is designed as a nested collection of modes, each with a specific purpose for being there by design. Each mode provides new values to existing tokens based on that purpose. This means that the semantics are moved from the tokens, to these new rectangular boundaries of the interface. Now the tokens are then simplified to naming categories and properties.</p>
 
-			<p>This isn't too far from wanting container queries after having media queries in a component driven architecture. We want micro experiences to be self contained and work within a larger experience.</p>
+			<p>This isn't too far from web development community wanting container queries after having media queries in a component driven architecture. We want micro experiences to be self contained and work within a larger experience.</p>
 
 			<Callout float>There is no critical button,<br> only a button in a critical mode.</Callout>
 
@@ -219,7 +229,7 @@ import Author from '@components/Author.astro';
 
 			<p>My answer: <strong>I don't know</strong>. What is the purpose of this treatment? Is it meant to help with reading, improve battery performance, portray a brand identity, another user need entirely? Tell me <em>why you need it</em>, bring the data, and then it can have an everlasting name as a mode.</p>
 
-			<p>Choosing what colors represent that mode? Don't ask me, I'm color-blind. 😎</p>
+			<p>Choosing what colors represent that mode? Don't ask me, I'm legally color-blind! 😎</p>
 
 		</Section>
 	</Main>

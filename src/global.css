@@ -49,6 +49,16 @@ strong {
   color: var(--accent-color);
 }
 
+code {
+  background-color: var(--tan-700);
+  -webkit-box-decoration-break: slice;
+  box-decoration-break: slice;
+  padding-inline: .3em;
+  padding-block: .1em;
+  margin-block: -.1em;
+  border-radius: 2px;
+}
+
 @media  (display-mode: browser) and (max-width: 500px) {
   :root {
     --unit: 2vh;
