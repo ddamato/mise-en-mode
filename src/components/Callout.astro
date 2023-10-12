@@ -1,5 +1,6 @@
 ---
-const { cite, float } = Astro.props;
+const { cite, float, caption } = Astro.props;
+const Tag = cite ? 'cite' : 'span';
 ---
 <style>
   blockquote {
@@ -10,7 +11,7 @@ const { cite, float } = Astro.props;
     font-size: 4vmax;
     font-weight: 600;
     font-family: var(--callout-font);
-    /* line-height: calc(var(--unit) * 2); */
+    line-height: 1.2;
     text-align: center;
     padding-block: calc(var(--unit) * 2);
     background: var(--bg-color);
@@ -26,9 +27,9 @@ const { cite, float } = Astro.props;
     margin-inline-start: calc(var(--unit) * -8);
   }
 
-  cite {
+  .caption {
     color: var(--fg-color);
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     line-height: calc(var(--unit) * 2);
     font-weight: 500;
     width: 100%;
@@ -63,5 +64,5 @@ const { cite, float } = Astro.props;
 
 <blockquote data-float={ Boolean(float) }>
   <slot/>
-  { cite && <cite>{ cite }</cite> }
+  { caption && <Tag class="caption">{ caption }</Tag> }
 </blockquote>

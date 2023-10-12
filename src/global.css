@@ -52,6 +52,7 @@ strong {
 }
 
 code {
+  font-size: .9em;
   background-color: var(--code-bg);
   color: var(--code-fg);
   -webkit-box-decoration-break: slice;

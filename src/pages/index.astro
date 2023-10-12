@@ -2,7 +2,6 @@
 import Layout from '@layouts/Layout.astro';
 import Section from '@components/Section.astro';
 import Main from '@components/Main.astro';
-import Logo from '@components/Logo.astro';
 import Media from '@components/Media.astro';
 import Callout from '@components/Callout.astro';
 import Complement from '@components/Complement.astro';
@@ -13,8 +12,7 @@ import Author from '@components/Author.astro';
 	<Main>
 		<Section split>
 			<Author/>
-			<br>
-			<p>The following is a recap of a year long research and development journey revealing how we might take semantic responsibility away from design tokens. I will attempt to demonstrate how we might execute design decisions not through complex token naming exercises, but by burdening these rectangles with glorious purpose.</p>
+			<p>The following is a recap of a year long research and development journey revealing a method to take semantic responsibility away from design tokens. I will attempt to demonstrate how we might execute design decisions not through complex token naming exercises, but by burdening rectangles with glorious purpose.</p>
 		</Section>
 		<Section>
 			<p>A year ago, at the time of this writing, my wife and I were invited to attend Schema 2022, Figma's design systems conference in New York. There were a collection of several great talks throughout the day. <a href="https://youtu.be/On3w6zPQPHU?si=882hkcmS2zsuR2Yp">One of these talks was by Lauren LoPrete</a>, who walks the audience down her path of growing influence in her teams. Her talk echoes a common statement within our practice; “design systems are for people” which I wholeheartedly agree with. All of the tokens and components we spend time with everyday will mean nothing without adoption. So building trustworthy relationships is key to success in our practice.</p>
@@ -117,9 +115,9 @@ import Author from '@components/Author.astro';
 			
 			<p>Importantly, this isn't recommending to change the scale of the elements, just the space between those elements. Think of being able to only affect the space, without changing the visual size of the objects themselves.</p>
 
-			<p>In theory, what this could mean is applying a single spacing token that means "space goes here" and then a designer determines how much space by deciding "how much zoom". In this way, <strong>we no longer need to have naming at all</strong> if the density increases as you go deeper into the interface and areas are simply marked to go one step down. Going multiple levels at once is a matter of nesting multiple regions. This is appropriate because as areas become smaller, the amount of room to place items becomes less and content appears more dense.</p>
+			<p>In theory, what this could mean is applying a single spacing token that means “space goes here” and then a designer determines how much space by deciding “how much zoom”. In this way, <strong>we no longer need to have naming at all</strong> if the density increases as you go deeper into the interface and areas are simply marked to go one step down. Going multiple levels at once is a matter of nesting multiple regions. This is appropriate because as areas become smaller, the amount of room to place items becomes less and content appears more dense.</p>
 
-			<p>In practice, I recommend two spacing tokens for the concepts of "near" and "away". In fact, these map nicely to where the expected use should be, "gap" and "inset" (ie., padding). From here, regions are marked as a shift in density as needed through design requirements. In other words, this approach doesn't take the decision of how to apply space from the design responsibility, it merely redistributes that responsibility as an exercise of identifying changing areas of users' needs.</p>
+			<p>In practice, I recommend two spacing tokens for the concepts of “near” and “away”. In fact, these map nicely to where the expected use should be, “gap” and “inset” (ie., padding). From here, regions are marked as a shift in density as needed through design requirements. In other words, this approach doesn't take the decision of how to apply space from the design responsibility, it merely redistributes that responsibility as an exercise of identifying changing areas of users' needs.</p>
 
 			<p>Returning to the example of applying tokens by name, now the person can identify where padding and gap should be applied and <strong>choose the appropriate token every time</strong>. No fudging space off the scale, no wasted time measuring the right amount of space. The exercise of choosing space is off-loaded to a decision about how dense any given area should be. Designers now choose how many areas and where they belong.</p>
 		</Section>
@@ -161,7 +159,7 @@ import Author from '@components/Author.astro';
 
 			<p>Modes are different interpretations of the user input by the system, depending on the state which is active.</p>
 
-			<Callout cite="Mode, Nielsen Norman Group (NN/G)" href="https://www.nngroup.com/articles/modes/">
+			<Callout cite caption="Mode, Nielsen Norman Group (NN/G)" href="https://www.nngroup.com/articles/modes/">
 				Same input, <br> different results.
 			</Callout>
 
@@ -176,11 +174,11 @@ import Author from '@components/Author.astro';
 		</Section>
 
 		<Section slide>
-			<Logo/>
+			<Media src="/media/xzibit.png" alt=""/>
 		</Section>
 
 		<Section slide>
-			<Media src="/media/xzibit.png" alt=""/>
+			<Callout caption="“placement in mode”">mise en mode</Callout>
 		</Section>
 
 		<Section slide>
@@ -190,7 +188,7 @@ import Author from '@components/Author.astro';
 		</Section>
 
 		<Section split>
-			<p>That's why I've have called this technique "<strong>mise en mode</strong>" meaning placement in mode. A play on the art history term <a href="https://en.wikipedia.org/wiki/Mise_en_abyme">mise en abyme</a>, which is act of creating smaller artwork within a larger composition. In this idea, an experience is designed as a nested collection of modes, each with a specific purpose for being there by design. Each mode provides new values to existing tokens based on that purpose. This means that the semantics are moved from the tokens, to these new rectangular boundaries of the interface. Now the tokens are then simplified to naming categories and properties.</p>
+			<p>That's why I've have called this technique “<strong>mise en mode</strong>” meaning placement in mode. A play on the art history term <a href="https://en.wikipedia.org/wiki/Mise_en_abyme">mise en abyme</a>, which is the act of creating smaller artwork within a larger composition. In this idea, an experience is designed as a nested collection of modes, each with a specific purpose for being there by design. Each mode provides new values to existing tokens based on that purpose. This means that some semantics are moved from the tokens, to these new rectangular boundaries of the interface. Now the tokens are then simplified to naming categories and properties.</p>
 
 			<p>This isn't too far from web development community wanting container queries after having media queries in a component driven architecture. We want micro experiences to be self contained and work within a larger experience.</p>
 
@@ -203,7 +201,7 @@ import Author from '@components/Author.astro';
 
 		<Section>
 			<Media src="/media/github-danger.png" alt="">
-				A critical "mode" within the larger page at Github.com
+				A critical “mode” within the larger page at Github.com
 			</Media>
 		</Section>
 
@@ -214,16 +212,8 @@ import Author from '@components/Author.astro';
 		</Section>
 
 		<Section>
-			<Callout cite="Jakob's Law, Nielsen Norman Group (NN/G)" href="https://www.nngroup.com/videos/jakobs-law-internet-ux/">
-				Design for patterns for which users are accustomed.
-			</Callout>
 
-			<p>What we aim to achieve in the design system practice is to identify the patterns that have developed across experiences and provide a means for repeating their socially agreeable purpose; a library of functions. The naming convention we provide to tokens is meant to describe how modes can affect the presentation of these functions; a collection of forms. <strong>Mise en mode is the practical application of form following function.</strong> Tokens describing the presentational qualities of functions. Modes providing the values for that presentation as clearly defined forms.</p>
-		</Section>
-
-		<Section>
-
-			<p>Finally, a quiz:</p>
+			<p>Now it's time for a quiz:</p>
 
 			<Media src="/media/which-mode.png" alt=""/>
 
@@ -231,6 +221,24 @@ import Author from '@components/Author.astro';
 
 			<p>Choosing what colors represent that mode? Don't ask me, I'm legally color-blind! 😎</p>
 
+		</Section>
+
+		<Section>
+			<Callout cite caption="Jakob's Law, Nielsen Norman Group (NN/G)" href="https://www.nngroup.com/videos/jakobs-law-internet-ux/">
+				Design for patterns for which users are accustomed.
+			</Callout>
+
+			<p>What we aim to achieve in the design system practice is to identify the patterns that have developed across experiences and provide a means for repeating their socially agreeable purpose; a library of functions. The naming convention we provide to tokens is meant to describe how modes can affect the presentation of these functions; a collection of forms. <strong>Mise en mode is the practical application of form following function.</strong> Tokens describing the presentational qualities of functions. Modes providing the values for that presentation as clearly defined forms.</p>
+		</Section>
+
+		<Section slide>
+			<Media src="/media/gump.png" alt=""/>
+		</Section>
+
+		<Section slide>
+			<Callout caption="mode.place">
+				Thank you
+			</Callout>
 		</Section>
 	</Main>
 </Layout>

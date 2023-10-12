@@ -81,7 +81,7 @@ const { split, flip, slide } = Astro.props;
       height: 100%;
     }
 
-    section:not(:has(img, video, blockquote, svg)) {
+    section:not(:has(img, video, blockquote, svg), [data-slide]) {
       display: none;
     }
 
