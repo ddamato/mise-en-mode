@@ -10,7 +10,10 @@
   --tan-700: #3d2a0f;
   --bg-color: white;
   --fg-color: var(--tan-700);
-  --accent-color: var(--tan-300);
+  --accent-color: var(--tan-700);
+  --accent-shadow: var(--tan-300);
+  --prose-font: 'Lexend', sans-serif;
+  --callout-font: 'Young Serif', serif;
 }
 
 
@@ -29,7 +32,7 @@ body {
   font-size: 1.5rem;
   line-height: 1.5;
   font-weight: 300;
-  font-family: 'Red Hat Display', sans-serif;
+  font-family: var(--prose-font);
   color: var(--fg-color);
   background-image: url('/colored-geometric.jpg');
   background-size: calc(var(--unit) * 12);
@@ -42,6 +45,10 @@ a {
   text-decoration-color: var(--accent-color);
 }
 
+strong {
+  color: var(--accent-color);
+}
+
 @media  (display-mode: browser) and (max-width: 500px) {
   :root {
     --unit: 2vh;
@@ -52,6 +59,7 @@ a {
   :root {
     --bg-color: #261a08;
     --fg-color: #eee;
-    --accent-color: var(--tan-500);
+    --accent-color: #ffe6be;
+    --accent-shadow: var(--tan-500);
   }
 }

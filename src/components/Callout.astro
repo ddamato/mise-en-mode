@@ -9,12 +9,13 @@ const { cite, float } = Astro.props;
     justify-content: center;
     font-size: 4vmax;
     font-weight: 600;
-    font-family: 'Aboreto', cursive;
+    font-family: var(--callout-font);
     /* line-height: calc(var(--unit) * 2); */
     text-align: center;
     padding-block: calc(var(--unit) * 2);
     background: var(--bg-color);
-    text-shadow: .04em .04em var(--accent-color);
+    color: var(--accent-color);
+    text-shadow: .04em .04em var(--accent-shadow);
   }
 
   blockquote[data-float] {
@@ -26,12 +27,13 @@ const { cite, float } = Astro.props;
   }
 
   cite {
+    color: var(--fg-color);
     font-size: 1.2rem;
     line-height: calc(var(--unit) * 2);
     font-weight: 500;
     width: 100%;
     text-shadow: none;
-    font-family: 'Red Hat Display', sans-serif;
+    font-family: var(--prose-font);
     margin-block-start: 1rem;
   }
 

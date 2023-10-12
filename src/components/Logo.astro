@@ -8,14 +8,9 @@ import logo from '@components/Logo.svg?raw';
 		width: max(200px, calc(var(--unit) * 6));
 		display: inline-flex;
 		font-size: clamp(2rem, 2vmin + 2rem, var(--unit) * 2);
-		filter: drop-shadow(.04em .04em var(--accent-color));
+		color: var(--accent-color);
+		filter: drop-shadow(.04em .04em var(--accent-shadow));
   }
-
-	@media (prefers-color-scheme: dark) {
-		span {
-			color: #ffe6be;
-		}
-	}
 </style>
 
 <span set:html={logo} />
