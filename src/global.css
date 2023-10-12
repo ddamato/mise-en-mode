@@ -12,6 +12,8 @@
   --fg-color: var(--tan-700);
   --accent-color: var(--tan-700);
   --accent-shadow: var(--tan-300);
+  --code-bg: #ffe6be;
+  --code-fg: var(--tan-700);
   --prose-font: 'Lexend', sans-serif;
   --callout-font: 'Young Serif', serif;
 }
@@ -50,7 +52,8 @@ strong {
 }
 
 code {
-  background-color: var(--tan-700);
+  background-color: var(--code-bg);
+  color: var(--code-fg);
   -webkit-box-decoration-break: slice;
   box-decoration-break: slice;
   padding-inline: .3em;
@@ -71,5 +74,7 @@ code {
     --fg-color: #eee;
     --accent-color: #ffe6be;
     --accent-shadow: var(--tan-500);
+    --code-bg: var(--tan-700);
+    --code-fg: var(--tan-100);
   }
 }
