@@ -8,7 +8,7 @@ const Tag = cite ? 'cite' : 'span';
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-size: min(4vmax, 6rem);
+    font-size: clamp(2rem, 4vw + 1rem, 4rem);
     font-weight: 600;
     font-family: var(--callout-font);
     line-height: 1.2;
@@ -30,7 +30,7 @@ const Tag = cite ? 'cite' : 'span';
   .caption {
     color: var(--fg-color);
     font-size: 1.4rem;
-    line-height: calc(var(--unit) * 2);
+    /* line-height: calc(var(--unit) * 2); */
     font-weight: 500;
     width: 100%;
     text-shadow: none;

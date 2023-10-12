@@ -62,15 +62,9 @@ const { split, flip, slide } = Astro.props;
   @media not (display-mode: browser) {
     section {
       font-size: 0;
-      margin-block-start: calc(var(--unit) * 2);
       scroll-snap-align: start;
-      scroll-margin-block-start: calc(var(--unit) * 2);
-      height: calc( 100% - (var(--unit) * 2));
+      height: 100%;
       cursor: none;
-    }
-
-    section:last-of-type {
-      margin-block-end:  calc(var(--unit) * 2);
     }
 
     section div {

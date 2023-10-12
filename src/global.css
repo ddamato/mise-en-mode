@@ -3,7 +3,7 @@
 }
 
 :root {
-  --unit: 5vmin;
+  --unit: calc(2vmin + 2rem);
   --tan-100: #ffb53d;
   --tan-300: #c58522;
   --tan-500: #965e01;

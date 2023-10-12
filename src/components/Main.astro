@@ -7,7 +7,6 @@ import Logo from '@components/Logo.astro';
 
   main {
 		margin-inline: auto;
-		padding-block-start: calc(var(--unit) * 2);
 	}
 
 	div {
@@ -40,14 +39,16 @@ import Logo from '@components/Logo.astro';
 </style>
 
 <main>
+	<div style="min-height: calc(var(--unit) * 2)"></div>
   <Section flip split>
     <div>
-		<Logo/>
-		<div class="lockup">
-			<small>(Fr. pronunciation: [miz ɑ̃n‿mɔd])</small>
-			<span>“placement in mode”</span>
+			<Logo/>
+			<div class="lockup">
+				<small>(Fr. pronunciation: [miz ɑ̃n‿mɔd])</small>
+				<span>“placement in mode”</span>
+			</div>
 		</div>
-	</div>
   </Section>
   <slot/>
+	<div style="min-height: calc(var(--unit) * 2)"></div>
 </main>
