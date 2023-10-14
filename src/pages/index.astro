@@ -51,26 +51,28 @@ import Author from '@components/Author.astro';
 			</Media>
 
 			<p>In this example, we have a section of a pricing page. Each card has some text, a button, and maybe some links. What many folks who use tokens might do is create tokens that describe the concept of inverse, highlight, or accent to support the difference between each of the cards and the rest of the page. Maybe text onaccent, or button background onaccent, et cetera. After all it is just a small part of the larger experiences. What harm could be done?</p>
-				
-			<p>While that might seem reasonable at first, things may get out of hand over time. What happens if we need a text input? Maybe that input has an error that needs to be displayed? How do you account for that?</p>
 
-			<p>If your answer is more tokens, you're going to find that you'll end up trying to have an onaccent version of every semantic token you have. You'll have to cover every possibility of each element appearing in this accented area of the page; at least doubling your token set. I don't know about you, but I'm trying to maintain <em>fewer</em> tokens, not more.</p>
 		</Section>
 
-		<Section slide>
-			<Media src="/media/purpose.png" alt="">
-				Lots of tokens!
+		<Section>
+			<Media src="/media/ondark-tokens.png" alt="">
+				10 tokens to cover only the card and button
 			</Media>
+
+			<p>What happens if we need a text input? Maybe that input has an error that needs to be displayed? How do you account for that?</p>
+
+			<p>If your answer is more tokens, you're going to find that you'll end up trying to have an accent version of every semantic token you have. You'll have to cover every possibility of each element appearing in this accented area of the page; at least doubling your token set; or in this case tripling it. I don't know about you, but I'm trying to maintain <em>fewer</em> tokens, not more.</p>
+			
 		</Section>
 
 		<Section>
 			<p>What I recommend is to instead consider each card as a separate mini-region which creates a scope of new values. There's a few benefits to this, one of which is <strong>no new tokens</strong>. The button background continues to use the button background token just with a new value applied in the same way that you might apply new values for dark mode.</p>
 
 			<Media src="/media/pricing-tokens.png" alt="">
-				Pricing page marked with treatments and tokens
+				A token decrease of 60%!
 			</Media>
 
-			<p>In this way, each card is a boundary for new values for the same elements. It's functionally the same text, button, and links just visually changed by existing within a new scope all co-existing on the same page.</p>
+			<p>In this way, each card is a boundary for new values for the same elements and tokens. It's functionally the same text, button, and links just visually changed by existing within a new scope all co-existing on the same page.</p>
 
 			<p>Keep this idea, put it in your pocket, and let's save it for later.</p>
 		</Section>
@@ -92,15 +94,7 @@ import Author from '@components/Author.astro';
 		</Section>
 		
 		<Section slide>
-			<Complement view="start">
-				Looking top down, small field-of-view
-			</Complement>
-		</Section>
-
-		<Section slide>
-			<Complement view="end">
-				Adding space between the colored objects
-			</Complement>
+			<Complement view="start"/>
 		</Section>
 
 		<Section slide>
