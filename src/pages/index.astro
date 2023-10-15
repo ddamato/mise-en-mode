@@ -43,25 +43,26 @@ import Author from '@components/Author.astro';
 			</Media>	
 		</Section>
 
-		<Section split>
+		<Section>
 			<p>There's no shortage of articles on token naming, <a href="https://blog.damato.design/posts/tokens-as-intents/">even I have one</a>. If you don't have an opinion about naming tokens, are you even interested in design systems? While I won't go into opinions about the best naming scheme here, I was frustrated with one particular recommendation that I kept seeing across the community. So much so, that I did what all of us do when we are upset at the internet; <a href="https://blog.damato.design/posts/ondark-virus/">I wrote a blog post</a>.</p>
 
-			<Media float src="/media/pricing.png" alt="">
-				Pricing page with different tiers
-			</Media>
+			<Media src="/media/pricing.png" alt=""/>
 
-			<p>In this example, we have a section of a pricing page. Each card has some text, a button, and maybe some links. What many folks who use tokens might do is create tokens that describe the concept of inverse, highlight, or accent to support the difference between each of the cards and the rest of the page. Maybe text onaccent, or button background onaccent, et cetera. After all it is just a small part of the larger experiences. What harm could be done?</p>
+			<p>In this example, we have a section of a pricing page. Each card has some text, a button, and maybe some links.</p>
 
 		</Section>
 
-		<Section>
-			<Media src="/media/ondark-tokens.png" alt="">
-				10 tokens to cover only the card and button
+		<Section split>
+			<p> What many folks who use tokens might do is create tokens that describe the concept of inverse, highlight, or accent to support the difference between each of the cards and the rest of the page. Maybe text accent, or button background accent, et cetera. After all it is just a small part of the larger experiences. What harm could be done?</p>
+
+			<Media float src="/media/ondark-tokens.png" alt="">
+				Now with 250% more tokens!
 			</Media>
 
-			<p>What happens if we need a text input? Maybe that input has an error that needs to be displayed? How do you account for that?</p>
+			<p>What should happen if we need to add a text input within these cards? Maybe that input has an error that needs to be displayed? How do you account for these additions?</p>
 
-			<p>If your answer is more tokens, you're going to find that you'll end up trying to have an accent version of every semantic token you have. You'll have to cover every possibility of each element appearing in this accented area of the page; at least doubling your token set; or in this case tripling it. I don't know about you, but I'm trying to maintain <em>fewer</em> tokens, not more.</p>
+			<p>If your answer is more tokens, you're going to find that you'll end up trying to have an accent variation of every semantic token you have. You'll have to cover every possibility of each element appearing in this accented area of the page; at least doubling your token set; or in this case <strong>tripling</strong>.</p>
+			<p>I don't know about you, but I'm trying to maintain <em>fewer</em> tokens, not more.</p>
 			
 		</Section>
 
@@ -72,74 +73,57 @@ import Author from '@components/Author.astro';
 		<Section>
 			<p>What I recommend is to instead consider each card as a separate mini-region which creates a scope of new values. There's a few benefits to this, one of which is <strong>no new tokens</strong>. The button background continues to use the button background token just with a new value applied in the same way that you might apply new values for dark mode.</p>
 
-			<Media src="/media/pricing-tokens.png" alt="">
-				A token decrease of 60%!
-			</Media>
+			<Media src="/media/pricing-tokens.png" alt=""/>
 
 			<p>In this way, each card is a boundary for new values for the same elements and tokens. It's functionally the same text, button, and links just visually changed by existing within a new scope all co-existing on the same page.</p>
 
 			<p>Keep this idea, put it in your pocket, and let's save it for later.</p>
 		</Section>
 
-		<Section slide>
+		<Section>
+			<p>That blog post was simply meant as a response to a repeated harmful practice. At the time, my real focus was how we might expand other themable properties into semantic naming. Is semantic naming for border radius possible? Spoiler, <a href="https://blog.damato.design/posts/meaningless-curves/">no it's not</a>, but what about spacing?</p>
+
 			<Callout>
 				How might we introduce semantic naming for space?
 			</Callout>
 		</Section>
 
-		<Section slide>
-			<Media src="/media/non-semantic.png" alt="">
-				Where does <code>space-4</code> go?
-			</Media>
-		</Section>
-		
-		<Section slide>
-			<Complement view="start"/>
-		</Section>
-
-		<Section slide>
-			<Complement view="move">
-				Creating space between objects by moving
-			</Complement>
-		</Section>
-
-		<Section slide>
-			<Complement view="zoom">
-				Creating space by zooming the field-of-view
-			</Complement>
-		</Section>
-
 		<Section split>
 
-			<p>That blog post was simply meant as a response to a repeated harmful practice. At the time, <a href="https://complementary.space/">my real focus</a> was how we might expand other themable properties into semantic naming. Is semantic naming for border radius possible? Spoiler, <a href="https://blog.damato.design/posts/meaningless-curves/">no it's not</a>, but what about spacing?</p>
+			<Media float src="/media/non-semantic.png" alt=""/>
 
-			<p>Spacing tokens in many design systems are either published as T-shirt sizing or propotional amounts, neither of which are semantic; <strong>the names of these tokens give no indication about where to use them</strong>. Think about if a person was asked to markup an interface with only a list of token names. It is logical that the semantic token name <code>button-bgcolor</code> is meant to color button backgrounds. While the proportional scale token <code>space-4</code> gives no indication where it should be applied using only the token name.</p>
+			<p>Spacing tokens in many design systems are either published as T-shirt sizing or propotional amounts, neither of which are semantic; <strong>the names of these tokens give no indication about where to use them</strong>.</p>
 				
-				<p>I had determination to discover if there was a way to mark where space should be applied, influenced later by a set of design decision values. Turns out, there is! You just need to think of space in a new way.</p>
+			<p>Think about if a person was asked to markup an interface with only a list of token names. It is logical that the semantic token name <code>button-bgcolor</code> is meant to color button backgrounds. While the proportional scale token <code>space-4</code> gives no indication where it should be applied using only the token name.</p>
 
-			<Complement float alt="">
-				Creating space can occur either by moving objects or zooming the field-of-view
-			</Complement>
+				
+			<p>I had determination to discover if there was a way to mark where space should be applied, influenced later by a set of design decision values. Turns out, there is! You just need to think of space in a new way.</p>
 
-			<p>In this example, there are two colored objects set some distance apart. We are observing the objects, top-down, through a narrow field-of-view. </p>
-			
-			<p>One way we could create more space between these objects is by physically translating them in the environment to be further from each other. </p>
-			
-			<p> However, there is another way. We can make the objects appear farther from each other by <em>zooming the camera</em>. This allows us to set the objects at a fixed distance and change the field-of-view to adjust the perceived amount of space between the objects. </p>
-			
-			<p>Importantly, this isn't recommending to change the scale of the elements, just the space between those elements. Think of being able to only affect the space, without changing the visual size of the objects themselves.</p>
-
-			<p>In theory, what this could mean is applying a single spacing token that means “space goes here” and then a designer determines how much space by deciding “how much zoom”. In this way, <strong>we no longer need to have naming at all</strong> if the density increases as you go deeper into the interface and areas are simply marked to go one step down. Going multiple levels at once is a matter of nesting multiple regions. This is appropriate because as areas become smaller, the amount of room to place items becomes less and content appears more dense.</p>
-
-			<p>In practice, I recommend two spacing tokens for the concepts of “near” and “away”. In fact, these map nicely to where the expected use should be, “gap” and “inset” (ie., padding). From here, regions are marked as a shift in density as needed through design requirements. In other words, this approach doesn't take the decision of how to apply space from the design responsibility, it merely redistributes that responsibility as an exercise of identifying changing areas of users' needs.</p>
-
-			<p>Returning to the example of applying tokens by name, now the person can identify where padding and gap should be applied and <strong>choose the appropriate token every time</strong>. No fudging space off the scale, no wasted time measuring the right amount of space. The exercise of choosing space is off-loaded to a decision about how dense any given area should be. Designers now choose how many areas and where they belong.</p>
 		</Section>
 
-		<Section slide>
+		<Section>
+
+			<p>In order to provide meaning to space, I wanted to ground my understanding in why we apply space at all. I adopted the Gestalt Principle of Proximity to guide my exploration.</p>
+
+			<Callout cite caption="Gestalt Principle of Proximity">
+				Objects closer together are perceived as more related
+			</Callout>
+
+			<p>It was also important to me that whatever the solution of this exploration, that it achieved the same visual results in comparison to existing best practices, with few exceptions if at all. I referred to <a href="https://medium.com/eightshapes-llc/space-in-design-systems-188bcbae0d62">Nathan Curtis's article about space</a> throughout this work as his outlook has been adopted by community several times over.</p>
+
+		</Section>
+
+		<Section>
+			
+			<p>The result of that research was called <a href="https://complementary.space/">Complementary Space</a>. A technique that suggests we can mark an area with a single token that means “space goes here” and then a designer determines how much space in a new way; using regions.</p>
+
 			<Media src="/media/complementary.png" alt="">
-				Example from Nathan Curtis's article, Space in Design Systems.
+				Example from Nathan Curtis's article, “Space in Design Systems” and similar results using Complementary Space.
 			</Media>
+
+			<p>Each region determines what the value of space is within. You can create different amounts of space by assigning a different value for the tokens in that region.</p>
+
+			<p>In this way, <strong>we no longer need to have space token naming at all!</strong> If the regions are the scale, and each region goes down one level of space, you can go down multiple levels by continuing to nest regions. Only going in a decreasing direction is appropriate because as we traverse deeper into an interface, there is less room and compositions are naturally more compact.</p>
 		</Section>
 
 		<Section>
@@ -150,40 +134,42 @@ import Author from '@components/Author.astro';
 			</Callout>
 
 		</Section>
-		<Section split>
-			<p>What I've found is that breaking down interface design into the foundational concepts of layout, content, and appearance help clearly define the responsibilities.</p>
+		<Section>
+			<Media src="/media/project-management.png" alt=""/>
 
-			<p>Layout is the most important one of these. You cannot change appearance without having elements in the layout to provide style and you cannot place content without it immediately becoming layout.</p>
+			<p>This is a low-fidelity wireframe of an interface. You might have a accurate guess of what it might represent. The more important question is <strong>how are you able to guess?</strong> There's no content clearly describing what to do, or branding to identify the product. How can we assume what this is meant for without these markers?</p>
 
-			<Media float src="/media/project-management.png" alt="">
-				How do you know what this wireframe represents?
-			</Media>
-
-			<p>The value of a layout is an element which must eventually contain content with appearance; best represented as a wireframe. When we choose elements for a layout, we are (hopefully) adding them with purpose, hierarchy, and user input in mind.</p>
-			
-			<p>As an example, the layout of a project management tool should both be immediately identifiable and different from the layout of a social media site to be the most successful.</p>
-			
-			<p>Even when the layout does change, in the case of right-to-left languages or responsive reflow, the purpose, hierarchy and methods of user input should persist. Changing any of these creates a new experience, even if slightly.</p>
+			<p>The answer is Jakob's Law of Familiarity.</p>
 
 		</Section>
 
-		<Section>
-			<Callout cite caption="Jakob's Law of familiarity" href="https://www.nngroup.com/videos/jakobs-law-internet-ux/">
-				People leverage previous experience to help them in understanding new experiences.
+		<Section split>
+			<Callout float cite caption="Jakob's Law of Familiarity" href="https://www.nngroup.com/videos/jakobs-law-internet-ux/">
+				Users prefer experiences that seem familiar.
 			</Callout>
 
-			<p>In the way we have begun to use the term within the design system practice, it is no longer only user input that could change the results, but a configuration of the system itself. Consider the password field with a hidden input as a mode provided by the system. Another way to think of this of input is via tokens; the user applies the same token but the interface renders a different result because of the active mode.</p>
+			<p>Wireframes represent layout; a blueprint to follow. When we choose elements for a layout, we are (hopefully) adding them with purpose, hierarchy, and user input in mind based on user's expectations learned over a period of time.</p>
+			
+			<p>As an example, the layout of a project management tool should both be immediately identifiable and different from the layout of a social media site to be the most successful. Even when the layout does change, in the case of right-to-left languages or responsive reflow, the purpose, hierarchy and methods of user input should persist. Changing any of these creates a new experience, even if slightly.</p>
 
-			<p>From here, we can use a mode to describe a change that needs to affect the entire page or (more innovately) part of the page. This area needs to be dense, this needs to standout, this needs to show another brand. From here what's stopping us from putting a mode <em>inside</em> a mode?</p>
-
+			<p>In the design system practice, we attempt to identify these user expectations and document them as reusable patterns and best practices. From here, designers can use mode to describe a change that needs to affect the entire page or (more innovately) part of the page: this area needs to be dense, this needs to standout, this needs to show another brand. <strong>A mode is a reusable expression as purposely selected values.</strong> As an example, “high contrast mode” is the collection of values curated together to convey a high contrast between content and surfaces, often meant to increase legibility.</p>
+				
+			<p>From here, what's stopping us from putting a mode <em>inside</em> a mode?</p>
 		</Section>
 
 		<Section slide>
-			<Media src="/media/config.mp4" alt=""/>
+			<Media src="/media/config.mp4" alt="">
+				Dylan Field demonstrating dynamic modes at Config 2023
+			</Media>
 		</Section>
+		
+		<Section>
 
-		<Section slide>
 			<Media src="/media/xzibit.png" alt=""/>
+
+			<p>That's why I've have called this technique <strong>mise en mode</strong> meaning “placement in mode”. A play on the art history term <a href="https://en.wikipedia.org/wiki/Mise_en_abyme">mise en abyme</a>, which is the act of creating smaller artwork within a larger composition. In this idea, an experience is designed as a nested collection of modes, each with a specific purpose for being there by design. Each mode provides new values to existing tokens for a shared purpose. This means that some semantics are moved from the tokens, to these new rectangular boundaries of the interface. Tokens are now simplified to naming elements and properties.</p>
+
+			<p>This isn't too far from web development community wanting container queries after having media queries in a component driven architecture. We want components to be self contained and locally responsive within a larger experience.</p>
 		</Section>
 
 		<Section slide>
@@ -198,18 +184,14 @@ import Author from '@components/Author.astro';
 
 		<Section slide>
 			<Media src="/media/progressive-enhancement.png" alt="">
-				Functionally identical with expressive enhancement
+				Functionally identical with “expressive enhancement”
 			</Media>
 		</Section>
 
 		<Section split>
-			<p>That's why I've have called this technique “<strong>mise en mode</strong>” meaning placement in mode. A play on the art history term <a href="https://en.wikipedia.org/wiki/Mise_en_abyme">mise en abyme</a>, which is the act of creating smaller artwork within a larger composition. In this idea, an experience is designed as a nested collection of modes, each with a specific purpose for being there by design. Each mode provides new values to existing tokens based on that purpose. This means that some semantics are moved from the tokens, to these new rectangular boundaries of the interface. Now the tokens are then simplified to naming categories and properties.</p>
-
-			<p>This isn't too far from web development community wanting container queries after having media queries in a component driven architecture. We want micro experiences to be self contained and work within a larger experience.</p>
-
 			<Callout float>There is no critical button,<br> only a button in a critical mode.</Callout>
 
-			<p>Taking this a step further, and maybe too far for some but, perhaps there is no critical button, only a button that exists in a critical mode. When a double confirm modal appears the content of that modal is meant to display as wholly critical. It is not just the button. Therefore we could treat the entire region as critical and adjust the appearance through the scoping the token values to this boundary.</p>
+			<p>Taking this a step further, and maybe too far for some but, perhaps there is no critical button, only a button that exists within a critical mode. When a double confirm modal appears the content of that modal is meant to display as wholly critical. It is not just the button. Therefore we could treat the entire region as critical and adjust the appearance through the scoping the token values to this boundary.</p>
 
 			<p>This would mean that the error states of input fields might not be a state, but a mode caused by the input of the user. This could be scoped to individual fields or the entire form as necessary. An area meant to slow the user down would be given a different treatment than the rest of the interface.</p>
 		</Section>
@@ -220,16 +202,10 @@ import Author from '@components/Author.astro';
 			</Media>
 		</Section>
 
-		<Section>
+		<Section slide>
 			<Media src="/media/github-danger.png" alt="">
 				A critical “mode” within the larger page at Github.com
 			</Media>
-		</Section>
-
-		<Section>
-			<p>So how might we determine when something should be a token versus a mode? If the concept exists across modes, it is a good candidate to be a token. A button will exist across modes, but a state (eg., critical) could be considered a specific mode.</p>
-				
-			<p>Be careful. Hierarchy is not state but structure and should persist between modes. Primary and secondary are herarchical. The lowest fidelity wireframes will help suggest the difference and inform necessary tokens. Wireframes are effectively a modeless representation of the experience. So the best way to name your tokens is to audit your lowest fidelity wireframes, identify the elements, and group them by purpose.</p>
 		</Section>
 
 		<Section>
@@ -250,7 +226,7 @@ import Author from '@components/Author.astro';
 		</Section>
 
 		<Section slide>
-			<Media src="/media/project-expression.png" alt=""/>
+			<Media src="/media/project-expression.png" alt="">Jira by Atlassian; one expression of project management</Media>
 		</Section>
 
 		<Section slide>
