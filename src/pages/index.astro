@@ -96,9 +96,6 @@ import Author from '@components/Author.astro';
 				
 			<p>Think about if a person was asked to markup an interface with only a list of token names. It is logical that the semantic token name <code>button-bgcolor</code> is meant to color button backgrounds. While the proportional scale token <code>space-4</code> gives no indication where it should be applied using only the token name.</p>
 
-				
-			<p>I had determination to discover if there was a way to mark where space should be applied, influenced later by a set of design decision values. Turns out, there is! You just need to think of space in a new way.</p>
-
 		</Section>
 
 		<Section>
@@ -148,11 +145,11 @@ import Author from '@components/Author.astro';
 				Users prefer experiences that seem familiar.
 			</Callout>
 
-			<p>Wireframes represent layout; a blueprint to follow. When we choose elements for a layout, we are (hopefully) adding them with purpose, hierarchy, and user input in mind based on user's expectations learned over a period of time.</p>
+			<p>Wireframes represent layout; a blueprint to follow. When we choose elements for a layout, we are (hopefully) adding them with purpose, hierarchy, and user input in mind based on user's expectations learned over a period of time. We are following a blueprint whether we know it or not.</p>
 			
 			<p>As an example, the layout of a project management tool should both be immediately identifiable and different from the layout of a social media site to be the most successful. Even when the layout does change, in the case of right-to-left languages or responsive reflow, the purpose, hierarchy and methods of user input should persist. Changing any of these creates a new experience, even if slightly.</p>
 
-			<p>In the design system practice, we attempt to identify these user expectations and document them as reusable patterns and best practices. From here, designers can use mode to describe a change that needs to affect the entire page or (more innovately) part of the page: this area needs to be dense, this needs to standout, this needs to show another brand. <strong>A mode is a reusable expression as purposely selected values.</strong> As an example, “high contrast mode” is the collection of values curated together to convey a high contrast between content and surfaces, often meant to increase legibility.</p>
+			<p>In the design system practice, we attempt to identify these user expectations and document them as reusable patterns and best practices. From here, designers can use modes to describe a change that needs to affect the entire page or (more innovately) part of the page: this area needs to be dense, this needs to standout, this needs to show another brand. <strong>A mode is a reusable expression as purposely selected values.</strong> As an example, “high contrast mode” is the collection of values curated together to convey a high contrast between content and surfaces, often meant to increase legibility.</p>
 				
 			<p>From here, what's stopping us from putting a mode <em>inside</em> a mode?</p>
 		</Section>
@@ -167,9 +164,9 @@ import Author from '@components/Author.astro';
 
 			<Media src="/media/xzibit.png" alt=""/>
 
-			<p>That's why I've have called this technique <strong>mise en mode</strong> meaning “placement in mode”. A play on the art history term <a href="https://en.wikipedia.org/wiki/Mise_en_abyme">mise en abyme</a>, which is the act of creating smaller artwork within a larger composition. In this idea, an experience is designed as a nested collection of modes, each with a specific purpose for being there by design. Each mode provides new values to existing tokens for a shared purpose. This means that some semantics are moved from the tokens, to these new rectangular boundaries of the interface. Tokens are now simplified to naming elements and properties.</p>
+			<p>That's why I've have called this technique <strong>mise en mode</strong>, meaning “placement in mode”. It is a play on the art history term <a href="https://en.wikipedia.org/wiki/Mise_en_abyme">mise en abyme</a>, which is the act of creating smaller artwork within a larger composition. In this idea, an experience is designed as a nested collection of modes, each with a specific purpose for being there by design. Each mode provides new values to existing tokens for a shared purpose. This means that some semantics are moved from the tokens, to these new rectangular boundaries of the interface. Tokens are now simplified to naming elements and properties.</p>
 
-			<p>This isn't too far from web development community wanting container queries after having media queries in a component driven architecture. We want components to be self contained and locally responsive within a larger experience.</p>
+			<p>For the folks familiar with React, this is the difference between prop drilling to every component and instead reading from some <code>useContext()</code> provider higher in the tree.</p>
 		</Section>
 
 		<Section slide>
@@ -191,9 +188,7 @@ import Author from '@components/Author.astro';
 		<Section split>
 			<Callout float>There is no critical button,<br> only a button in a critical mode.</Callout>
 
-			<p>Taking this a step further, and maybe too far for some but, perhaps there is no critical button, only a button that exists within a critical mode. When a double confirm modal appears the content of that modal is meant to display as wholly critical. It is not just the button. Therefore we could treat the entire region as critical and adjust the appearance through the scoping the token values to this boundary.</p>
-
-			<p>This would mean that the error states of input fields might not be a state, but a mode caused by the input of the user. This could be scoped to individual fields or the entire form as necessary. An area meant to slow the user down would be given a different treatment than the rest of the interface.</p>
+			<p>Taking this a step further, and maybe too far for some but, perhaps there is no critical button, only a button that exists within a critical mode. When a double confirm modal appears the content of that modal is meant to display as wholly critical. It is not just the button. Therefore we could treat the entire region as critical and adjust the appearance through the scoping the token values to this boundary. This isn't so far-fetched when looking at existing patterns.</p>
 		</Section>
 
 		<Section slide>
@@ -202,35 +197,36 @@ import Author from '@components/Author.astro';
 			</Media>
 		</Section>
 
-		<Section slide>
+		<Section>
+
 			<Media src="/media/github-danger.png" alt="">
 				A critical “mode” within the larger page at Github.com
 			</Media>
-		</Section>
 
-		<Section>
+			<p>In the above example, Github profiles have a Danger Zone. While this area could have been given the same treatment as the rest of the page, the designers felt it would have more impact to convey a sense of danger. This could be done by curating a different expression through use of new color values for the properties of elements within this area. You can notice the rest of the style is otherwise identical to the larger experience. This means you can change just the values you need while defaults can support the rest. When new expressions aren't dependent on new tokens, flexibility makes this a powerful design paradigm.</p>
 
-			<p>Now it's time for a quiz:</p>
-
-			<Media src="/media/which-mode.png" alt=""/>
-
-			<p>My answer: <strong>I don't know</strong>. What is the purpose of this treatment? Is it meant to help with reading, improve battery performance, portray a brand identity, another user need entirely? Tell me <em>why you need it</em>, bring the data, and then it can have an everlasting name as a mode.</p>
-
-			<p>Choosing what colors represent that mode? Don't ask me, I'm legally color-blind! 😎</p>
+			<p>With great power, comes great responsibility.</p>
 
 		</Section>
 
-		<Section>
+		<Section split>			
 
-			<p>What we aim to achieve in the design system practice is to identify the patterns that have developed across experiences and provide a means for repeating their socially agreeable purpose; a library of functions. The naming convention we provide to tokens is meant to describe how modes can affect the presentation of these functions; a collection of forms. <strong>Mise en mode is the practical application of form following function.</strong> Tokens describing the presentational qualities of functions. Modes providing the values for that presentation as clearly defined forms.</p>
+			<Media float src="/media/which-mode.png" alt=""/>
+
+			<p>My answer to the question in <a href="https://twitter.com/mikemai2awesome/status/1701691579931435091">Mike Mai's tweet</a>: <em>I don't know</em>.</p>
+				
+			<p>What is the purpose of this treatment? Is it meant to help with reading, improve battery performance, portray a brand identity, or another user need entirely? What message is this mode meant to convey? As a design system maintainer, I don't have many opinions about the values of color. As long as there's an appropriate amount of contrast, you can select whatever you want! What matters is the purpose; why is this treatment needed?</p>
+
 		</Section>
 
 		<Section slide>
 			<Media src="/media/project-expression.png" alt="">Jira by Atlassian; one expression of project management</Media>
 		</Section>
 
-		<Section slide>
-			<Media src="/media/purpose.png" alt=""/>
+		<Section>
+			<p>I believe mise en mode is an approach to support creativity and expression while maintain a systems approach to user experience design. Rounded corners, purple gradients, and florished typography can all be applied as a mode to an underlying familiar structure. A functional layout provides the guardrails of user expectation, while tokens provide a style-by-name interface to convey a form of expression. <strong>Mise en mode is the practical application of form following function.</strong> So maybe to some, they're just rectangles on the internet, or maybe...</p>
+
+			<Media src="/media/purpose.png" alt="they're rectangles burdened with glorious purpose"/>
 		</Section>
 
 		<Section slide>
