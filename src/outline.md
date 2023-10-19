@@ -1,51 +1,80 @@
-- Rectangles are important
-    - Schema, Lauren LoPrete
-    - Rectangles IRL
-    - The missing link (with semantic tokens)
-    - How we might execute design decisions not through complex token naming but using the boundaries of rectangles.
-- Design with intentions
-    - What does "semantic" mean?
-    - The "smedium" test
-    - Examples of semantic
-    - Why is semantic naming so important?
-        - Dark mode
-        - Private labeling
-- Ondark Virus
-    - Wrote this is frustration about the token explosion that comes with adding "ondark" tokens.
-    - Example of the problem.
-        - Footer CTA, inverted area
-        - Add more components, requires more "ondark" tokens
-        - Eventually you have 2x times the tokens
-    - Solution: use the same tokens with different values
-        - Scope the values to the area, name this with purpose. Why are you making this change?
-    - Light and dark are NOT semantic. Is this treatment a callout, campaign, low-power, high-contrast? Why is it different?
-- Complementary Space
-    - Wrote this as an exploration about what a truly semantic spacing system might look like.
-    - Example of the problem.
-    - Describe space in terms of relationships not amounts.
-    - "How closely related is this thing related to other things?"
-    - Group apples and oranges.
-    - Change the frame (rectangle) of reference in the same environment. Shrinking test. Update the ruler at every rectangle.
-    - If you want have more space, zoom out your frame of reference. If you want less, zoom in.
-    - Nathan Curtis recommends less spacing options, Hicks Law.
+- Preface
+    - Title.
+    - Thank Jina.
+    - Thank Sean.
+    - Thank Jen.
+- Introduction
+    - Donnie D'Amato
+    - Design Systems House
+    - GoDaddy
+    - Parsons
+    - New York with wife who also works in design systems
+- Schema
+    - Attending schema last year
+    - Lauren LoPrete's talk
+    - Walks the audience down her path of growing influence within her teams
+    - Building trustworthy relationships is key to success in our practice
+- Rectangles
+    - Final slide of Lauren's talk
+    - Inverse kinematics on 3 dimensional soft bodies
+    - Rectangles are changing humanity, we're practically dependent on them
+    - Rectangles make the world go 'round, socio-economically speaking
+    - Rectangles are a gateway into a whole new design paradigm
+- Ondark virus, intro
+    - No shortage of articles about naming design tokens
+    - One practice that kept reoccurring
+    - Wrote a blog post in frustration
+- Ondark virus, problem
+    - Example is a pricing page with several tiers
+    - Each tier with a different treatment to indicate a product being more premium than the next.
+    - How might we support this with design tokens?
+- Ondark virus, bad solution
+    - Create tokens that cover all the new variations
+    - What happens if we need an input, and also an error on the input
+    - Multiplies the number of tokens, doubled or tripled
+- Ondark virus, simplified
+    - To help see the solution, here's another example of something fairly common; white page with a dark footer.
+    - Instead of text-ondark and button-ondark, consider this region to be a mini dark mode.
+    - Then we use the same tokens we've used for the larger page, just with new values within the footer.
+- Ondark virus, solution
+    - So for our pricing page example, we don't create new tokens just assign new values based on the region.
+    - It is functionally the same text, button, and links, just with a new visual treatment.
+- Complementary space, intro
+    - That was just a blog post, my real focus over the past year was this question: How might we introduce semantic naming for space?
+    - T-shirt sizing and propotional naming are not semantic. The name gives no indication as to where the token should go.
+    - Important to understand why we apply space, Gestalt principle of proximity
+    - Important to provide similar results to existing best practices.
+    - To do that, Nathan's article on space was also largely influencial to me. Achieving similar visual results to what he originally recommended was important.
+- Complementary space, solution
+    - 3 cards, the left is the final result.
+    - The middle is the version from Nathan's article, marked up in the way he recommends using SASS like spacing tokens
+    - The right is using Complementary Space. We mark a single spot as "space goes here", and then the region where the spot is will determine all space for the region.
+    - In this way, we don't need naming at all!
+    - Regions can bet set to always decrease space as compositions become more dense the deeper you go. Going down multiple levels is nesting multiple regions.
+- Connected
+    - After finishing, I paused the reflect on the work. I realized that both of these techniques were effectively the same.
+    - What are the shared principles in these approaches?
+    - The question is not "what is this a wireframe of?" it is "how do you know, what this is a wireframe of?".
+    - Jakobs law of familiarity. Users prefer experiences that seem familiar.
+    - The project management tool structure should be immediately identifiable and different from a social media site.
+    - The underlying blueprint directs the function of the experience
+    - In the design system practice, we attempt to identify these user expectations and document them as reusable patterns and best practices.
+    - From here we can provide different content or appearance to these patterns using a mode.
+    - A mode is a reusable expression as purposely selected values.
+    - What is stopping us from mode inside a mode?
 - Mise en mode
-    - The previous ideas are very similar; creating a boundary which has new qualities for the elements inside.
-    - This region is different because:
-        - There's critical information that the user needs to see.
-        - There's a lot of information that we need the user to review.
-        - This is a different kind of task.
-        - This is a promotion.
-        - NOT. I think it looks _cooler_.
-    - Art history, mise en abyme
-    - What is a "mode"?
-        - Caps Lock, settings produce different results
-        - A theme with a purpose; a semantic theme.
-        - The mode affects appearance for a purpose.
-        - Layout vs. Content vs. Appearance
-        - Wireframe is MODELESS
-        - Encoding hierarchy (heading/paragraph, primary/secondary) into layout...
-        - "There is no critical button, only a button that exists in a critical mode."
-    - Difference between critical button and critical mode
-    - Designing with meaningful rectangles
-        - 
-        - Consider designing by identifying areas of intentful boundaries; like wireframing.
+    - Placement in mode
+    - Art history, mise en abyme. Coat of arms.
+    - In this idea, an experience is designed as a nested collection of modes, each with a specific purpose for being there by design. Each mode provides new values to existing tokens for a shared purpose. This means that some semantics are moved from the tokens, to these new rectangular boundaries of the interface. Tokens are now simplified to naming elements and properties.
+    - In the light page, dark footer example, we can see an expressive enhancement using this technique. It's the same structure for both, but the footer in one is meant to stand out.
+    - There is no critical button, only a button that exists within a critical mode.
+    - Atlassian Design, danger modal
+    - Github profile, danger zone
+- Quiz
+    - Is this light mode or dark mode?
+    - I don't know, what is the purpose?
+    - Asking “why?” about new designs often starts conflict because it puts designers on defense and often why designers go rogue.
+    - So here's one weird trick for designers to get the look they want using mise en mode; name the mode just like you would a component.
+    - In the same way we create components to perform a function, we can create modes to express a form.
+- Conclusion
+    - I believe mise en mode is a powerful approach to support creativity and expression while maintaining a system to user experience design. Rounded corners, purple gradients, and flourished typography can all be applied as a mode to an underlying familiar structure. A functional layout of rectangles provide the guardrails of user expectation, while tokens provide a style-by-name interface to convey a form of expression within. Mise en mode is the practical application of form following function. So maybe to some, they're just rectangles on the internet, or maybe they're just rectangles burdened with glorious purpose.
