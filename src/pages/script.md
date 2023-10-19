@@ -1,3 +1,7 @@
+---
+layout: '@layouts/Layout.astro'
+---
+
 - Hi folks, the name of my talk is Mise en mode. We'll get to what that is in a few minutes. For the French speakers in the audience, don't get ahead of me.
 - Before we begin, I want to thank Jina for providing me a platform and community to present. I want to thank my coworker Sean Rice for ensuring me that I wasn't completely crazy. And thank you to my wife Jen for hearing this talk dozens of times, thankful that I'm now across the country.
 [SLIDE](name)

@@ -1,11 +1,13 @@
 ---
 import Head from '@components/Head.astro';
+const { file } = Astro.props;
+const clean = file && file.endsWith('md');
 ---
 
 <!doctype html>
 <html lang="en">
 	<Head { ...Astro.props }/>
-	<body>
+	<body data-clean={ clean }>
 		<slot/>
 	</body>
 </html>

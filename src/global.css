@@ -18,24 +18,17 @@
   --callout-font: 'Young Serif', serif;
 }
 
-
-html {
-  background-color: var(--tan-100);
-  background-image:
-    linear-gradient(90deg, rgba(197, 134, 33, 0.5) 50%, transparent 0),
-    linear-gradient(rgba(60, 43, 15, .8) 50%, transparent 0); 
-  background-size: calc(var(--unit) * 4) calc(var(--unit) * 4); 
-  background-position: top center;
-  background-attachment: fixed;
-}
-
 body {
   margin: 0;
   font-size: 1.5rem;
   line-height: 1.5;
   font-weight: 300;
   font-family: var(--prose-font);
+}
+
+body:not([data-clean]) {
   color: var(--fg-color);
+  background-color: var(--tan-100);
   background-image: url('/colored-geometric.jpg');
   background-size: calc(var(--unit) * 12);
   background-position: top center;
