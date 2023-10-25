@@ -49,7 +49,7 @@ layout: '@layouts/Layout.astro'
 - This is a wireframe of some experience. Now I could ask, what is this a wireframe of? However, I think a more interesting question is "how do you know?". I think some of you already know what this represents, you might have even been a bit triggered. Maybe you forgot to close a ticket. It's a project management tool. But the question is, how did you know? It doesn't say project management, or Jira. There's no branding, so how?
 - The answer is because we've seen something similar before. Our prior experience is informing this newly introduced one. This is Jakob's law of familiarity, which goes on to say:
 [SLIDE](jakob)
-- User's prefer familiar experiences. This makes sense because users don't need to relearn anything. The experience will meet their expectations. That's why project management tools work the same. Social media feeds work the same. Calendar applications work the same. We've aligned into common patterns of user experience, a blueprint for how a certain experience should behave. From here, we can enhance that experience with personality. This concept was very clearly demonstrated at Config earlier this year:
+- User's prefer familiar experiences. This makes sense because users don't need to relearn anything. The experience will meet their expectations. That's why project management tools work the same. Social media feeds work the same. Calendar applications work the same. We've aligned into common patterns of user experience, a blueprint for how a certain experience should behave. From here, we can enhance that experience with personality using a new collection of values. This concept was very clearly demonstrated at Config earlier this year:
 [SLIDE](config)
 - Here is a video from the keynote where Dylan takes a predetermined app structure, wired with variables, and moves the structure into these sections which provide different values to those variables. The first being Japanese and Dark mode, the next being German and Config mode. This was exciting to see live, but I saw more potential based on the earlier work. From here, what's stopping us from putting a mode inside a mode?
 [SLIDE](xzibit)
@@ -59,7 +59,10 @@ layout: '@layouts/Layout.astro'
 [SLIDE](coat)
 - Here we can see the coat of arms for the United Kingdom in 1816, with a smaller one inside and then an even smaller one inside of that. In the case of user experience design, we can use an example from earlier.
 [SLIDE](enhancement)
-- Both of these pages are functionally identical, however the experience on the left is what I'll call expressively enhanced with mise en mode. There was a decision made that the footer needs to stand out differently from the rest of the page and this was done with a dark mode treatment. Without the treatment, we would have the same purpose, hierarchy, and input methods between them, maintaining that underlying blueprint.
+- Both of these pages are functionally identical, however the experience on the left is what I'll call expressively enhanced with mise en mode. There was a design decision made that the footer needs to stand out differently from the rest of the page and this was done with a dark mode treatment. Without the treatment, we would have the same purpose, hierarchy, and input methods between them with that underlying blueprint.
+- So if we think about an experience in this way, as rectangular boundaries that provide new values to existing tokens, it unlocks a creative freedom of expression that designers have been asking for. They can now round those corners, flourish that typography and purple those gradients using mise en mode.
+[SLIDE](purple)
+- Meanwhile the patterns and best practices we advocate as design system maintainers are the re-enforced scaffold supporting these freedoms.
 - Taking this a step further, and maybe too far for some but
 [SLIDE](critical)
 - Perhaps there is no critical button, only a button that exists within a critical mode.
@@ -68,14 +71,12 @@ layout: '@layouts/Layout.astro'
 - Here's an example of one from Atlassian's design system and we can clearly see the critical button. But I'd argue that the entire modal is meant to display as wholly critical. The icon, content, and buttons are meant to convey the expression of danger. So why not consider this a new mode?
 [SLIDE](github)
 - Here's another example from github. This is a edit profile experience and we can see the danger zone gets a different treatment than the rest of the page. We can even see the slight change between the normal button above and ones that are found in what could be a critical mode.
-- So if we think about an experience in this way, as rectangular boundaries that provide new values to existing tokens, it unlocks a creative freedom of expression that designers have been asking for. They can now round those corners, flourish that typography and purple those gradients using mise en mode.
-[SLIDE](purple)
-- Meanwhile the patterns and best practices we advocate as design system maintainers are the re-enforced scaffold supporting these freedoms. This is a powerful approach, but with great power comes great responsibility.
-- Here's a question from community member Mike Mai.
+- So not only does this approach support that creative freedom, it also can enhance a message or feeling.
+- This is a powerful approach, but with great power comes a great question. This comes from community member Mike Mai.
 [SLIDE](question)
 - He asks, is this light mode or dark mode. Take a second to think, lock in your answers. Ok show of hands, who thinks this is light mode. Ok, who thinks this is dark mode? Ok, and who has no clue. Alright, I'm with you. I don't know.
 - What is the purpose of this treatment? Is it meant to help with reading, improve battery performance, portray a brand identity, or another user need entirely? What message is this mode meant to convey?
-- Here lies the problem in our work. Asking “why?” about new designs often starts conflict because it puts designers on defense and then designers go rogue. It's hard to articulate our needs and is just easier to avoid that conflict.
+- Here lies a challenge in our work. Asking “why?” about new designs often starts conflict because it puts designers on defense and then designers go rogue. It's hard to articulate our needs and is just easier to avoid that conflict.
 - So here's one weird trick for designers to get the look they want using mise en mode; name the mode just like you would a component. Consider that other people might want to use this expression for the same reason you need it. So, give it a name that has shared meaning. For this tweet, one of the responses was "What is Jeopardy mode" and I think that was great.
 [SLIDE](jeopardy)
 - In the same way we create components to perform a function, we can create modes to express a form. In fact that is exactly what mise en mode is.
