@@ -12,10 +12,12 @@ layout: '@layouts/Layout.astro'
 - They're just rectangles on the internet. There was a collective chuckle in the crowd, myself included. It's common for us to belittle the work we do in the grand scheme of things. Here's another example from the internet.
 [SLIDE](hand)
 - There's people out there doing inverse kinematics on 3d soft bodies; it's cool stuff! And here we are arguing about if the rectangle should be gray or dark gray.
-- However, in retrospect, I wouldn't be in this room without rectangles. I wouldn't have the same career without them. In fact I wouldn't have met my wife without them; online dating! So in reality, rectangles are changing humanity, maybe we're becoming dependent on them.
-[SLIDE](dependency)
-- Rectangles make the world go 'round, socio-economically speaking.
-- I didn't know it then, but I'd come to find that rectangles are also a gateway to a whole new design paradigm.
+[SLIDE](think)
+- However, in retrospect, I wouldn't be in this room without rectangles. I wouldn't have the same career without them. In fact I wouldn't have met my wife without them; online dating! So in reality, rectangles are changing humanity, maybe we're becoming dependent on them. Rectangles make the world go 'round, socio-economically speaking.
+- I didn't know it then, but I'd come to find that rectangles are also potentially a gateway to a whole new design paradigm. One that I believe delivers what Nate is excited for here.
+[SLIDE](nate)
+- (READ TWEET)
+- Sounds like Nate might have better luck asking for a pony but this Christmas I'm the Design System Santa and I intend to make your wishes come true.
 - Alright, so there's no shortage of articles about naming design tokens.
 [SLIDE](articles)
 - Even I have one up there. If you don't have an opinion about naming tokens, are you even interested in design systems? While I won't go into opinions about the best naming scheme here, I was frustrated with one particular strategy that I kept seeing across the community. So much so, that I did what all of us do when we are upset at the internet; I wrote a blog post. So let's talk about it.
@@ -59,14 +61,14 @@ layout: '@layouts/Layout.astro'
 [SLIDE](coat)
 - Here we can see the coat of arms for the United Kingdom in 1816, with a smaller one inside and then an even smaller one inside of that. In the case of user experience design, we can use an example from earlier.
 [SLIDE](enhancement)
-- Both of these pages are functionally identical, however the experience on the left is what I'll call expressively enhanced with mise en mode. In this idea, an experience is designed as a nested collection of modes, each with a specific purpose for being there by design. Each mode provides new values to existing tokens for a shared purpose. This means that some semantics are moved from the tokens, to these new rectangular boundaries of the interface. Tokens are now often simplified to naming elements and properties.
+- Both of these pages are functionally identical, however the experience on the left is what I'll call expressively enhanced with mise en mode. In this idea, an experience is created as a nested collection of modes, each with a specific purpose for being there by design. Each mode provides new values to existing tokens for a shared purpose.
 - So if we think about an experience in this way, as rectangular boundaries that provide new values to existing tokens, it unlocks a creative freedom of expression that designers have been asking for. They can now round those corners, flourish that typography and purple those gradients using mise en mode.
 [SLIDE](purple)
-- Meanwhile the patterns and best practices we advocate as design system maintainers are the re-enforced scaffold supporting these freedoms.
+- Meanwhile the patterns and best practices we advocate as design system maintainers are the re-enforced scaffolding to support these freedoms.
 - Taking this a step further, and maybe too far for some but
 [SLIDE](critical)
 - Perhaps there is no critical button, only a button that exists within a critical mode.
-- Alright, I'm confident the system you maintain has a critical button and its used for when the user is about to do something destructive.
+- Alright, I'm confident the system you maintain has a critical button for when the user is about to do something destructive.
 [SLIDE](modal)
 - Here's an example of one from Atlassian's design system and we can clearly see the critical button. But I'd argue that the entire modal is meant to display as wholly critical. The icon, content, and buttons are meant to convey the expression of danger. So why not consider this a new mode?
 [SLIDE](github)
@@ -76,12 +78,12 @@ layout: '@layouts/Layout.astro'
 [SLIDE](question)
 - He asks, is this light mode or dark mode. Take a second to think, lock in your answers. Ok show of hands, who thinks this is light mode. Ok, who thinks this is dark mode? Ok, and who has no clue. Alright, I'm with you. I don't know.
 - What is the purpose of this treatment? Is it meant to help with reading, improve battery performance, portray a brand identity, or another user need entirely? What message is this mode meant to convey?
-- Here lies a challenge in our work. Asking “why?” about new designs often starts conflict because it puts designers on defense and then designers go rogue. It's hard to articulate our needs and is just easier to avoid that conflict.
-- So here's one weird trick for designers to get the look they want using mise en mode; name the mode just like you would a component. Consider that other people might want to use this expression for the same reason you need it. So, give it a name that has shared meaning. For this tweet, one of the responses was "What is Jeopardy mode" and I think that was great.
+- Here lies a challenge in our work. Asking “why?” about new designs often starts conflict because it puts designers on defense and then they go rogue. As humans, it's hard to articulate our needs and is just easier to avoid that conflict.
+- So here's one weird trick for designers to get the look they want using mise en mode; name the mode just like you would a component. Consider that other people might want to use this expression for the same reason you need it. So, give it a name that has shared meaning. For this tweet, one of the responses was "What is Jeopardy mode" and I think that was great. Maybe even a better name than Fred!
 [SLIDE](jeopardy)
 - In the same way we create components to perform a function, we can create modes to express a form. In fact that is exactly what mise en mode is.
 [SLIDE](fff)
-- Mise en mode is the practical application of form following function. As design systems practicioners, we identify the patterns which support a particular function. This library of functions can create a full experience; a blueprint of user familiarity. From here, designers create modes of expression and curating the placement of these rectangles of influence. Design and system each with their own clear responsibility, working together in a beautiful harmony.
+- Mise en mode is the practical application of form following function. As design systems practicioners, we identify the patterns which support a particular function. This library of functions can create a full experience; a blueprint of user familiarity. From here, designers form modes of expression by curating the placement of these rectangles of influence. Design and system each with their own clear responsibilities, working together in a beautiful harmony.
 - So maybe they're just rectangles on the internet, or maybe...
 [SLIDE](burdened)
 - They're just rectangles burdened with glorious purpose. Thank you.

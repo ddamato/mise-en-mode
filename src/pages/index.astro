@@ -40,7 +40,11 @@ import Author from '@components/Author.astro';
 		</Section>
 
 		<Section slide>
-			<Media src="/media/dependency.png" alt=""/>
+			<Callout><span style="font-size: 3em">🤔</span></Callout>
+		</Section>
+		
+		<Section slide>
+			<Media src="/media/screenshot.png" alt=""/>	
 		</Section>
 
 		<Section slide>
@@ -76,10 +80,16 @@ import Author from '@components/Author.astro';
 			<Media src="/media/footer.png" alt=""/>
 		</Section>
 
+		<Section slide>
+			<Callout>
+				<s>new tokens</s>
+			</Callout>
+		</Section>
+
 		<Section>
 			<p>What I recommend is to instead consider each card as a separate mini-region which creates a scope of new values. There's a few benefits to this, one of which is <strong>no new tokens</strong>. The button background continues to use the button background token just with a new value applied in the same way that you might apply new values for dark mode.</p>
 
-			<Media src="/media/pricing-tokens.png" alt=""/>
+			<Media src="/media/pricing-tokens.png" alt="">Same tokens, new value</Media>
 
 			<p>In this way, each card is a boundary for new values for the same elements and tokens. It's functionally the same text, button, and links just visually changed by existing within a new scope all co-existing on the same page.</p>
 
@@ -181,7 +191,7 @@ import Author from '@components/Author.astro';
 		</Section>
 
 		<Section slide>
-			<Media src="/media/purple.png" alt=""/>
+			<Media src="/media/purple.png" alt="">“purple gradient mode”</Media>
 		</Section>
 
 		<Section split>
