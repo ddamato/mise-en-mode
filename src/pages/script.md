@@ -102,12 +102,11 @@ layout: '@layouts/Layout.astro'
 - So here's one weird trick for designers to get the look they want using mise en mode; name the mode just like you would a component. Consider that other people might want to use this expression for the same reason you need it. So, give it a name that has shared meaning.
 [SLIDE](jeopardy)
 - For this tweet, one of the responses was "What is Jeopardy mode" and I think that was great. Maybe even a better name than Fred!
-- In the same way we create components to perform a function, we can create modes to express a form. In fact that is exactly what mise en mode is.
-- Meanwhile the patterns and best practices we advocate as system maintainers are the re-enforced scaffolding to support these freedoms.
+- So in the same way we create components to perform a function, we can create modes to express a form. In fact that is exactly what mise en mode is.
 [SLIDE](fff)
-- Mise en mode is the practical application of form following function. As design systems practicioners, we identify the patterns which support a particular function. This library of functions can create a full experience; a blueprint of user familiarity. From here, designers form modes of expression by curating the placement of these rectangles of influence.
-[SLIDE](handshake)
+- Mise en mode is the practical application of form following function. As design systems practicioners, we identify the patterns and best practices which support a particular function with an expectation of shared reuse. This library of functions can create a full experience; a blueprint of user familiarity. From here, on top of this re-enforced scaffolding, designers form modes of expression by freely curating the placement of these rectangles of influence.
 - Design and system each with their own clear responsibilities, working together in a beautiful harmony.
+[SLIDE](handshake)
 - So maybe they're just rectangles on the internet, or maybe...
 [SLIDE](burdened)
 - They're just rectangles burdened with glorious purpose. Thank you.
