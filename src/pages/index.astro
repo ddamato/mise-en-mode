@@ -89,7 +89,7 @@ import Author from '@components/Author.astro';
 		<Section>
 			<p>What I recommend is to instead consider each card as a separate mini-region which creates a scope of new values. There's a few benefits to this, one of which is <strong>no new tokens</strong>. The button background continues to use the button background token just with a new value applied in the same way that you might apply new values for dark mode.</p>
 
-			<Media src="/media/pricing-tokens.png" alt="">Same tokens, new value</Media>
+			<Media src="/media/pricing-tokens.png" alt="">Same tokens, new values</Media>
 
 			<p>In this way, each card is a boundary for new values for the same elements and tokens. It's functionally the same text, button, and links just visually changed by existing within a new scope all co-existing on the same page.</p>
 
@@ -119,7 +119,7 @@ import Author from '@components/Author.astro';
 			
 			<p>The result of that research was called <a href="https://complementary.space/">Complementary Space</a>. A technique that suggests we can mark an area with a single token that means “space goes here” and then a designer determines how much space in a new way; using regions.</p>
 
-			<Media src="/media/complementary.png" alt="">
+			<Media src="/media/cards.png" alt="">
 				Example from Nathan Curtis's article, “Space in Design Systems” and similar results using Complementary Space.
 			</Media>
 
@@ -128,13 +128,18 @@ import Author from '@components/Author.astro';
 			<p>In this way, <strong>we no longer need to have space token naming at all!</strong> If the regions are the scale, and each region goes down one level of space, you can go down multiple levels by continuing to nest regions. Only going in a decreasing direction is appropriate because as we traverse deeper into an interface, there is less room and compositions are naturally more compact.</p>
 		</Section>
 
+		<Section slide>
+			<Callout>
+				Semantic names do not suggest values
+			</Callout>
+		</Section>
+
+		<Section slide>
+			<Media src="/media/complementary.png" alt="" />
+		</Section>
+
 		<Section>
 			<p>Through these separate units of work I soon realized that both were using the same technique of changing token values depending on a targeted scope. From here, I wanted to understand the fundamental prinicples I was uncovering so that it was clear when tokens were meant to drive design decisions and when scope should be considered instead.</p>
-
-			<Callout>
-				What are the shared principles in these approaches?
-			</Callout>
-
 		</Section>
 		<Section>
 			<Media src="/media/wireframe.png" alt=""/>
@@ -157,6 +162,14 @@ import Author from '@components/Author.astro';
 			<p>In the design system practice, we attempt to identify these user expectations and document them as reusable patterns and best practices. From here, designers can use modes to describe a change that needs to affect the entire page or (more innovately) part of the page: this area needs to be dense, this needs to standout, this needs to show another brand. <strong>A mode is a reusable expression as purposely selected values.</strong> As an example, “high contrast mode” is the collection of values curated together to convey a high contrast between content and surfaces, often meant to increase legibility.</p>
 				
 			<p>From here, what's stopping us from putting a mode <em>inside</em> a mode?</p>
+		</Section>
+
+		<Section slide>
+			<Media src="/media/wireframe-rtl.png" alt=""/>
+		</Section>
+
+		<Section slide>
+			<Media src="/media/wireframe-color.png" alt=""/>
 		</Section>
 
 		<Section slide>
@@ -191,7 +204,11 @@ import Author from '@components/Author.astro';
 		</Section>
 
 		<Section slide>
-			<Media src="/media/purple.png" alt="">“purple gradient mode”</Media>
+			<Media src="/media/branded.png" alt=""/>
+		</Section>
+
+		<Section slide>
+			<Media src="/media/purple.png" alt=""/>
 		</Section>
 
 		<Section split>

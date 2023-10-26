@@ -42,16 +42,21 @@ layout: '@layouts/Layout.astro'
 - In my exploration, it was important that I achieved the same results that other approaches the community has adopted even if executed differently. I was heavily influenced by Nathan Curtis's article about Space in Design Systems from 2016. So much so, that I stole the example right out of it. Great artists steal, right?
 [SLIDE](nathan)
 - What you see here is the card example from Nathan's article, the first one is the final result without any markup. The second example is how Nathan recommends to use tokens. We have tokens like space inset medium, and space stack small. I think this approach is in many systems today and for good reason. It's easy to understand what the value of the space is at any time.
-- The third one is using the result of my exploration called Complementary Space. In it, we mark where space goes with a single token for all areas that need space. Then, each region determines what the value of tokens found within. This highlights another quality about true semantic tokens, the name doesn't suggest the value. Just like button-bgcolor doesn't give indication about what the color is, this approach doesn't suggest how much space through the token either. The way you create different amounts of space by assigning a different value at the region. Now the regions are the scale going down one level of space each. You can go down multiple levels by continuing to nest regions. Here, the act of applying space is a binary decision. Is there space or not?
+- The third one is using the result of my exploration called Complementary Space. In it, we mark where space goes with a single token for all areas that need space. Then, each region determines what the value of tokens found within.
+[SLIDE](suggest)
+- This highlights another quality about true semantic tokens, the name doesn't suggest the value. Just like button-bgcolor doesn't give indication about what the color is, this approach doesn't suggest how much space through the token either. The way you create different amounts of space by assigning a different value at the region. Now the regions are the scale going down one level of space each. You can go down multiple levels by continuing to nest regions. Here, the act of applying space is a binary decision. Is there space or not?
+[SLIDE](complementary)
 - If you want to learn more about the approach, you can visit Complementary dot Space, that site also uses a version of the approach and folks who have tried this method have reported positive results.
-- After completing that exploration, I paused to reflect on the work I've done. I realized that both Ondark Virus and Complementary Space were using the same technique of changing token values depending on a targeted scope. From here I wanted to understand how I got here.
-[SLIDE](shared)
-- What were the shared principles in these approaches? How are they in common? And this how I understood it.
+- After completing that exploration, I paused to reflect on the work I've done. I realized that both Ondark Virus and Complementary Space were using the same technique of changing token values depending on a targeted scope. From here I wanted to understand how I got here. What were the shared principles in these approaches? How are they in common? And this how I understood it.
 [SLIDE](wireframe)
 - This is a wireframe of some experience. Now I could ask, what is this a wireframe of? However, I think a more interesting question is "how do you know?". I think some of you already know what this represents, you might have even been a bit triggered. Maybe you forgot to close a ticket. It's a project management tool. But the question is, how did you know? It doesn't say project management, or Jira. There's no branding, so how?
 - The answer is because we've seen something similar before. Our prior experience is informing this newly introduced one. This is Jakob's law of familiarity, which goes on to say:
 [SLIDE](jakob)
-- User's prefer familiar experiences. This makes sense because users don't need to relearn anything. The experience will meet their expectations. As an example, the layout of a project management tool should both be immediately identifiable and different from the layout of a social media feed to be the most successful. Even when the layout does change, in the case of right-to-left languages or responsive reflow, the purpose, hierarchy and methods of user input should persist as a blueprint for how a certain experience should behave. From here, we can enhance that experience with personality using a new collection of values otherwise known as a mode. This concept was very clearly demonstrated at Config earlier this year:
+- User's prefer familiar experiences. This makes sense because users don't need to relearn anything. The experience will meet their expectations. As an example, the layout of a project management tool should both be immediately identifiable and different from the layout of a social media feed to be the most successful.
+[SLIDE](rtl)
+- Even when the layout does change, in the case of right-to-left languages or responsive reflow, the purpose, hierarchy and methods of user input should persist as a blueprint for how a certain experience should behave.
+[SLIDE](colored)
+- From here, we can enhance that experience with personality using a new collection of values otherwise known as a mode. This concept was very clearly demonstrated at Config earlier this year:
 [SLIDE](config)
 - Here is a video from the keynote where Dylan takes a predetermined app structure, wired with variables, and moves the structure into these sections which provide different values to those variables. The first being Japanese and Dark mode, the next being German and Config mode. This was exciting to see live, but I saw more potential based on the earlier work. From here, what's stopping us from putting a mode inside a mode?
 [SLIDE](xzibit)
@@ -61,10 +66,11 @@ layout: '@layouts/Layout.astro'
 [SLIDE](coat)
 - Here we can see the coat of arms for the United Kingdom in 1816, with a smaller one inside and then an even smaller one inside of that. In the case of user experience design, we can use an example from earlier.
 [SLIDE](enhancement)
-- Both of these pages are functionally identical, however the experience on the left is what I'll call expressively enhanced with mise en mode. In this idea, an experience is created as a nested collection of modes, each with a specific purpose for being there by design. Each mode provides new values to existing tokens for a shared purpose.
-- So if we think about an experience in this way, as rectangular boundaries that provide new values to existing tokens, it unlocks a creative freedom of expression that designers have been asking for. They can now round those corners, flourish that typography and purple those gradients using mise en mode.
+- Both of these pages are functionally identical, however the experience on the left is what I'll call expressively enhanced with mise en mode. In this idea, an experience is created as a nested collection of modes, each providing new values to existing tokens for some purpose. For example, maybe that purpose is to promote a brand identity.
+[SLIDE](mcd)
+- So if we think about designing an experience in this way, it unlocks a creative freedom of expression that designers have been asking for. They can now round those corners, flourish that typography and purple those gradients using mise en mode.
 [SLIDE](purple)
-- Meanwhile the patterns and best practices we advocate as design system maintainers are the re-enforced scaffolding to support these freedoms.
+- Meanwhile the patterns and best practices we advocate as system maintainers are the re-enforced scaffolding to support these freedoms.
 - Taking this a step further, and maybe too far for some but
 [SLIDE](critical)
 - Perhaps there is no critical button, only a button that exists within a critical mode.
