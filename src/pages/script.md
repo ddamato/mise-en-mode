@@ -28,8 +28,12 @@ layout: '@layouts/Layout.astro'
 - Where we had 4 tokens for the card surface and button before, we now would have 10. A 250% increase of tokens. Ok, maybe that's not so bad. But what happens if we now needed to add an input field? We'd need more tokens for that. Maybe that input field needs to show error text, that's more tokens too. Before long, you might have variations for all the tokens in your system to support accent and onaccent. So what's the solution?
 - To find out, let's simplify:
 [SLIDE](footer)
-- I think we've all seen this before, it's a light page with a dark footer. What I've seen many folks do is create new tokens to describe the text in the footer as "text-ondark" and the button as "button-ondark". These new tokens along with variations like contrast and inverse are the problem. In fact, the blog post where I describe this behavior is called "Ondark Virus" because I believe this is an infection across systems. It is resulting in many more tokens that are needed.
-- So what's the remedy? Treat the footer as a mini-dark-mode. The same way we assign new values to existing tokens to support dark mode for an entire page, we can do the same for a smaller part of a page. That way, we can keep a core set of tokens and provide different values for a new treatment. There's a few benefits to this, one of which is no new tokens. The button background continues to use the button background token just with a new value applied in the same way that you might apply new values for dark mode.
+- I think we've all seen this before, it's a light page with a dark footer.
+[SLIDE](ondark)
+- What I've seen many folks do is create new tokens to describe the text in the footer as "text-ondark" and the button as "button-ondark". These new tokens along with variations like contrast and inverse are the problem. In fact, the blog post where I describe this behavior is called "Ondark Virus" because I believe this is an infection across systems. It is resulting in many more tokens that are needed.
+- So what's the remedy? Treat the footer as a mini-dark-mode. 
+[SLIDE](remedy)
+- The same way we assign new values to existing tokens to support dark mode for an entire page, we can do the same for a smaller part of a page. That way, we can keep a core set of tokens and provide different values for a new treatment. There's a few benefits to this, one of which is no new tokens. The button background continues to use the button background token just with a new value applied in the same way that you might apply new values for dark mode.
 [SLIDE](solution)
 - Back in our pricing page example, we are back to 4 tokens to describe the basic structure and then provide new values for each treatment to get the intended result.
 - So ondark virus was a reaction to improvable behavior, my true focus over the past year was this question:
@@ -42,12 +46,15 @@ layout: '@layouts/Layout.astro'
 - In my exploration, it was important that I achieved the same results that other approaches the community has adopted even if executed differently. I was heavily influenced by Nathan Curtis's article about Space in Design Systems from 2016. So much so, that I stole the example right out of it. Great artists steal, right?
 [SLIDE](nathan)
 - What you see here is the card example from Nathan's article, the first one is the final result without any markup. The second example is how Nathan recommends to use tokens. We have tokens like space inset medium, and space stack small. I think this approach is in many systems today and for good reason. It's easy to understand what the value of the space is at any time.
-- The third one is using the result of my exploration called Complementary Space. In it, we mark where space goes with a single token for all areas that need space. Then, each region determines what the value of tokens found within.
+- The third one is using the result of my exploration called Complementary Space. In it, we mark where space goes with a single token for all areas that need space. Then, each region determines what the value of tokens found within. Here, the act of applying space is a binary decision. Is there space or not?
+- This highlights another quality about true semantic tokens.
 [SLIDE](suggest)
-- This highlights another quality about true semantic tokens, the name doesn't suggest the value. Just like button-bgcolor doesn't give indication about what the color is, this approach doesn't suggest how much space through the token either. The way you create different amounts of space by assigning a different value at the region. Now the regions are the scale going down one level of space each. You can go down multiple levels by continuing to nest regions. Here, the act of applying space is a binary decision. Is there space or not?
+- The name doesn't suggest the value. Just like button-bgcolor doesn't give indication about what the color is this approach doesn't suggest how much space through the token either.
 [SLIDE](complementary)
 - If you want to learn more about the approach, you can visit Complementary dot Space, that site also uses a version of the approach and folks who have tried this method have reported positive results.
-- After completing that exploration, I paused to reflect on the work I've done. I realized that both Ondark Virus and Complementary Space were using the same technique of changing token values depending on a targeted scope. From here I wanted to understand how I got here. What were the shared principles in these approaches? How are they in common? And this how I understood it.
+- After completing that exploration, I paused to reflect on the work I've done. I realized that both Ondark Virus and Complementary Space were using the same technique of changing token values depending on a targeted scope. From here I wanted to understand how I got here.
+[SLIDE](shared)
+- What were the shared principles in these approaches? How are they in common? And this how I understood it.
 [SLIDE](wireframe)
 - This is a wireframe of some experience. Now I could ask, what is this a wireframe of? However, I think a more interesting question is "how do you know?". I think some of you already know what this represents, you might have even been a bit triggered. Maybe you forgot to close a ticket. It's a project management tool. But the question is, how did you know? It doesn't say project management, or Jira. There's no branding, so how?
 - The answer is because we've seen something similar before. Our prior experience is informing this newly introduced one. This is Jakob's law of familiarity, which goes on to say:
@@ -56,7 +63,7 @@ layout: '@layouts/Layout.astro'
 [SLIDE](rtl)
 - Even when the layout does change, in the case of right-to-left languages or responsive reflow, the purpose, hierarchy and methods of user input should persist as a blueprint for how a certain experience should behave.
 [SLIDE](colored)
-- From here, we can enhance that experience with personality using a new collection of values otherwise known as a mode. This concept was very clearly demonstrated at Config earlier this year:
+- From here, we can enhance that experience with personality using a new collection of values. This concept was very clearly demonstrated at Config earlier this year:
 [SLIDE](config)
 - Here is a video from the keynote where Dylan takes a predetermined app structure, wired with variables, and moves the structure into these sections which provide different values to those variables. The first being Japanese and Dark mode, the next being German and Config mode. This was exciting to see live, but I saw more potential based on the earlier work. From here, what's stopping us from putting a mode inside a mode?
 [SLIDE](xzibit)
@@ -66,30 +73,41 @@ layout: '@layouts/Layout.astro'
 [SLIDE](coat)
 - Here we can see the coat of arms for the United Kingdom in 1816, with a smaller one inside and then an even smaller one inside of that. In the case of user experience design, we can use an example from earlier.
 [SLIDE](enhancement)
-- Both of these pages are functionally identical, however the experience on the left is what I'll call expressively enhanced with mise en mode. In this idea, an experience is created as a nested collection of modes, each providing new values to existing tokens for some purpose. For example, maybe that purpose is to promote a brand identity.
-[SLIDE](mcd)
-- So if we think about designing an experience in this way, it unlocks a creative freedom of expression that designers have been asking for. They can now round those corners, flourish that typography and purple those gradients using mise en mode.
-[SLIDE](purple)
-- Meanwhile the patterns and best practices we advocate as system maintainers are the re-enforced scaffolding to support these freedoms.
-- Taking this a step further, and maybe too far for some but
+- Both of these pages are functionally identical, however the experience on the left is what I'll call expressively enhanced with mise en mode. Now what do I mean by that.
+[SLIDE](bars)
+- Going back to the ondark virus examples, if the token text-ondark didn't load or was simply forgotten during the curation step. Anything meant to receive the value of that token is completely unstyled. It is not informed by other tokens.
+[SLIDE](fallback)
+- Meanwhile, if we use the same tokens and provide a new collection of values. If those new values fail, the configuration higher up says "No worries, I got you fam'. I have a value for that token." And while you might not get the expression you intended, the experience will remain cohesive. But if everything is successful, we'd get that enhancement.
+- Now, I know some of you are thinking. Donnie, I'm smarter than that, I choose what text-ondark should fallback to in my configuration to get the same results. And I'd say sure, you could do that. But then your tokens look like this:
+[SLIDE](graph)
+- And I don't know about you, but I feel like I need a degree in graph theory to understand all these relationships here. When all I want to do is change the background color. Mise en mode reintroduces simplicity to the process.
+- In fact, I'm about to make this really simple.
 [SLIDE](critical)
 - Perhaps there is no critical button, only a button that exists within a critical mode.
 - Alright, I'm confident the system you maintain has a critical button for when the user is about to do something destructive.
 [SLIDE](modal)
-- Here's an example of one from Atlassian's design system and we can clearly see the critical button. But I'd argue that the entire modal is meant to display as wholly critical. The icon, content, and buttons are meant to convey the expression of danger. So why not consider this a new mode?
+- Here's an example of one from Atlassian's design system and we can clearly see the critical button. But I'd argue that the entire modal is meant to display as wholly critical. The icon, content, and buttons are meant to convey the concept of danger. So why not consider this a new mode of expression?
 [SLIDE](github)
-- Here's another example from github. This is a edit profile experience and we can see the danger zone gets a different treatment than the rest of the page. We can even see the slight change between the normal button above and ones that are found in what could be a critical mode.
-- So not only does this approach support that creative freedom, it also can enhance a message or feeling.
-- This is a powerful approach, but with great power comes a great question. This comes from community member Mike Mai.
+- Here's another example from github. This is a edit profile experience and we can see the danger zone gets a different treatment than the rest of the page. We can even see the compare changes between the normal headings and button above and ones that are found in what could be a critical mode.
+- So if we think about designing an experience in this way, as a nested collection of modes, each providing new values to existing tokens, we can enhance our messaging,
+[SLIDE](mcd)
+- or to promote a brand. Mise en mode unlocks a creative freedom of expression that designers have been asking for. They can now round those corners, flourish that typography and purple those gradients using mise en mode.
+- They could go wild with power, muahahahaa.
+[SLIDE](doge)
+- But with great power comes a great question. This comes from community member Mike Mai.
 [SLIDE](question)
 - He asks, is this light mode or dark mode. Take a second to think, lock in your answers. Ok show of hands, who thinks this is light mode. Ok, who thinks this is dark mode? Ok, and who has no clue. Alright, I'm with you. I don't know.
 - What is the purpose of this treatment? Is it meant to help with reading, improve battery performance, portray a brand identity, or another user need entirely? What message is this mode meant to convey?
-- Here lies a challenge in our work. Asking “why?” about new designs often starts conflict because it puts designers on defense and then they go rogue. As humans, it's hard to articulate our needs and is just easier to avoid that conflict.
-- So here's one weird trick for designers to get the look they want using mise en mode; name the mode just like you would a component. Consider that other people might want to use this expression for the same reason you need it. So, give it a name that has shared meaning. For this tweet, one of the responses was "What is Jeopardy mode" and I think that was great. Maybe even a better name than Fred!
+- Here lies a challenge in our work. Asking “why?” about new treatments often starts conflict because it puts designers on defense and then they may go rogue. As humans, it's hard to articulate our needs and is just easier to avoid that conflict.
+- So here's one weird trick for designers to get the look they want using mise en mode; name the mode just like you would a component. Consider that other people might want to use this expression for the same reason you need it. So, give it a name that has shared meaning.
 [SLIDE](jeopardy)
+- For this tweet, one of the responses was "What is Jeopardy mode" and I think that was great. Maybe even a better name than Fred!
 - In the same way we create components to perform a function, we can create modes to express a form. In fact that is exactly what mise en mode is.
+- Meanwhile the patterns and best practices we advocate as system maintainers are the re-enforced scaffolding to support these freedoms.
 [SLIDE](fff)
-- Mise en mode is the practical application of form following function. As design systems practicioners, we identify the patterns which support a particular function. This library of functions can create a full experience; a blueprint of user familiarity. From here, designers form modes of expression by curating the placement of these rectangles of influence. Design and system each with their own clear responsibilities, working together in a beautiful harmony.
+- Mise en mode is the practical application of form following function. As design systems practicioners, we identify the patterns which support a particular function. This library of functions can create a full experience; a blueprint of user familiarity. From here, designers form modes of expression by curating the placement of these rectangles of influence.
+[SLIDE](handshake)
+- Design and system each with their own clear responsibilities, working together in a beautiful harmony.
 - So maybe they're just rectangles on the internet, or maybe...
 [SLIDE](burdened)
 - They're just rectangles burdened with glorious purpose. Thank you.
