@@ -48,7 +48,8 @@ layout: '@layouts/Layout.astro'
 - The name doesn't suggest the value. Just like button-bgcolor doesn't give indication about what the color is this approach doesn't suggest how much space through the token either.
 [SLIDE](complementary)
 - If you want to learn more about the approach, you can visit Complementary dot Space, that site also uses a version of the approach and folks who have tried this method have reported positive results.
-- After completing that exploration, I paused to reflect on the work I've done. I realized that both Ondark Virus and Complementary Space were using the same technique of changing token values depending on a targeted scope. From here I wanted to understand how I got here.
+[SLIDE](survived)
+- Ok nice work team, we made it through those two thought experiments! Now if you we're paying attention, you might have came to the same realization that I did. Both of these questions, these separate units of work and discovery, ended up at similar results; changing token values depending on a targeted scope. So this introduces a 3rd, bonus question.
 [SLIDE](shared)
 - What were the shared principles in these approaches? How are they in common? And this how I understood it.
 [SLIDE](wireframe)
