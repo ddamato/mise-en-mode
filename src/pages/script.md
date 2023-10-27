@@ -17,10 +17,7 @@ layout: '@layouts/Layout.astro'
 - I didn't know it then, but I'd come to find that rectangles are also potentially a gateway to a whole new design paradigm. One that I believe delivers what Nate is excited for here.
 [SLIDE](nate)
 - (READ TWEET)
-- Sounds like Nate might have better luck asking for a pony but this Christmas I'm the Design System Santa and I intend to make your wishes come true.
-- Alright, so there's no shortage of articles about naming design tokens.
-[SLIDE](articles)
-- Even I have one up there. If you don't have an opinion about naming tokens, are you even interested in design systems? While I won't go into opinions about the best naming scheme here, I was frustrated with one particular strategy that I kept seeing across the community. So much so, that I did what all of us do when we are upset at the internet; I wrote a blog post. So let's talk about it.
+- Sounds like Nate might have better luck asking for a pony but this Christmas I'm the Design System Santa and I intend to make your wishes come true. So what we're about to go on is a crazy ride about how I got here. All the questions that I asked myself over the past year. So if you can stick with me, it could be all worth it in the end.
 [SLIDE](pricing)
 - In this example, we have a section of a pricing page. There's different tiers of products, maybe standard, pro, and enterprise. Each card has some text, a button, and maybe some links but they have different treatments based on how premium the product. The task would be, how do we support these slight variations using design tokens?
 - What many might do is create new tokens to support the variations. So just focusing on the surface and buttons, maybe the first button is the regular primary background. Then the second is an accent version of primary. And then the third, because it is on an accent color, gets something like onaccent primary. So maybe that could look like this:
@@ -36,7 +33,6 @@ layout: '@layouts/Layout.astro'
 - The same way we assign new values to existing tokens to support dark mode for an entire page, we can do the same for a smaller part of a page. That way, we can keep a core set of tokens and provide different values for a new treatment. There's a few benefits to this, one of which is no new tokens. The button background continues to use the button background token just with a new value applied in the same way that you might apply new values for dark mode.
 [SLIDE](solution)
 - Back in our pricing page example, we are back to 4 tokens to describe the basic structure and then provide new values for each treatment to get the intended result.
-- So ondark virus was a reaction to improvable behavior, my true focus over the past year was this question:
 [SLIDE](spacing)
 - How might we introduce semantic naming for space? We've already solved semantic naming for color and typography, but what about the other parts of design?
 - Now most systems distribute space tokens using either t-shirt sizing or proportional naming. Neither of which are semantic. Let me explain this:
@@ -104,7 +100,9 @@ layout: '@layouts/Layout.astro'
 - For this tweet, one of the responses was "What is Jeopardy mode" and I think that was great. Maybe even a better name than Fred!
 - So in the same way we create components to perform a function, we can create modes to express a form. In fact that is exactly what mise en mode is.
 [SLIDE](fff)
-- Mise en mode is the practical application of form following function. As design systems practicioners, we identify the patterns and best practices which support a particular function with an expectation of shared reuse. This library of functions can create a full experience; a blueprint of user familiarity. From here, on top of this re-enforced scaffolding, designers form modes of expression by freely curating the placement of these rectangles of influence.
+- Mise en mode is the practical application of form following function. 
+[SLIDE](collab) <-----------
+- As design systems practicioners, we identify the patterns and best practices which support a particular function with an expectation of shared reuse. This library of functions can create a full experience; a blueprint of user familiarity. From here, on top of this re-enforced scaffolding, designers form modes of expression by freely curating the placement of these rectangles of influence.
 - Design and system each with their own clear responsibilities, working together in a beautiful harmony.
 [SLIDE](handshake)
 - So maybe they're just rectangles on the internet, or maybe...

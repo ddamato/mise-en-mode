@@ -48,9 +48,9 @@ import Author from '@components/Author.astro';
 		</Section>
 
 		<Section slide>
-			<Media src="/media/token-naming.png" alt="">
-				A small selection of token naming articles
-			</Media>	
+			<Callout caption="Question 1">
+				Do new expressions need new tokens?
+			</Callout>
 		</Section>
 
 		<Section>
@@ -107,8 +107,8 @@ import Author from '@components/Author.astro';
 		<Section>
 			<p>That blog post was simply meant as a response to a repeated harmful practice. At the time, my real focus was how we might expand other themable properties into semantic naming. Is semantic naming for border radius possible? Spoiler, <a href="https://blog.damato.design/posts/meaningless-curves/">no it's not</a>, but what about spacing?</p>
 
-			<Callout>
-				How might we introduce semantic naming for space?
+			<Callout caption="Question 2">
+				How might we make space semantic?
 			</Callout>
 		</Section>
 
@@ -136,20 +136,10 @@ import Author from '@components/Author.astro';
 			<p>In this way, <strong>we no longer need to have space token naming at all!</strong> If the regions are the scale, and each region goes down one level of space, you can go down multiple levels by continuing to nest regions. Only going in a decreasing direction is appropriate because as we traverse deeper into an interface, there is less room and compositions are naturally more compact.</p>
 		</Section>
 
-		<Section slide>
-			<Callout>
-				Semantic names do not suggest values
-			</Callout>
-		</Section>
-
-		<Section slide>
-			<Media src="/media/complementary.png" alt="" />
-		</Section>
-
 		<Section>
 			<p>Through these separate units of work I soon realized that both were using the same technique of changing token values depending on a targeted scope. From here, I wanted to understand the fundamental prinicples I was uncovering so that it was clear when tokens were meant to drive design decisions and when scope should be considered instead.</p>
 
-			<Callout>
+			<Callout caption="Question 3">
 				What are the shared principles in these approaches?
 			</Callout>
 		</Section>
@@ -210,21 +200,23 @@ import Author from '@components/Author.astro';
 		</Section>
 
 		<Section slide>
-			<Media src="/media/progressive-enhancement.png" alt="">
-				Functionally identical with “expressive enhancement”
-			</Media>
+			<Media src="/media/rectangles.png" alt="">A nested collections of modes</Media>
 		</Section>
 
 		<Section slide>
-			<Media src="/media/no-signal.png" alt=""/>
+			<Media src="/media/footer.png" alt="">“Expressively enhanced” with new values</Media>
 		</Section>
 
 		<Section slide>
-			<Media src="/media/not-found.png" alt=""/>
+			<Media src="/media/no-signal.png" alt="">Unique tokens that fail</Media>
 		</Section>
 
 		<Section slide>
 			<Media src="/media/adobe-graph.png" alt=""/>
+		</Section>
+
+		<Section slide>
+			<Media src="/media/not-found.png" alt="">Reused tokens that fail</Media>
 		</Section>
 
 		<Section split>
