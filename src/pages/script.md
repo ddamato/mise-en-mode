@@ -73,11 +73,11 @@ layout: '@layouts/Layout.astro'
 - Both of these pages are functionally identical, however the experience on the left is what I'll call expressively enhanced with mise en mode. Now what do I mean by that.
 [SLIDE](bars)
 - Going back to the ondark virus examples, if the token text-ondark didn't load or was simply forgotten during the curation step. Anything meant to receive the value of that token is completely unstyled. It is not informed by other tokens.
-[SLIDE](fallback)
-- Meanwhile, if we use the same tokens and provide a new collection of values. If those new values fail, the configuration higher up says "No worries, I got you fam'. I have a value for that token." And while you might not get the expression you intended, the experience will remain cohesive. But if everything is successful, we'd get that enhancement.
 - Now, I know some of you are thinking. Donnie, I'm smarter than that, I choose what text-ondark should fallback to in my configuration to get the same results. And I'd say sure, you could do that. But then your tokens look like this:
 [SLIDE](graph)
-- And I don't know about you, but I feel like I need a degree in graph theory to understand all these relationships here. When all I want to do is change the background color. Mise en mode reintroduces simplicity to the process.
+- And I don't know about you, but I feel like I need a degree in graph theory to understand all these relationships here. When all I want to do is change the background color.
+[SLIDE](fallback)
+- Meanwhile, if we use the same tokens and provide a new collection of values. If those new values fail, the configuration higher up says "No worries, I got you fam'. I have a value for that token." And while you might not get the expression you intended, the experience will remain cohesive. But if everything is successful, we'd get that enhancement.  Mise en mode reintroduces simplicity to the process.
 - In fact, I'm about to make this really simple.
 [SLIDE](critical)
 - Perhaps there is no critical button, only a button that exists within a critical mode.
@@ -88,27 +88,31 @@ layout: '@layouts/Layout.astro'
 - Here's another example from github. This is a edit profile experience and we can see the danger zone gets a different treatment than the rest of the page. We can even see the compare changes between the normal headings and button above and ones that are found in what could be a critical mode.
 - So if we think about designing an experience in this way, as a nested collection of modes, each providing new values to existing tokens, we can enhance our messaging,
 [SLIDE](mcd)
-- or to promote a brand. Mise en mode unlocks a creative freedom of expression that designers have been asking for. They can now round those corners, flourish that typography and purple those gradients using mise en mode.
+- or to promote a brand. They could do a lot!
+- They can now round those corners, flourish that typography and purple those gradients using mise en mode.
 - They could go wild with power, muahahahaa.
 [SLIDE](doge)
-- But with great power comes a great question. This comes from community member Mike Mai.
+- But with great power comes a great question.
 [SLIDE](question)
-- He asks, is this light mode or dark mode. Take a second to think, lock in your answers. Ok show of hands, who thinks this is light mode. Ok, who thinks this is dark mode? Ok, and who has no clue. Alright, I'm with you. I don't know.
-- What is the purpose of this treatment? Is it meant to help with reading, improve battery performance, portray a brand identity, or another user need entirely? What message is this mode meant to convey?
-- Here lies a challenge in our work. Asking “why?” about new treatments often starts conflict because it puts designers on defense and then they may go rogue. As humans, it's hard to articulate our needs and is just easier to avoid that conflict.
-- So here's one weird trick for designers to get the look they want using mise en mode; name the mode just like you would a component. Consider that other people might want to use this expression for the same reason you need it. So, give it a name that has shared meaning.
+- This question comes from community member Mike Mai. He asks, is this light mode or dark mode. Take a second to think, lock in your answers. Ok show of hands, who thinks this is light mode. Ok, who thinks this is dark mode? Ok, and who has no clue. Alright, I'm with you. I don't know.
+- What is the purpose of this treatment? Is it meant to help with reading, improve battery performance, portray a brand identity, or another user need entirely?
+- Why, designer, do you need this?
+- Here lies a challenge in our work. Asking “why?” about a new treatment often starts conflict because it puts designers on defense. As humans, it's hard to articulate our needs and is just easier to avoid that conflict and go rogue, ejecting from the system.
+- So what if instead of asking "why" we said "yes"?
 [SLIDE](jeopardy)
-- For this tweet, one of the responses was "What is Jeopardy mode" and I think that was great. Maybe even a better name than Fred!
-- So in the same way we create components to perform a function, we can create modes to express a form. In fact that is exactly what mise en mode is.
-[SLIDE](fff)
-- Mise en mode is the practical application of form following function. 
-[SLIDE](collab) <-----------
-- As design systems practicioners, we identify the patterns and best practices which support a particular function with an expectation of shared reuse. This library of functions can create a full experience; a blueprint of user familiarity. From here, on top of this re-enforced scaffolding, designers form modes of expression by freely curating the placement of these rectangles of influence.
-- Design and system each with their own clear responsibilities, working together in a beautiful harmony.
-[SLIDE](handshake)
+- What is stopping us from saying yes to "What is Jeopardy mode"?
+- Before mise en mode, when I would look at this, I'd run a mental cost benefit analysis. This treatment against the amount of effort it'll be to support it.
+- And I'd come to some conclusion that results in more tokens, which requires new variations to components, which requires new publishes to those components, which requires new updates to applications, and could never seem equally beneficial to a positive impact some new colors could possibly make.
+[SLIDE](balance)
+- Does it really matter if the rectangle is gray or dark gray?
+- But to the person making the change, it matters. They want this rectangle to mean something more. And for a design system to be a successful product, we need to support our users. We need adoption. Mise en mode empowers designers to have creative freedom of expression that would otherwise be locked behind a series of organizational steps. Because of the foundation concept "no new tokens", many of these steps vanish.
+[SLIDE](vanish)
+- They get what they want because this system is built to support them. And we get what we want, for designers to use the system.
 - So maybe they're just rectangles on the internet, or maybe...
 [SLIDE](burdened)
 - They're just rectangles burdened with glorious purpose. Thank you.
+
+
 
 
 
