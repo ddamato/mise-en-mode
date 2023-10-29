@@ -103,11 +103,12 @@ layout: '@layouts/Layout.astro'
 - What is stopping us from saying yes to "What is Jeopardy mode"?
 - Before mise en mode, when I would look at this, I'd run a mental cost benefit analysis. This treatment against the amount of effort it'll be to support it.
 - And I'd come to some conclusion that results in more tokens, which requires new variations to components, which requires new publishes to those components, which requires new updates to applications. All of that work seems unbalanced to introducing a few new colors.
-[SLIDE](balance)
+[SLIDE](unbalanced)
 - Does it really matter if the rectangle is gray or dark gray?
-- But to the person making the change, it matters. They want this rectangle to mean something more. And for a design system to be a successful product, we need to support our users. We need adoption. Because of the foundation concept "no new tokens", mise en mode empowers designers to have creative freedom of expression that would otherwise be locked behind a series of organizational hurdles. When you simplify using this technique of influencial rectangles, many of these steps vanish.
-[SLIDE](vanish)
-- Designers get what they want because the system is built to support them. And we get what we want, for designers to use our system.
+- But to the person making the change, it matters. They want this rectangle to mean something more. And for a design system to be a successful product, we need to support our users. We need adoption. But it's the process of creating a new token that introduces this series of organizational hurdles. The system becomes a necessary evil, until it's an unnecessary one.
+- I think it's ironic that constraints like "no new tokens" and rectangular boundaries are the secret to creative freedom of expression which makes many of these steps vanish.
+[SLIDE](rectangles)
+- When we, quite literally, reframe our view about how to enhance an experience using mise en mode, everyone gets what they want. Designers get what they want because the system is built to support them. And we get what we want, for designers to use our system.
 - So maybe they're just rectangles on the internet, or maybe...
 [SLIDE](burdened)
 - They're just rectangles burdened with glorious purpose. Thank you.
