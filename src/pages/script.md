@@ -106,11 +106,11 @@ layout: '@layouts/Layout.astro'
 [SLIDE](juice)
 - Does it really matter if the rectangle is gray or dark gray?
 - But to the person making the change, it matters. They want these rectangles to mean something more.
-[SLIDE](orange)
-- And for a design system to be a successful product, we need to support our user's needs. We need adoption.
-- I think it's ironic that constraints like "no new tokens" and rectangular boundaries are the secret to creative freedom of expression.
+- And for a design system to be a successful product, we need to support our user's needs. We need adoption. To do that we create a system, an efficient factory, where we can let the creative juice loose.
+[SLIDE](factory)
+Look how confident he his! Clearly, he's thinking about how mise en mode unlocks a designer's freedoms of expression while the system can support those freedoms through blueprints of user familiarity and rectangular boundaries of influence. He gets it!
 [SLIDE](rectangles)
-- When we, quite literally, reframe our view about how to enhance an experience using mise en mode, everyone gets what they want. Designers get what they want because the system is built to support them. And we get what we want, for designers to use our system.
+- When we, quite literally, reframe our view about how to enhance an experience using mise en mode, everyone gets what they want. Designers get what they want because the system is built to support them. And we get what we want, for designers to use our system that we work so hard to maintain.
 - So maybe they're just rectangles on the internet, or maybe...
 [SLIDE](burdened)
 - They're just rectangles burdened with glorious purpose. Thank you.
