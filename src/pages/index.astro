@@ -21,7 +21,7 @@ import Author from '@components/Author.astro';
 		</Section>
 
 		<Section>
-			<p>A year ago, at the time of this writing, my wife and I were invited to attend Schema 2022, Figma's design systems conference in New York. There were a collection of several great talks throughout the day. <a href="https://youtu.be/On3w6zPQPHU?si=882hkcmS2zsuR2Yp">One of these talks was by Lauren LoPrete</a>, who walks the audience down her path of growing influence with her teams. Her talk echoes a common statement within our practice; “design systems are for people” which I wholeheartedly agree with. All of the tokens and components we spend time with everyday will mean nothing without adoption. So building trustworthy relationships is key to success in our practice.</p>
+			<p>A year ago, at the time of this writing, my wife and I were invited to attend Schema 2022, Figma's design systems conference in New York. There were a collection of several great talks throughout the day. <a href="https://youtu.be/On3w6zPQPHU?si=882hkcmS2zsuR2Yp">One of these talks was by Lauren LoPrete</a>, who walks the audience down her path of growing influence with her teams. Her talk echoes a common statement within our practice; “design systems are for people” which I wholeheartedly agree with. All of the tokens and components we spend time with everyday will mean little without adoption. So building trustworthy relationships is key to success in our practice.</p>
 
 			<p>The final slide of Lauren's talk ends with the following sentence: “They're just rectangles on the internet.”</p>
 
@@ -33,6 +33,7 @@ import Author from '@components/Author.astro';
 
 			<p>However, in retrospect, I wouldn't have been in that room without rectangles. My career, which puts a roof over my head and food on the table, would have been completely different without rectangles. I wouldn't have met my wife without them. The work that we do with rectangles is truly changing humanity every day. In reality, rectangles make the world go round, socio-economically speaking. I didn't know it then but I was about to discover that these rectangles could also be a looking glass to a whole new design paradigm.</p>
 
+			<p>In order to understand how I came to this conclusion, I'll walk you through my thought process as I ask questions that challenge our current norms with surprising results.</p>
 		</Section>
 
 		<Section slide>
@@ -51,14 +52,13 @@ import Author from '@components/Author.astro';
 			<Media src="/media/schoolbus.png" alt=""/>	
 		</Section>
 
-		<Section slide>
+		<Section>
 			<Callout caption="Question 1">
 				Do new expressions need new tokens?
 			</Callout>
 		</Section>
 
 		<Section>
-			<p>There's no shortage of articles on token naming, <a href="https://blog.damato.design/posts/tokens-as-intents/">even I have one</a>. If you don't have an opinion about naming tokens, are you even interested in design systems? While I won't go into opinions about the best naming scheme here, I was frustrated with one particular recommendation that I kept seeing across the community. So much so, that I did what all of us do when we are upset at the internet; <a href="https://blog.damato.design/posts/ondark-virus/">I wrote a blog post</a>.</p>
 
 			<Media src="/media/pricing.png" alt=""/>
 
@@ -117,8 +117,6 @@ import Author from '@components/Author.astro';
 		</Section>
 
 		<Section>
-			<p>That blog post was simply meant as a response to a repeated harmful practice. At the time, my real focus was how we might expand other themable properties into semantic naming. Is semantic naming for border radius possible? Spoiler, <a href="https://blog.damato.design/posts/meaningless-curves/">no it's not</a>, but what about spacing?</p>
-
 			<Callout caption="Question 2">
 				How might we make space semantic?
 			</Callout>
@@ -126,16 +124,18 @@ import Author from '@components/Author.astro';
 
 		<Section split>
 
+			<p>At this time, I'd like to focus on how we might expand other themable properties into semantic naming. Is semantic naming for border radius possible? Spoiler, <a href="https://blog.damato.design/posts/meaningless-curves/">no it's not</a>, but what about spacing?</p>
+
 			<Media float src="/media/non-semantic.png" alt=""/>
 
 			<p>Spacing tokens in many design systems are either published as T-shirt sizing or propotional amounts, neither of which are semantic; <strong>the names of these tokens give no indication about where to use them</strong>.</p>
 				
-			<p>Think about if a person was asked to markup an interface with only a list of token names. It is logical that the semantic token name <code>button-bgcolor</code> is meant to color button backgrounds. While the proportional scale token <code>space-4</code> gives no indication where it should be applied using only the token name.</p>
+			<p>Think about if a person was asked to markup an interface with only a list of token names. It is logical that the semantic token name <code>button-bgcolor</code> is meant to color button backgrounds. While the proportional scale token <code>space-4</code> gives no indication where it should be applied using only the token name. This means that they should be segregated into different categories, where <code>button-bgcolor</code> is semantic and <code>space-4</code> is not.</p>
 
 		</Section>
 
 		<Section>
-			<p>It was important to me that whatever the solution of this exploration, that it achieved the same visual results in comparison to existing best practices, with few exceptions if at all. I referred to <a href="https://medium.com/eightshapes-llc/space-in-design-systems-188bcbae0d62">Nathan Curtis's article about space</a> throughout this work as his outlook has been adopted by community several times over.</p>
+			<p>It was important to me that whatever the solution of this exploration, that it achieved the same visual results in comparison to existing best practices, even if executed differently. I was heavily influenced by <a href="https://medium.com/eightshapes-llc/space-in-design-systems-188bcbae0d62">Nathan Curtis's article about space</a> throughout this work as his outlook has been adopted by community several times over.</p>
 			
 			<p>The result of that research was called <a href="https://complementary.space/">Complementary Space</a>. A technique that suggests we can mark an area with a single token that means “space goes here” and then a designer determines how much space in a new way; using regions.</p>
 
@@ -157,13 +157,14 @@ import Author from '@components/Author.astro';
 		</Section>
 
 		<Section>
-			<p>Through these separate units of work I soon realized that both were using the same technique of changing token values depending on a targeted scope. From here, I wanted to understand the fundamental prinicples I was uncovering so that it was clear when tokens were meant to drive design decisions and when scope should be considered instead.</p>
-
 			<Callout caption="Bonus Question">
 				What are the shared principles in these approaches?
 			</Callout>
 		</Section>
+
 		<Section>
+			<p>Through these separate units of work I soon realized that both questions resulted in using the same technique of changing token values depending on a targeted scope. From here, I wanted to understand the fundamental prinicples I was uncovering so that it was clear when tokens were meant to drive design decisions and when scope should be considered instead.</p>
+
 			<Media src="/media/wireframe.png" alt=""/>
 
 			<p>This is a low-fidelity wireframe of an interface. You might have a accurate guess of what it might represent. The more important question is <strong>how are you able to guess?</strong> There's no content clearly describing what to do, or branding to identify the product. How can we assume what this is meant for without these markers?</p>
@@ -200,9 +201,7 @@ import Author from '@components/Author.astro';
 
 			<Media src="/media/xzibit.png" alt=""/>
 
-			<p>That's why I've have called this technique <strong>mise en mode</strong>, meaning “placement in mode”. It is a play on the art history term <a href="https://en.wikipedia.org/wiki/Mise_en_abyme">mise en abyme</a>, which is the act of creating smaller artwork within a larger composition. In this idea, an experience is designed as a nested collection of modes, each with a specific purpose for being there by design. Each mode provides new values to existing tokens for a shared purpose. This means that some semantics are moved from the tokens, to these new rectangular boundaries of the interface. Tokens are now simplified to naming elements and properties.</p>
-
-			<p>For the folks familiar with React, this is the difference between prop drilling to every component and instead reading from some <code>useContext()</code> provider higher in the tree.</p>
+			<p>That's why I've have called this technique <strong>mise en mode</strong>, meaning “placement in mode”. It is a play on the art history term <a href="https://en.wikipedia.org/wiki/Mise_en_abyme">mise en abyme</a>, which is the act of creating smaller artwork within a larger composition.</p>
 		</Section>
 
 		<Section slide>
@@ -210,20 +209,27 @@ import Author from '@components/Author.astro';
 		</Section>
 
 		<Section slide>
-			<Media float src="/media/mise-en-abyme.png" alt="">
+			<Media src="/media/mise-en-abyme.png" alt="">
 				Coat of arms of the United Kingdom, 1816—1837
 			</Media>
 		</Section>
 
-		<Section slide>
-			<Media src="/media/rectangles.png" alt="">A nested collection of modes</Media>
+		<Section split>
+			<Media float src="/media/rectangles.png" alt="">A nested collection of modes</Media>
+
+			<p>In this idea, an experience is designed as a nested collection of modes, each with a specific purpose for being there by design. </p>
+
+			<p>Each rectangle has the possibility of being “expressively enhanced” with new values. Each mode provides new values to existing tokens for a shared purpose. All of the tokens are curated together to express this new mode. This means that some semantics are moved from the tokens, to these new rectangular boundaries of the interface. Tokens are now simplified to naming elements and properties.</p>
+
+			<p>For the folks familiar with React, this is the difference between prop drilling to every component and instead reading from some <code>useContext()</code> provider higher in the tree.</p>
+
 		</Section>
 
 		<Section slide>
 			<Media src="/media/footer.png" alt="">“Expressively enhanced” with new values</Media>
 		</Section>
 
-		<Section>
+		<Section slide>
 			<Callout cite caption="Progressive enhancement, w3.org">Regardless of environment and ability you deliver a product that works</Callout>
 		</Section>
 
@@ -248,7 +254,9 @@ import Author from '@components/Author.astro';
 
 			<p>Taking this a step further, and maybe too far for some but, perhaps there is no critical button, only a button that exists within a critical mode.</p>
 
-			<p>The content of a double confirm modal is meant to display as wholly dangerous. The messaging, icons, and other design choices can be affected along with the button. Therefore we could treat the entire region as critical and adjust the appearance through the scoping the token values to this boundary.</p>
+			<p>While mise en mode aims to reduce the number of tokens we need to manage, it also has the possibility to reduce the number of variations that your components need to support.</p>
+				
+			<p>When we choose to use a critical button, we very often want to convey the idea of being dangerous to a much larger area. There is often messaging that accompanies that button to provide more context about the dangers of pressing the associated button. Therefore we could treat the entire region as critical and adjust the appearance through the scoping the token values to this boundary.</p>
 		</Section>
 
 		<Section slide>
@@ -282,12 +290,14 @@ import Author from '@components/Author.astro';
 			<Media float src="/media/which-mode.png" alt=""/>
 				
 			<p>What is the purpose of this treatment? Is it meant to help with reading, improve battery performance, portray a brand identity, or another user need entirely? What message is this mode meant to convey?</p>
-			
-			<p>Asking “why?” about new designs often starts conflict because it puts designers on defense and often why designers go rogue. It's hard to articulate our needs and is just easier to avoid conflict.</p>
 
-			<p>So here's one weird trick for designers to get the look they want using mise en mode; <strong>name the mode just like you would a component</strong>. Consider that other people might want to use this expression for the same reason you need it. So, give it a name that has shared meaning.</p>
+			<p>Asking “why?” about new designs often starts conflict because it puts designers on defense and often why designers go rogue. It's hard to articulate our needs and is just easier to avoid conflict. But maybe we could stop asking why and start saying yes!</p>
 
-			<p>In the same way we create components to perform a function, we can create modes to express a form.</p>
+			<p>The reason we hesitate as a system maintainer is because we will do a cost benefit analysis on this new concept. This treatment against all of the work it'll take to support it.</p>
+
+			<p>The conclusion would be that this would need new tokens that require new values. And those tokens need to be assigned to variants or props on components, either new or existing. Then those components need to be published as a new version of the library. And that library needs to be adopted by teams into applications.</p>
+
+			<p>All that work, just to change a few colors just doesn't seem worth it.</p>
 
 		</Section>
 
@@ -296,7 +306,7 @@ import Author from '@components/Author.astro';
 		</Section>
 
 		<Section slide>
-			<Media src="/media/thick.png" alt=""/>
+			<Media float src="/media/thick.png" alt=""/>
 		</Section>
 
 		<Section slide>
@@ -312,14 +322,16 @@ import Author from '@components/Author.astro';
 		</Section>
 
 		<Section>
+			<p>But for the folks who are asking for these changes, it is worth it. They want these rectangles to mean more. And for the design system to be a successful product, we need to support our users. We need adoption. To do this we create systems that are meant to support our users and their creative freedom of expression needs quickly.</p>
+
 			<p>I believe mise en mode is a powerful approach to support creativity and expression while maintaining a system to user experience design. Rounded corners, purple gradients, and flourished typography can all be applied as a mode to an underlying familiar structure. A functional layout of rectangles provide the guardrails of user expectation, while tokens provide a style-by-name interface to convey a form of expression within. <strong>Mise en mode is the practical application of form following function.</strong> So maybe to some, they're just rectangles on the internet, or maybe...</p>
 
 			<Media src="/media/purpose.png" alt="they're rectangles burdened with glorious purpose"/>
 		</Section>
 
 		<Section slide>
-			<Callout caption="mode.place">
-				Thank you
+			<Callout>
+				mode.place
 			</Callout>
 		</Section>
 	</Main>
