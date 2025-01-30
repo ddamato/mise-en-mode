@@ -9,6 +9,6 @@ const clean = file && file.endsWith('md');
 	<Head { ...Astro.props }/>
 	<body data-clean={ clean }>
 		<slot/>
-		<img src="https://analytics.damato.design/api/track?domain=mode.place" style="display: none"/>
+		<script async defer src="https://scripts.withcabin.com/hello.js"></script>
 	</body>
 </html>
