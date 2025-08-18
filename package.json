@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "mise-en-mode",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -10,7 +10,6 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^3.2.1",
-    "css-doodle": "^0.37.3"
+    "astro": "^5.13.2"
   }
 }

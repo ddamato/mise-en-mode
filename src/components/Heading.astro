@@ -4,7 +4,7 @@ const { browser, Tag = 'h2' } = Astro.props;
 
 <style>
     @media not (display-mode: browser) {
-        .heading[data-browser] {
+        .heading[data-browser="true"] {
             display: none;
         }
     }
