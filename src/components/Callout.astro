@@ -20,7 +20,7 @@ const Tag = cite ? 'cite' : 'span';
     text-wrap: balance;
   }
 
-  blockquote[data-float] {
+  blockquote[data-float="true"] {
     padding: calc(var(--unit) * 2);
     float: left;
     text-align: right;
@@ -44,7 +44,7 @@ const Tag = cite ? 'cite' : 'span';
   }
 
   @media  (display-mode: browser) and (max-width: 144vh) {
-		blockquote[data-float] {
+		blockquote[data-float="true"] {
       float: initial;
       margin: 0;
       max-width: none;
@@ -54,7 +54,7 @@ const Tag = cite ? 'cite' : 'span';
 	}
 
   @media not (display-mode: browser) {
-    blockquote[data-float] {
+    blockquote[data-float="true"] {
       float: initial;
       text-align: center;
       margin: 0;

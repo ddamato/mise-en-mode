@@ -1,0 +1,79 @@
+<style>
+    #scene {
+        perspective: 1500px;
+    }
+
+    #book {
+        --thickness: 4mm;
+        --inset: 2%;
+        --color: #3d2a0f;
+        position: relative;
+        z-index: 1;
+        transform-style: preserve-3d;
+        transition: transform .218s ease;
+        transform: rotateY(-30deg);
+    }
+
+    #book:hover {
+        transform: rotateY(-20deg);
+    }
+
+    #book img {
+        display: block;
+        border-radius: 4px;
+        border: 1px solid transparent;
+        overflow: hidden;
+        transform: translateZ(calc(var(--thickness)));
+        width: 200px;
+        height: 300px;
+        background: var(--color);
+    }
+
+    #book:before,
+    #book:after {
+        content: "";
+        display: block;
+        position: absolute;
+        transform-style: preserve-3d;
+    }
+
+    #book:before {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        background: var(--color);
+        border-radius: 4px;
+        overflow: hidden;
+        transform: translateZ(calc(-1 * var(--thickness)));
+    }
+
+    #book:after {
+        height: calc(100% - (var(--inset) * 2));
+        width: calc(var(--thickness) * 2);
+        background: white;
+        position: absolute;
+        top: var(--inset);
+        right: 0;
+        background: linear-gradient(
+                90deg,
+                rgba(0, 0, 0, 0.3),
+                rgba(255, 255, 255, 0)
+            ),
+            repeating-linear-gradient(
+                90deg,
+                white,
+                #e2e2e2 1px,
+                white 3px,
+                #9a9a9a 1px
+            );
+        transform: rotateY(90deg) translateX(calc(var(--thickness) / 7))
+            translateZ(calc(var(--thickness) / 1.5));
+    }
+</style>
+
+<div id="scene">
+    <div id="book">
+        <img src="temp-cover.png" />
+    </div>
+</div>

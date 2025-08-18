@@ -14,7 +14,7 @@ const { float } = Astro.props;
     background: var(--bg-color);
   }
 
-  figure[data-float] {
+  figure[data-float="true"] {
     margin: calc(var(--unit) * 2);
     margin-inline-start: calc(var(--unit) * -8);
     float: left;
@@ -35,7 +35,7 @@ const { float } = Astro.props;
   }
 
   @media  (display-mode: browser) and (max-width: 144vh) {
-		figure[data-float] {
+		figure[data-float="true"] {
       float: initial;
       margin: 0 auto;
       max-width: none;
@@ -44,7 +44,7 @@ const { float } = Astro.props;
 	}
 
   @media not (display-mode: browser) {
-    figure[data-float] {
+    figure[data-float="true"] {
       float: initial;
       padding-block: 0;
       margin: 0 auto;

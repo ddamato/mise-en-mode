@@ -1,0 +1,57 @@
+<style>
+    form {
+        max-width: 500px;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 1rem;
+    }
+
+    h2 {
+        margin: 0;
+        line-height: 1.1;
+        font-family: var(--callout-font);
+        font-size: 3rem;
+    }
+
+    .lockup {
+        display: flex;
+        flex-wrap: wrap;
+        gap: .5rem;
+    }
+
+    input, button {
+        font: inherit;
+        padding: .5rem 1rem;
+        border: 0;
+        border-radius: 4px;
+    }
+
+    input {
+        background: var(--accent-color);
+        color: var(--accent-shadow);
+        width: 100%;
+        flex: 1 1 240px;
+    }
+
+    button {
+        cursor: pointer;
+        color: var(--accent-color);
+        background: var(--accent-shadow);
+        flex: 1 0 auto;
+    }
+
+    label {
+        font-family: var(--callout-font);
+    }
+</style>
+
+<form name="updates" method="POST" data-netlify="true">
+    <h2>Get the book!</h2>
+    <p>Learn step-by-step how Mise en Mode can put creativity back into your design system! Enter your email below to get notified once the book is available.</p>
+    <label for="email">email</label>
+    <div class="lockup">
+        <input id="email" type="email" name="email" placeholder="me@example.com"/>
+        <button type="submit">Subscribe</button>
+    </div>
+</form>
