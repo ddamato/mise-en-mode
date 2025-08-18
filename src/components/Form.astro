@@ -46,12 +46,19 @@
     }
 </style>
 
-<form name="updates" method="POST" data-netlify="true">
+<form
+    name="updates"
+    method="POST"
+    data-netlify="true"
+    netlify-honeypot="bot-field">
     <h2>Get the book!</h2>
     <p>Learn step-by-step how Mise en Mode can put creativity back into your design system! Enter your email below to get notified once the book is available.</p>
     <label for="email">email</label>
     <div class="lockup">
         <input id="email" type="email" name="email" placeholder="me@example.com"/>
         <button type="submit">Subscribe</button>
+    </div>
+    <div style="display: none">
+        <input name="bot-field" type="text" />
     </div>
 </form>
