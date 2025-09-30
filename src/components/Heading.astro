@@ -3,7 +3,7 @@ const { browser, Tag = 'h2' } = Astro.props;
 ---
 
 <style>
-    @media not (display-mode: browser) {
+    @media (display-mode: fullscreen) {
         .heading[data-browser="true"] {
             display: none;
         }

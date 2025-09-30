@@ -12,7 +12,7 @@ const { src, alt, float } = Astro.props;
     border-radius: 4px;
   }
 
-  @media not (display-mode: browser) {
+  @media (display-mode: fullscreen) {
     :where(img, video) {
       max-height: calc(var(--unit) * 10);
     }

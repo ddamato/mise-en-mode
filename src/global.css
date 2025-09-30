@@ -56,7 +56,7 @@ code {
   border-radius: 2px;
 }
 
-@media  (display-mode: browser) and (max-width: 500px) {
+@media (max-width: 500px) and (not (display-mode: fullscreen))  {
   :root {
     --unit: 2vh;
   }

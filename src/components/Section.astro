@@ -33,7 +33,7 @@ const { split, flip, slide } = Astro.props;
     margin: 0 auto;
   }
 
-  @media (display-mode: browser) {
+  @media not (display-mode: fullscreen) {
     section[data-slide="true"] {
       display: none;
     }
@@ -52,14 +52,14 @@ const { split, flip, slide } = Astro.props;
     }
   }
 
-  @media  (display-mode: browser) and (max-width: 144vh) {
+  @media (max-width: 144vh) and (not (display-mode: fullscreen)) {
 		section[data-split="true"] {
       padding-inline: calc(var(--unit) * 2);
       background: var(--bg-color);
     }
 	}
 
-  @media not (display-mode: browser) {
+  @media (display-mode: fullscreen) {
     section {
       font-size: 0;
       scroll-snap-align: start;

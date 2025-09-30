@@ -359,6 +359,6 @@ import Billboard from '@components/Billboard.astro';
 		});
 	}
 
-	const mql = window.matchMedia("(display-mode: browser)");
-	mql.onchange = ({ matches }) => observe(!matches);
+	const mql = window.matchMedia("(display-mode: fullscreen)");
+	mql.onchange = ({ matches }) => observe(matches);
 </script>

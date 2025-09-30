@@ -43,7 +43,7 @@ const Tag = cite ? 'cite' : 'span';
     content: '— ';
   }
 
-  @media  (display-mode: browser) and (max-width: 144vh) {
+  @media (max-width: 144vh) and (not (display-mode: fullscreen)) {
 		blockquote[data-float="true"] {
       float: initial;
       margin: 0;
@@ -53,7 +53,7 @@ const Tag = cite ? 'cite' : 'span';
     }
 	}
 
-  @media not (display-mode: browser) {
+  @media (display-mode: fullscreen) {
     blockquote[data-float="true"] {
       float: initial;
       text-align: center;
